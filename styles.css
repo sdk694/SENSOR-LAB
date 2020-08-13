@@ -1,0 +1,33 @@
+body{
+ background-image: url("https://i.stack.imgur.com/7JjU3.jpg");
+}
+
+.jumbotron {
+    background-color: #f5f1faef;
+}
+footer {
+    background-color: #f5f1faef;    
+}
+.image {
+    background-image: url("https://img.pngio.com/light-blue-gradient-background-light-blue-gradient-png-15-wt-blue-gradient-png-2000_1500.png");    
+}
+.breadcrumb {
+    background-color: ;
+    
+}
+
+table {
+  border-collapse: collapse;
+  width: 95%;
+  color: black; 
+  font-size: 18px;
+  text-align: left;
+
+} 
+th {
+  background-color: darkgrey;
+  color: black;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
