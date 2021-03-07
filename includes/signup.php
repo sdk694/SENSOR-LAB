@@ -1,6 +1,6 @@
 <?php
 
-    include_once 'connect1.php'
+    include 'connect1.php'
 
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
@@ -13,4 +13,3 @@
 
     mysqli_query($conn,$sql)
 
-    header("Location : ../login.php?signup=success");
