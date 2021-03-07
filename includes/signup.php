@@ -14,5 +14,3 @@
     mysqli_query($conn,$sql)
 
     header("Location : ../login.php?signup=success");
-
-    echo "<div id=\"success\"><h2>Your data has been recorded. Kindly L</h2></div>";

@@ -3,7 +3,7 @@
 $dbServername = "34.121.146.230";
 $dbUsername = "lora-rms";
 $dbPassword = "rms-lora";
-$dbName = "solarnexus";
+$dbName = "user";
 
 $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
 
