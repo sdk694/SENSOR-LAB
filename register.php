@@ -14,7 +14,7 @@
     
     } //Else if user has not pressed logout, it takes it back to thw Logged In page!! wao! 
     else if ((array_key_exists("email",$_SESSION) AND $_SESSION["email"]) OR (array_key_exists("email",$_COOKIE) AND $_COOKIE["email"])){
-        header("Location: 8SecretDiary-LoggedInPage.php");
+        header("Location:dashboardmumbai.php");
 
     }
 
@@ -60,7 +60,7 @@
                         //Using password_hash
                         $_POST["password"] = password_hash($_POST["password"],PASSWORD_DEFAULT);
 
-                        $insertQuery = "INSERT INTO userinfo (email,password) VALUES ('".mysqli_real_escape_string($link,$_POST["email"])."','".mysqli_real_escape_string($link,$_POST["password"])."')"; 
+                        $insertQuery = "INSERT INTO userinfo VALUES ('".mysqli_real_escape_string($link,$_POST["email"])."','".mysqli_real_escape_string($link,$_POST["password"])."')"; 
     
                         if (mysqli_query($link,$insertQuery)){
                             $success = "Sign up Complete!";  //This is overridden by Sessions
@@ -72,7 +72,7 @@
                                 setcookie("email",$_POST["email"],time()+60*60*24*365);
                             
                             }
-                            header("Location: dashboardmumbai.html");
+                            header("Location: dashboardmumbai.php");
     
                         } else {
                             $failure = "ERROR signing up!";
@@ -89,9 +89,11 @@
                 $checkQuery2 = "SELECT * FROM userinfo WHERE email ='".mysqli_real_escape_string($link,$_POST["email"])."'";    
                 
                 $result2 = mysqli_query($link,$checkQuery2);
+
+
                 $row = mysqli_fetch_array($result2);
                 
-                //print_r ($row);
+                // print_r ($row);
 
                 if(array_key_exists("email",$row)){
                     
@@ -105,7 +107,7 @@
                             setcookie("email",$_POST["email"],time()+60*60*24*365);
                         
                         }
-                        header("Location: dashboardmumbai.html");
+                        header("Location: dashboardmumbai.php");
 
                     } else {
                         $failure = "Wrong Username or Password";
@@ -118,9 +120,6 @@
     }
 
 ?>
-
-
-
 
 
 
