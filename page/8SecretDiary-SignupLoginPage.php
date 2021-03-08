@@ -2,7 +2,7 @@
     //Sessions: Last till browser is ON
     session_start();   
 
-    include 'sqlconnect2.php'; 
+    include '8SQLconnection.php'; 
     
     //If user presses logout, then all Sessions & Cookies destroyed
     if(array_key_exists("logout",$_GET)){
@@ -51,7 +51,7 @@
                     //echo 'Strong password.';
  
                     //Checking if email is already present in DB
-                    $checkQuery = "SELECT email FROM userinfo WHERE email ='".mysqli_real_escape_string($link,$_POST["email"])."'";
+                    $checkQuery = "SELECT id FROM secretdiary WHERE email ='".mysqli_real_escape_string($link,$_POST["email"])."'";
                     $result1 = mysqli_query($link,$checkQuery);
 
                     //Checks if there are rows where email is repeated
@@ -60,7 +60,7 @@
                         //Using password_hash
                         $_POST["password"] = password_hash($_POST["password"],PASSWORD_DEFAULT);
 
-                        $insertQuery = "INSERT INTO userinfo (email,password) VALUES ('".mysqli_real_escape_string($link,$_POST["email"])."','".mysqli_real_escape_string($link,$_POST["password"])."')"; 
+                        $insertQuery = "INSERT INTO secretdiary (email,password) VALUES ('".mysqli_real_escape_string($link,$_POST["email"])."','".mysqli_real_escape_string($link,$_POST["password"])."')"; 
     
                         if (mysqli_query($link,$insertQuery)){
                             $success = "Sign up Complete!";  //This is overridden by Sessions
@@ -72,7 +72,7 @@
                                 setcookie("email",$_POST["email"],time()+60*60*24*365);
                             
                             }
-                            header("Location: dashboardmumbai.html");
+                            header("Location: 8SecretDiary-LoggedInPage.php");
     
                         } else {
                             $failure = "ERROR signing up!";
@@ -86,7 +86,7 @@
             //Sign In
             else {
                     
-                $checkQuery2 = "SELECT * FROM userinfo WHERE email ='".mysqli_real_escape_string($link,$_POST["email"])."'";    
+                $checkQuery2 = "SELECT * FROM secretdiary WHERE email ='".mysqli_real_escape_string($link,$_POST["email"])."'";    
                 
                 $result2 = mysqli_query($link,$checkQuery2);
                 $row = mysqli_fetch_array($result2);
@@ -105,7 +105,7 @@
                             setcookie("email",$_POST["email"],time()+60*60*24*365);
                         
                         }
-                        header("Location: dashboardmumbai.html");
+                        header("Location: 8SecretDiary-LoggedInPage.php");
 
                     } else {
                         $failure = "Wrong Username or Password";
@@ -126,7 +126,7 @@
 
 <html lang="en">
     <head>
-        <title>Dashboard Sign up and Login</title>
+        <title>Secret Diary Project</title>
         <bootstrapReq>
             <!-- Required meta tags -->
             <meta charset="utf-8">
@@ -146,7 +146,7 @@
 
         <style>
             html { 
-                background: url("https://www.anurezapower.in/images/residential.jpg") no-repeat center center fixed; 
+                background: url("beachshowcase.jpg") no-repeat center center fixed; 
                 -webkit-background-size: cover;
                 -moz-background-size: cover;
                 -o-background-size: cover;
@@ -158,8 +158,9 @@
             }
             
             .container{
+                text-align:center;
                  
-                margin-top:20px;
+                margin-top:80px;
             }
 
             #loginForm{
@@ -184,9 +185,9 @@
     </head>
 
     <body>
-        <div class="container d-flex justify-content-center">
-            <div class ="card text-white " style ="width : 500px; height : 650px; opacity: 0.75;">
-              <div class = "card-body bg-dark shadow boder-dark ">
+        <div class="container">
+            <h1>Secret Diary</h1>
+            <h5> &copy;Jithin Saji Isaac</h5>
             <div id="error">
                 <?php
                     if($success){
@@ -197,89 +198,76 @@
                     }            
                 ?>
             </div>
+           <div class="card">
+             <div class= "card-body">
+             <h2 class="card-header">Solar Sureveil</h2>
              <form action="" method="post" id="signUpForm">
-                <h2 class="card-header bg-dark text-white d-flex justify-content-center">Dashboard Sign up</h2>
-                <br>
-                 <div class="form-group row d-flex justify-content-center links">
-                    <div class="col-8 align-self-center">
-                        <label for="">Email</label>
+                <p>Interested? Sign up now!</p>
+                 <div class="form-group row d-flex justify-content-center">
+                    <div class="col-sm-5 align-self-center">
                         <input type="email" class="form-control " name="email" placeholder="Your Email address">
-                        <small id="emailHelp" class="form-text text-white">Email will not be shared</small>
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                 </div>
-                <div class="form-group  row d-flex justify-content-center links ">
-                    <div class="col-8 align-self-center">
-                        <label for="">Password</label>
+                <div class="form-group  row d-flex justify-content-center">
+                    <div class="col-sm-5 align-self-center">
                         <input type="password" class="form-control" name="password" placeholder="Your password">
-                        <small id="pwdHelp" class="form-text text-white">-> Atleast: 8 characters (Max 20), one number, one upper & lower case <-</small>
+                        <small id="pwdHelp" class="form-text text-muted">-> Atleast: 8 characters (Max 20), one number, one upper & lower case <-</small>
                     </div>
                 </div>
-                <div class="d-flex justify-content-center links">
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input " name="stayloggedin" value=1 checked>
+                    <input type="checkbox" class="form-check-input" name="stayloggedin" value=1 checked>
                     <label class="form-check-label"  for="stayloggedin">Stay logged in</label>
                 </div>
-                </div>
-                <br>
-                <div class="d-flex justify-content-center links">
                 <div class="form-group">
                     <input type="hidden" name="signup" value=1>
                 </div> 
-                <input type="submit" name="submit" value="Sign Up" class="btn btn-primary">
+                <input type="submit" name="submit" value="Sign Up" class="btn btn-info">
                 <br><br> 
-                </div>
-                <br>
-                <div class ="d-flex justify-content-center links">
-                <div class="row">
-                    <div class="col-6 ">Already signed up?<br> Please Log in.</div>
-                    <div class="col-6 ">
-                        <a class= "btn btn-primary toggleForm float-left" role="button"><span id="toggleFormButton">Log In</span></a> 
+                
+                <div class="row d-flex justify-content-center">
+                    <div class="col-6  text-right padding-0">Already signed up?<br> Please Log in.</div>
+                    <div class="col-6 padding-0">
+                        <a class= "btn btn-dark toggleForm float-left" role="button"><span id="toggleFormButton">Log In</span></a> 
                     </div>
-                </div>
                 </div>
             </form>
 
             <!-- login  -->
 
             <form action="" method="post" id="loginForm">
-                <h2 class="card-header bg-dark text-white d-flex justify-content-center">Dashboard Login</h2>
-                <br>
-                <div class="form-group row  d-flex justify-content-center link">
-                    <div class="col-8 align-self-center">
-                        <label for="">Email</label>
+                <p>Login with email and password</p>
+                <div class="form-group row d-flex justify-content-center">
+                    <div class="col-sm-5 align-self-center">
                         <input type="email" class="form-control" name="email"  placeholder="Your registered login email address">
                     </div>
                  </div>  
-                <div class="form-group row  d-flex justify-content-center  link">
-                    <div class="col-8 align-self-center">
-                        <label for="">Password</label>
+                <div class="form-group row d-flex justify-content-center">
+                    <div class="col-sm-5 align-self-center">
                         <input type="password"  class="form-control" name="password" placeholder="Your Login password">
                     </div>
                 </div>
-                <div class="d-flex justify-content-center  link">
                 <div class="form-check">
                     <input type="checkbox" name="stayloggedin" class="form-check-input" value=1 checked>                    
                     <label class="form-check-label" for="stayloggedin">Stay logged in</label>
                 </div>
-                </div>
                 <div class="form-group">
                     <input type="hidden" name="signup" value=0>
                 </div> 
-                <div class="d-flex justify-content-center  links ">
-                <input type="submit" name="submit" value="Login" class="btn btn-primary">
+                <input type="submit" name="submit" value="Login" class="btn btn-info">
                 <br><br> 
-                </div>
-                <br>
-                <div class="row ">
+                <div class="row d-flex justify-content-center">
                     <div class="col-6 my-auto text-right padding-0">Not Signed up?</div>
                     <div class="col-6 padding-0">
-                        <a class= "btn btn-primary toggleForm float-left" role="button"><span id="toggleFormButton">Sign Up</span></a> 
+                        <a class= "btn btn-dark toggleForm float-left" role="button"><span id="toggleFormButton">Sign Up</span></a> 
                     </div>
                 </div>
             </form>
-              </div>
+
+
+             </div>
+           </div>
         </div>
-      </div>
 
         <script type="text/javascript">
             $(".toggleForm").click(function(){

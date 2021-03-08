@@ -16,7 +16,7 @@
 
   </head>
   <body style="background-image: url('https://www.anurezapower.in/images/residential.jpg') ;background-repeat: no-repeat;">
-        <div class="container col-4 " style="margin-top: 70px;" >
+        <div class="container col-5 " style="margin-top: 70px;" >
             <div class="card shadow bg-dark text-light" style="opacity: 0.9;">
                 <h1 class="card-header  text-dark" style="background-color: rgb(255, 217, 0);"><span class="fa fa-sign-in"></span> Login </h1>
                 <div class="card-body">
