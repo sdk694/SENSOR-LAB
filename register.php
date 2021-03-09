@@ -183,6 +183,20 @@
                 padding-right:5;
                 padding-left:5;
             }
+
+            ::-webkit-scrollbar {
+                width: 7px;
+            }
+
+            ::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+                border-radius: 10px;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+                border-radius: 10px;
+            }
         </style>
 
     </head>
