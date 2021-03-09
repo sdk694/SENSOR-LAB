@@ -68,7 +68,7 @@ if(array_key_exists("email",$_SESSION)){
       <a class="nav-link bg-warning text-dark active fa fa-tachometer fa-2x" href="dashboard.html"><span> Dashboard</span></a>
       <a class="nav-link  fa fa-map-marker fa-2x" href="location.html"><span> Location</span></a>
       <a class="nav-link fa fa-user fa-2x" href="#about"><span> Profile</span></a>
-      <a class="nav-link fa fa-user fa-2x" href="register.php?logout=1"><span> Logout</span></a>     
+      <a class="nav-link fa fa-sign-out fa-2x" href="register.php?logout=1"><span> Logout</span></a>     
     </div>
     
     <!-- Page content -->
