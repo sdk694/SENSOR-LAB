@@ -49,7 +49,7 @@
                 <a class="nav-link" href="solarcalculator.html">Calculator <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="view_item.php">Buy Now</a>
+                <a class="nav-link" href="view_item.php">Get Components</a>
             </li>
             </ul>
             <span class="navbar-text text-white">
