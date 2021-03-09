@@ -1,3 +1,24 @@
+<?php
+
+session_start();
+if(array_key_exists("email",$_COOKIE)){
+
+    $_SESSION["email"] = $_COOKIE["email"];
+    //echo 'Logged In user email is: '.$_COOKIE["email"];
+    
+}
+
+if(array_key_exists("email",$_SESSION)){
+
+    include ("sqlconnect2.php");
+
+} else{
+
+   header("Location: register.php");
+
+}
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -27,9 +48,11 @@
     
     <!-- The sidebar -->
     <div class="sidebar nav flex-column nav-pills shadow" id="grad13">
-      <a class="nav-link fa fa-tachometer fa-2x" href="dashboardmumbai.html"><span> Dashboard</span></a>
+      <a class="nav-link fa fa-tachometer fa-2x" href="dashboardmumbai.php"><span> Dashboard</span></a>
       <a class="nav-link bg-warning text-dark active fa fa-map-marker fa-2x" href="location.html"><span> Location</span></a>
-      <a class="nav-link fa fa-user fa-2x" href="#about"><span> Profile</span></a>
+      <!-- <a class="nav-link fa fa-user fa-2x" href="#about"><span> Profile</span></a> -->
+      <a class="nav-link fa fa-sign-out fa-2x" href="register.php?logout=1"><span> Logout</span></a>     
+
     </div>
     
     <!-- Page content -->
@@ -94,8 +117,7 @@
                   <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                       <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Location on map</a>
-                      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="getmap2()">Mumbai</a>
-                      <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Walvanda</a>
+                      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="getmap2()">Details</a>
                     </div>
                   </nav>
                   <div class="tab-content" id="nav-tabContent">
@@ -131,11 +153,28 @@
                       <br>
                       <div class="card" style="height: 380px;">
                         <div class="card-body">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="card">
+                                <div class="card-body">
+                                  <h5 class="card-title">Mumbai</h5>
+                                  <p class="card-text">Testing On Mini Solar Setup of 150W using end nodes.</p>
+                                  <a href="dashboardmumbai.php" class="btn btn-primary">Mumbai Dashboard</a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="card">
+                                <div class="card-body">
+                                  <h5 class="card-title">Walvanda</h5>
+                                  <p class="card-text">Implementation of end nodes at Walwanda.</p>
+                                  <a href="dashboardmumbai.php" class="btn btn-primary">Walvanda Dashboard</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
 
                          </div>                        
-                    </div>
-                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">..
-
                     </div>
                   </div>  
                 </div>
