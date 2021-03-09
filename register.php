@@ -93,12 +93,15 @@
 
                 $row = mysqli_fetch_array($result2);
                 
-                // print_r ($row);
+                print_r ($row);
+                print_r(gettype($_POST["password"]));
+                print_r(gettype($row["password"]));
 
                 if(array_key_exists("email",$row)){
-                    
-
+                    print_r("Hello");
+                    print_r(json_encode(password_verify($_POST["password"],$row["password"])));
                     if(password_verify($_POST["password"],$row["password"])){
+                       
                         $success = "Username & Password correct";
                         $_SESSION["email"] = $_POST["email"];
 

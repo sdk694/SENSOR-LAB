@@ -1,4 +1,23 @@
+<?php
 
+session_start();
+if(array_key_exists("email",$_COOKIE)){
+
+    $_SESSION["email"] = $_COOKIE["email"];
+    //echo 'Logged In user email is: '.$_COOKIE["email"];
+    
+}
+
+if(array_key_exists("email",$_SESSION)){
+
+    include ("sqlconnect2.php");
+
+} else{
+
+   header("Location: register.php");
+
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -49,33 +68,7 @@
       <a class="nav-link bg-warning text-dark active fa fa-tachometer fa-2x" href="dashboard.html"><span> Dashboard</span></a>
       <a class="nav-link  fa fa-map-marker fa-2x" href="location.html"><span> Location</span></a>
       <a class="nav-link fa fa-user fa-2x" href="#about"><span> Profile</span></a>
-      <?php
-
-    session_start();
-    if(array_key_exists("email",$_COOKIE)){
-
-        $_SESSION["email"] = $_COOKIE["email"];
-        //echo 'Logged In user email is: '.$_COOKIE["email"];
-        
-    }
-
-    if(array_key_exists("email",$_SESSION)){
-
-      echo "<p><a href ='register.php?logout=1'>Log out</a></p>";
-
-        include ("sqlconnect2.php");
-
-        // $PrevContentquery = "SELECT email FROM secretdiary WHERE email= '".mysqli_real_escape_string($link,$_SESSION["email"])."'";
- 
-        // $row = mysqli_fetch_array (mysqli_query($link,$PrevContentquery));
-
-        // $diaryContent = $row["diarycontent"];
-    } else{
-
-       header("Location: register.php");
-
-    }
-?>
+      <a class="nav-link fa fa-user fa-2x" href="register.php?logout=1"><span> Logout</span></a>     
     </div>
     
     <!-- Page content -->
