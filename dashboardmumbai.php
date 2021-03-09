@@ -125,7 +125,7 @@ if(array_key_exists("email",$_SESSION)){
                             <p class="h5" > Temp = <span class="h4" id="temptrature1"></span> </p>
                             <!-- <p> Pressure = <span id="pressure1"></span> </p> -->
                             <p class="h5"> Humidity = <span class="h4" id="humidity1"></span> </p>
-                            <p class="h5"> Windspeed = <span class="h4" id="windspeed1"></span> </p>
+                            <p class="h5"> Wind(m/s) = <span class="h4" id="windspeed1"></span> </p>
                             <!-- <p> Winddig = <span id="winddig1"></span> </p> -->
                           
                             <script>                               
@@ -164,7 +164,7 @@ if(array_key_exists("email",$_SESSION)){
                             <p class="h5"> Temp = <span class="h4" id="temptrature2"></span> </p>
                             <!-- <p> Pressure = <span id="pressure2"></span> </p> -->
                             <p class="h5"> Humidity = <span class="h4" id="humidity2"></span> </p>
-                            <p class="h5"> Windspeed = <span class="h4" id="windspeed2"></span> </p>
+                            <p class="h5"> Wind(m/s) = <span class="h4" id="windspeed2"></span> </p>
                             <!-- <p> Winddig = <span id="winddig2"></span> </p> -->
                           
                             <script>                              
@@ -200,7 +200,7 @@ if(array_key_exists("email",$_SESSION)){
                             <p class="h5"> Temp = <span class="h4" id="temptrature3"></span> </p>
                             <!-- <p> Pressure = <span id="pressure3"></span> </p> -->
                             <p class="h5"> Humidity = <span class="h4" id="humidity3"></span> </p>
-                            <p class="h5"> Windspeed = <span class="h4" id="windspeed3"></span> </p>
+                            <p class="h5"> Wind(m/s) = <span class="h4" id="windspeed3"></span> </p>
                             
                             <!-- <p> Winddig = <span id="winddig3"></span> </p>   -->
                             
@@ -251,7 +251,7 @@ if(array_key_exists("email",$_SESSION)){
                         <p><span class="h5" id="maincurr"></span></p>
                         <p class="h5">Tempt = <span class="h5" id="tempcurr"></span></p>
                         <p class="h5">Humidity    = <span  class="h5"id="humiditycurr"></span></p>
-                        <p class="h5">Windspeed = <span class="h5"id="windspeedcurr"></span></p>
+                        <p class="h5">Wind(m/s) = <span class="h5"id="windspeedcurr"></span></p>
                       </div>
                     </div>
                       <script>
