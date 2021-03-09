@@ -202,7 +202,7 @@
                 ?>
             </div>
              <form action="" method="post" id="signUpForm">
-                <h2 class="card-header bg-dark text-white d-flex justify-content-center"> Dashboard Sign up <span class="fa fa-user-plus"></span></h2>
+                <h2 class="card-header bg-dark text-white d-flex justify-content-center"> Dashboard Sign up</h2>
                 <br>
                  <div class="form-group row d-flex justify-content-center links">
                     <div class="col-8 align-self-center">
@@ -246,7 +246,7 @@
             <!-- login  -->
 
             <form action="" method="post" id="loginForm">
-                <h2 class="card-header bg-dark text-white d-flex justify-content-center"> Dashboard Login <span class="fa fa-sign-in"></span></h2>
+                <h2 class="card-header bg-dark text-white d-flex justify-content-center"> Dashboard Login</h2>
                 <br>
                 <div class="form-group row  d-flex justify-content-center link">
                     <div class="col-8 align-self-center">
