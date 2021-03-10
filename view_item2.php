@@ -10,8 +10,8 @@
     <title>Get Components</title>
     <style>
         table {
-          
-          margin-left: 20px;
+          margin-left: auto;
+          margin-right: auto;
           margin-top: 20px;
           border-collapse: collapse;
           width: 90%;
