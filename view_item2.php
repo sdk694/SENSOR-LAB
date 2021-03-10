@@ -61,6 +61,9 @@
             <li class="nav-item active">
                 <a class="nav-link" href="view_item.php">Get Components</a>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">About Us</a>
+            </li>
             </ul>
             <span class="navbar-text text-white">
             LoRa RMS Team
