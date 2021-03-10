@@ -14,7 +14,7 @@
           margin-right: auto;
           margin-top: 20px;
           border-collapse: collapse;
-          width: 90%;
+          width: 80%;
           color: black; 
           font-size: 18px;
           text-align: center;
