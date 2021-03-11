@@ -416,6 +416,7 @@
                     <input type="hidden" name="signup" value=1>
                 </div> 
                 <input type="submit" name="submit" value="Sign Up" class=" col-12 btn btn-primary">
+                <a href="index.html">Go back to main page</a>
                 <br><br> 
                 </div>
                 <br>
