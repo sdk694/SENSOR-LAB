@@ -66,7 +66,7 @@ if(array_key_exists("email",$_SESSION)){
     <!-- The sidebar -->
     <div class="sidebar shadow" id="grad12">
       <a class="bg-warning text-dark active fa fa-tachometer fa-2x" href="dashboard.html"><span> Dashboard</span></a>
-      <a class="fa fa-map-marker fa-2x" href="location.html"><span> Location</span></a>
+      <a class="fa fa-map-marker fa-2x" href="location.php"><span> Location</span></a>
       <a class=" fa fa-sign-out fa-2x" href="register.php?logout=1"><span> Logout</span></a>
     </div>
     
