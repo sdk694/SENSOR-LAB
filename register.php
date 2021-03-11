@@ -458,9 +458,10 @@
                 </div> 
                 <div class="d-flex justify-content-center  links ">
                 <input type="submit" name="submit" value="Login" class="col-12 btn btn-primary">
+
+                </div>
                 <br><br>
                 <a class="d-flex justify-content-center" href="index.html">Go back to main page</a>
-                </div>
                 <!-- <br>
                 <div class="row ">
                     <div class="col-6 my-auto text-right padding-0">Not Signed up?</div>
