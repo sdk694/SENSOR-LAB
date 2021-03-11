@@ -458,7 +458,8 @@
                 </div> 
                 <div class="d-flex justify-content-center  links ">
                 <input type="submit" name="submit" value="Login" class="col-12 btn btn-primary">
-                <br><br> 
+                <br><br>
+                <a class="d-flex justify-content-center" href="index.html">Go back to main page</a>
                 </div>
                 <!-- <br>
                 <div class="row ">
