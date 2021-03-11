@@ -10,11 +10,11 @@
     <title>Get Components</title>
     <style>
         table {
-          
-          margin-left: 20px;
+          margin-left: auto;
+          margin-right: auto;
           margin-top: 20px;
           border-collapse: collapse;
-          width: 100%;
+          width: 80%;
           color: black; 
           font-size: 18px;
           text-align: center;
@@ -31,10 +31,20 @@
           background-color: #f2f2f2;
          
         }
-  
-       
-       
-      
+        ::-webkit-scrollbar {
+              width: 7px;
+          }
+
+          ::-webkit-scrollbar-track {
+              box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+              border-radius: 10px;
+          }
+
+          ::-webkit-scrollbar-thumb {
+              box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+              border-radius: 10px;
+          }
+            
     </style>
   </head>
   <body>
@@ -43,13 +53,16 @@
             <span class="navbar-toggler-icon"></span>
             </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand" href="solarcalculator.html">SOLAR SURVEIL</a>
+            <a class="navbar-brand" href="index.html">SOLAR SURVEIL</a>
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
                 <a class="nav-link" href="solarcalculator.html">Calculator <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="view_item.php">Buy Now</a>
+                <a class="nav-link" href="view_item.php">Get Components</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
             </li>
             </ul>
             <span class="navbar-text text-white">
@@ -61,14 +74,14 @@
     <br>
     
     <div class="container">
-        <div class="card">
+        <div class="card shadow">
             <div class="card-header bg-dark text-white">
               <h1>View Components Online</h1>
             </div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-sm-3">
-                      <div class="card">
+                      <div class="card shadow">
                         <div class="card-body">
                                 <form method="post">
                                     <div class="form-row">
@@ -120,7 +133,7 @@
                       </div>
                     </div>
                     <div class="col-sm-6">
-                      <div class="card">
+                      <div class="card shadow">
                         <div class="card-body">
                             <div class="form-row">
                                 <div class="form-group col-md-6"> 
@@ -153,7 +166,7 @@
                       </div>
                     </div>
                     <div class="col-sm-3">
-                        <div class="card">
+                        <div class="card shadow">
                           <div class="card-body">
                             <div class="form-row">
                                 <div class="form-group"> 
@@ -176,7 +189,7 @@
 
                 <div class="row">
                     <div class="col-sm-6">
-                      <div class="card">
+                      <div class="card shadow">
                         <div class="card-body">
                             <div class="form-row">
                                 <div class="form-group col-md-6"> 
@@ -228,7 +241,7 @@
                       </div>
                     </div>
                     <div class="col-sm-6">
-                      <div class="card">
+                      <div class="card shadow">
                         <div class="card-body">
                             <div class="form-row">
                                 <div class="form-group col-md-6"> 

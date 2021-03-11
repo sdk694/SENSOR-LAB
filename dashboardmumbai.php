@@ -64,22 +64,21 @@ if(array_key_exists("email",$_SESSION)){
   <body>
     
     <!-- The sidebar -->
-    <div class="sidebar nav flex-column nav-pills shadow" id="grad12">
-      <a class="nav-link bg-warning text-dark active fa fa-tachometer fa-2x" href="dashboard.html"><span> Dashboard</span></a>
-      <a class="nav-link  fa fa-map-marker fa-2x" href="location.html"><span> Location</span></a>
-      <a class="nav-link fa fa-user fa-2x" href="#about"><span> Profile</span></a>
-      <a class="nav-link fa fa-user fa-2x" href="register.php?logout=1"><span> Logout</span></a>     
+    <div class="sidebar shadow" id="grad12">
+      <a class="bg-warning text-dark active fa fa-tachometer fa-2x" href="dashboard.html"><span> Dashboard</span></a>
+      <a class="fa fa-map-marker fa-2x" href="location.php"><span> Location</span></a>
+      <a class=" fa fa-sign-out fa-2x" href="register.php?logout=1"><span> Logout</span></a>
     </div>
     
     <!-- Page content -->
-      <div class="content">
+    <div class="content">
         <div class="card shadow ">
           <h5 class="card-header bg-dark text-white lead"  style="font-size: 40px;">Dashboard - Mumbai </h5>
           <div class="card-body">
             <div class="row">
               <div class="col-sm-9">
                 <div class="card  shadow">
-                  <div class="card-body bg-light" style="height: 420px;">
+                  <div class="card-body bg-light">
                     <h4 class="card-title">Weather Forecast for the Next 3 days</h4>
                 
 
@@ -89,7 +88,44 @@ if(array_key_exists("email",$_SESSION)){
                           <div class="card-body bg-light">
                             <div class="row">
                               <button type="button" class="btn btn-primary col-8 text-uppercase shadow"><span id="description1"></span></button>
-                              <button type="button" class="btn btn-light col-4 shadow"><img id="icon1"></button>                            
+                              <button type="button" class="btn btn-light col-4 shadow"><img id="icon1"></button>  
+                              <div class="card border-light col-12 shadow" style=" margin-top: 20px;">
+                                <div class="card-body">
+                                  <!-- add content here -->
+                                  <p class="btn btn-success" id="date1"></p>
+                                  <p class="h5" > Temp = <span class="h4" id="temptrature1"></span> </p>
+                                  <!-- <p> Pressure = <span id="pressure1"></span> </p> -->
+                                  <p class="h5"> Humidity = <span class="h4" id="humidity1"></span> </p>
+                                  <p class="h5"> Windspeed = <span class="h5" id="windspeed1"></span> </p>
+                                  <!-- <p> Winddig = <span id="winddig1"></span> </p> -->
+                                
+                                  <script>                               
+                                     function cardforecast1(data) {
+                                        var temptrature = data['list'][9]['main']['temp'];
+                                        var pressure    = data['list'][9]['main']['pressure'];
+                                        var humidity    = data['list'][9]['main']['humidity'];
+                                        var windspeed   = data['list'][9]['wind']['speed'];
+                                        var winddig     = data['list'][9]['wind']['deg'];
+                                        var date        = data['list'][9]['dt_txt'];
+                                        var description = data['list'][9]['weather'][0]['description'];
+                                        var icon        = data['list'][9]['weather'][0]['icon'];                                  
+                                        var iconurl     = "https://openweathermap.org/img/wn/" +icon + ".png";
+      
+                                        document.getElementById('temptrature1').innerHTML = temptrature;
+                                        // document.getElementById('pressure1').innerHTML    = pressure;
+                                        document.getElementById('humidity1').innerHTML    = humidity;
+                                        document.getElementById('windspeed1').innerHTML   = windspeed;
+                                        // document.getElementById('winddig1').innerHTML     = winddig;
+                                        document.getElementById('date1').innerHTML        = date;
+                                        document.getElementById('description1').innerHTML = description;
+                                        document.getElementById('icon1').src = iconurl; 
+      
+      
+                                      }
+                                  </script>
+      
+                                </div>
+                              </div>                          
                             </div>
                           </div>
                         </div>
@@ -99,7 +135,41 @@ if(array_key_exists("email",$_SESSION)){
                           <div class="card-body bg-light">
                             <div class="row">
                               <button type="button" class="btn btn-primary col-8 shadow text-uppercase"><span id="description2"></span></button>
-                              <button type="button" class="btn btn-light col-4 shadow"><img id="icon2"></button>                            
+                              <button type="button" class="btn btn-light col-4 shadow"><img id="icon2"></button>
+                              <div class="card col-sm-12 border-light shadow" style="margin-top: 20px;">
+                                <div class="card-body">
+                                  <!-- add content here -->
+                                  <p class="btn btn-success" id="date2"></p>                           
+                                  <p class="h5"> Temp = <span class="h4" id="temptrature2"></span> </p>
+                                  <!-- <p> Pressure = <span id="pressure2"></span> </p> -->
+                                  <p class="h5"> Humidity = <span class="h4" id="humidity2"></span> </p>
+                                  <p class="h5"> Windspeed = <span class="h5" id="windspeed2"></span> </p>
+                                  <!-- <p> Winddig = <span id="winddig2"></span> </p> -->
+                                
+                                  <script>                              
+                                    function cardforecast2(data) {
+                                       var temptrature = data['list'][17]['main']['temp'];
+                                       var pressure    = data['list'][17]['main']['pressure'];
+                                       var humidity    = data['list'][17]['main']['humidity'];
+                                       var windspeed   = data['list'][17]['wind']['speed'];
+                                       var winddig     = data['list'][17]['wind']['deg'];
+                                       var date        = data['list'][17]['dt_txt'];
+                                       var description = data['list'][17]['weather'][0]['description'];
+                                       var icon        = data['list'][17]['weather'][0]['icon'];                                  
+                                       var iconurl     = "https://openweathermap.org/img/wn/" +icon + ".png";
+      
+                                       document.getElementById('temptrature2').innerHTML = temptrature;
+                                      //  document.getElementById('pressure2').innerHTML    = pressure;
+                                       document.getElementById('humidity2').innerHTML    = humidity;
+                                       document.getElementById('windspeed2').innerHTML   = windspeed;
+                                      //  document.getElementById('winddig2').innerHTML     = winddig;
+                                       document.getElementById('date2').innerHTML        = date;
+                                       document.getElementById('description2').innerHTML = description;
+                                       document.getElementById('icon2').src = iconurl; 
+                                     }
+                                 </script>
+                                </div>
+                              </div>                            
                             </div>
                           </div>
                         </div>
@@ -109,127 +179,48 @@ if(array_key_exists("email",$_SESSION)){
                           <div class="card-body bg-light">
                             <div class="row">
                               <button type="button" class="btn btn-primary col-8 shadow text-uppercase"><span id="description3"></span></button>
-                              <button type="button" class="btn btn-light col-4 shadow"><img id="icon3"></button>                            
+                              <button type="button" class="btn btn-light col-4 shadow"><img id="icon3"></button> 
+                              <div class="card col-sm-12 border-light shadow" style="margin-top: 20px;">
+                                <div class="card-body">
+                                  <!-- add content here -->
+                                  <p  class="btn btn-success" id="date3"> </p>
+                                  <p class="h5"> Temp = <span class="h4" id="temptrature3"></span> </p>
+                                  <!-- <p> Pressure = <span id="pressure3"></span> </p> -->
+                                  <p class="h5"> Humidity = <span class="h4" id="humidity3"></span> </p>
+                                  <p class="h5"> Windspeed = <span class="h5" id="windspeed3"></span> </p>
+                                  
+                                  <!-- <p> Winddig = <span id="winddig3"></span> </p>   -->
+                                  
+                                  <script>                              
+                                    function cardforecast3(data) {
+                                       var temptrature = data['list'][25]['main']['temp'];
+                                       var pressure    = data['list'][25]['main']['pressure'];
+                                       var humidity    = data['list'][25]['main']['humidity'];
+                                       var windspeed   = data['list'][25]['wind']['speed'];
+                                       var winddig     = data['list'][25]['wind']['deg'];
+                                       var date        = data['list'][25]['dt_txt'];
+                                       var description = data['list'][25]['weather'][0]['description'];
+                                       var icon        = data['list'][17]['weather'][0]['icon'];                                  
+                                       var iconurl     = "https://openweathermap.org/img/wn/" +icon + ".png";
+      
+                                       document.getElementById('temptrature3').innerHTML = temptrature;
+                                      //  document.getElementById('pressure3').innerHTML    = pressure;
+                                       document.getElementById('humidity3').innerHTML    = humidity;
+                                       document.getElementById('windspeed3').innerHTML   = windspeed;
+                                      //  document.getElementById('winddig3').innerHTML     = winddig;
+                                       document.getElementById('date3').innerHTML        = date;
+                                       document.getElementById('description3').innerHTML = description;
+                                       document.getElementById('icon3').src = iconurl;
+                                     }
+                                 </script>
+                                </div>
+                              </div>                           
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                     <br>
-                    <div class="row">
-                      <div class="col-sm-4">
-                        <div class="card border-light shadow" style="height: 210px;">
-                          <div class="card-body">
-                            <!-- add content here -->
-                            <p class="btn btn-success" id="date1"></p>
-                            <p class="h5" > Temp = <span class="h4" id="temptrature1"></span> </p>
-                            <!-- <p> Pressure = <span id="pressure1"></span> </p> -->
-                            <p class="h5"> Humidity = <span class="h4" id="humidity1"></span> </p>
-                            <p class="h5"> Windspeed = <span class="h4" id="windspeed1"></span> </p>
-                            <!-- <p> Winddig = <span id="winddig1"></span> </p> -->
-                          
-                            <script>                               
-                               function cardforecast1(data) {
-                                  var temptrature = data['list'][9]['main']['temp'];
-                                  var pressure    = data['list'][9]['main']['pressure'];
-                                  var humidity    = data['list'][9]['main']['humidity'];
-                                  var windspeed   = data['list'][9]['wind']['speed'];
-                                  var winddig     = data['list'][9]['wind']['deg'];
-                                  var date        = data['list'][9]['dt_txt'];
-                                  var description = data['list'][9]['weather'][0]['description'];
-                                  var icon        = data['list'][9]['weather'][0]['icon'];                                  
-                                  var iconurl     = "https://openweathermap.org/img/wn/" +icon + ".png";
-
-                                  document.getElementById('temptrature1').innerHTML = temptrature;
-                                  // document.getElementById('pressure1').innerHTML    = pressure;
-                                  document.getElementById('humidity1').innerHTML    = humidity;
-                                  document.getElementById('windspeed1').innerHTML   = windspeed;
-                                  // document.getElementById('winddig1').innerHTML     = winddig;
-                                  document.getElementById('date1').innerHTML        = date;
-                                  document.getElementById('description1').innerHTML = description;
-                                  document.getElementById('icon1').src = iconurl; 
-
-
-                                }
-                            </script>
-
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="card border-light shadow" style="height: 210px;">
-                          <div class="card-body">
-                            <!-- add content here -->
-                            <p class="btn btn-success" id="date2"></p>                           
-                            <p class="h5"> Temp = <span class="h4" id="temptrature2"></span> </p>
-                            <!-- <p> Pressure = <span id="pressure2"></span> </p> -->
-                            <p class="h5"> Humidity = <span class="h4" id="humidity2"></span> </p>
-                            <p class="h5"> Windspeed = <span class="h4" id="windspeed2"></span> </p>
-                            <!-- <p> Winddig = <span id="winddig2"></span> </p> -->
-                          
-                            <script>                              
-                              function cardforecast2(data) {
-                                 var temptrature = data['list'][17]['main']['temp'];
-                                 var pressure    = data['list'][17]['main']['pressure'];
-                                 var humidity    = data['list'][17]['main']['humidity'];
-                                 var windspeed   = data['list'][17]['wind']['speed'];
-                                 var winddig     = data['list'][17]['wind']['deg'];
-                                 var date        = data['list'][17]['dt_txt'];
-                                 var description = data['list'][17]['weather'][0]['description'];
-                                 var icon        = data['list'][17]['weather'][0]['icon'];                                  
-                                 var iconurl     = "https://openweathermap.org/img/wn/" +icon + ".png";
-
-                                 document.getElementById('temptrature2').innerHTML = temptrature;
-                                //  document.getElementById('pressure2').innerHTML    = pressure;
-                                 document.getElementById('humidity2').innerHTML    = humidity;
-                                 document.getElementById('windspeed2').innerHTML   = windspeed;
-                                //  document.getElementById('winddig2').innerHTML     = winddig;
-                                 document.getElementById('date2').innerHTML        = date;
-                                 document.getElementById('description2').innerHTML = description;
-                                 document.getElementById('icon2').src = iconurl; 
-                               }
-                           </script>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="card border-light shadow" style="height: 210px;">
-                          <div class="card-body">
-                            <!-- add content here -->
-                            <p  class="btn btn-success" id="date3"> </p>
-                            <p class="h5"> Temp = <span class="h4" id="temptrature3"></span> </p>
-                            <!-- <p> Pressure = <span id="pressure3"></span> </p> -->
-                            <p class="h5"> Humidity = <span class="h4" id="humidity3"></span> </p>
-                            <p class="h5"> Windspeed = <span class="h4" id="windspeed3"></span> </p>
-                            
-                            <!-- <p> Winddig = <span id="winddig3"></span> </p>   -->
-                            
-                            <script>                              
-                              function cardforecast3(data) {
-                                 var temptrature = data['list'][25]['main']['temp'];
-                                 var pressure    = data['list'][25]['main']['pressure'];
-                                 var humidity    = data['list'][25]['main']['humidity'];
-                                 var windspeed   = data['list'][25]['wind']['speed'];
-                                 var winddig     = data['list'][25]['wind']['deg'];
-                                 var date        = data['list'][25]['dt_txt'];
-                                 var description = data['list'][25]['weather'][0]['description'];
-                                 var icon        = data['list'][17]['weather'][0]['icon'];                                  
-                                 var iconurl     = "https://openweathermap.org/img/wn/" +icon + ".png";
-
-                                 document.getElementById('temptrature3').innerHTML = temptrature;
-                                //  document.getElementById('pressure3').innerHTML    = pressure;
-                                 document.getElementById('humidity3').innerHTML    = humidity;
-                                 document.getElementById('windspeed3').innerHTML   = windspeed;
-                                //  document.getElementById('winddig3').innerHTML     = winddig;
-                                 document.getElementById('date3').innerHTML        = date;
-                                 document.getElementById('description3').innerHTML = description;
-                                 document.getElementById('icon3').src = iconurl;
-                               }
-                           </script>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -378,7 +369,14 @@ if(array_key_exists("email",$_SESSION)){
                           };
                           var data = [trace1];
 
-                          Plotly.newPlot('generated', data);
+                          var layout = { 
+                              title: '',
+                              font: {size: 18}
+                            };
+
+                          var config = {responsive: true}
+
+                          Plotly.newPlot('generated', data, layout, config);
                         })
 
                     </script>
@@ -422,8 +420,14 @@ if(array_key_exists("email",$_SESSION)){
 
 
                           var data = [trace1];
+                          var layout = { 
+                              title: '',
+                              font: {size: 18}
+                            };
 
-                          Plotly.newPlot('consumed', data);
+                          var config = {responsive: true}
+
+                          Plotly.newPlot('consumed', data, layout, config);
                         })
                     </script>
                   </div>
