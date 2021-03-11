@@ -23,7 +23,7 @@
 
     if(array_key_exists("email",$_POST) && array_key_exists("password",$_POST)){
 
-        echo "<br>";
+        // echo "<br>";
 
         if($_POST["email"] == ""){ //Checking if email is empty
             $failure = "<p>Email is required</p>";
@@ -93,13 +93,13 @@
 
                 $row = mysqli_fetch_array($result2);
                 
-                print_r ($row);
-                print_r(gettype($_POST["password"]));
-                print_r(gettype($row["password"]));
+                // print_r ($row);
+                // print_r(gettype($_POST["password"]));
+                // print_r(gettype($row["password"]));
 
                 if(array_key_exists("email",$row)){
-                    print_r("Hello");
-                    print_r(json_encode(password_verify($_POST["password"],$row["password"])));
+                    // print_r("Hello");
+                    // print_r(json_encode(password_verify($_POST["password"],$row["password"])));
                     if(password_verify($_POST["password"],$row["password"])){
                        
                         $success = "Username & Password correct";
@@ -148,133 +148,304 @@
             <script src="bootstrap-4.5.0-dist/js/bootstrap.min.js"></script> -->
         </bootstrapReq>
 
-        <style>
-            html { 
-                background: url("https://www.anurezapower.in/images/residential.jpg") no-repeat center center fixed; 
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-            }
+<style>
+    body {
+        margin: 0;
+        color: #6a6f8c;
+        background: #c8c8c8;
+        font: 600 16px/18px 'Open Sans', sans-serif
+    }
 
-            body{
-                background: none;
-            }
-            
-            .container{
-                 
-                margin-top:20px;
-            }
+    .login-box {
+        width: 100%;
+        margin: auto;
+        /* max-width: 525px; */
+        min-height: 500px;
+        position: relative;
+        background: url(https://images.unsplash.com/photo-1507208773393-40d9fc670acf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1268&q=80) no-repeat center;
+        box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19)
+    }
 
-            #loginForm{
-                display:none;
-            }
+    .login-snip {
+        width: 100%;
+        /* height: 100%; */
+        position: absolute;
+        padding: 90px 70px 50px 70px;
+        background: rgba(0, 77, 77, .9)
+    }
 
-           .toggleForm{
-               margin-top:10px;
-               color: white;                
-           }
-           
-           #toggleFormButton{
-                color: white; 
-           }
+    .login-snip .login,
+    .login-snip .sign-up-form {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+        transition: all .4s linear
+    }
 
-           .padding-0{
-                padding-right:5;
-                padding-left:5;
-            }
+    .login-snip .sign-in,
+    .login-snip .sign-up,
+    .login-space .group .check {
+        display: none
+    }
 
-            ::-webkit-scrollbar {
-                width: 7px;
-            }
+    .login-snip .tab,
+    .login-space .group .label,
+    .login-space .group .button {
+        text-transform: uppercase
+    }
 
-            ::-webkit-scrollbar-track {
-                box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-                border-radius: 10px;
-            }
+    .login-snip .tab {
+        font-size: 22px;
+        margin-right: 15px;
+        padding-bottom: 5px;
+        margin: 0 15px 10px 0;
+        display: inline-block;
+        border-bottom: 2px solid transparent
+    }
 
-            ::-webkit-scrollbar-thumb {
-                box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-                border-radius: 10px;
-            }
-        </style>
+    .login-snip .sign-in:checked+.tab,
+    .login-snip .sign-up:checked+.tab {
+        color: #fff;
+        border-color: #1161ee
+    }
+
+    .login-space {
+        min-height: 345px;
+        position: relative;
+        perspective: 1000px;
+        transform-style: preserve-3d
+    }
+
+    .login-space .group {
+        margin-bottom: 15px
+    }
+
+    .login-space .group .label,
+    .login-space .group .input,
+    .login-space .group .button {
+        width: 100%;
+        color: #fff;
+        display: block
+    }
+
+    .login-space .group .input,
+    .login-space .group .button {
+        border: none;
+        padding: 15px 20px;
+        border-radius: 25px;
+        background: rgba(255, 255, 255, .1)
+    }
+
+    .login-space .group input[data-type="password"] {
+        text-security: circle;
+        -webkit-text-security: circle
+    }
+
+    .login-space .group .label {
+        color: #aaa;
+        font-size: 12px
+    }
+
+    .login-space .group .button {
+        background: #1161ee
+    }
+
+    .login-space .group label .icon {
+        width: 15px;
+        height: 15px;
+        border-radius: 2px;
+        position: relative;
+        display: inline-block;
+        background: rgba(255, 255, 255, .1)
+    }
+
+    .login-space .group label .icon:before,
+    .login-space .group label .icon:after {
+        content: '';
+        width: 10px;
+        height: 2px;
+        background: #fff;
+        position: absolute;
+        transition: all .2s ease-in-out 0s
+    }
+
+    .login-space .group label .icon:before {
+        left: 3px;
+        width: 5px;
+        bottom: 6px;
+        transform: scale(0) rotate(0)
+    }
+
+    .login-space .group label .icon:after {
+        top: 6px;
+        right: 0;
+        transform: scale(0) rotate(0)
+    }
+
+    .login-space .group .check:checked+label {
+        color: #fff
+    }
+
+    .login-space .group .check:checked+label .icon {
+        background: #1161ee
+    }
+
+    .login-space .group .check:checked+label .icon:before {
+        transform: scale(1) rotate(45deg)
+    }
+
+    .login-space .group .check:checked+label .icon:after {
+        transform: scale(1) rotate(-45deg)
+    }
+
+    .login-snip .sign-in:checked+.tab+.sign-up+.tab+.login-space .login {
+        transform: rotate(0)
+    }
+
+    .login-snip .sign-up:checked+.tab+.login-space .sign-up-form {
+        transform: rotate(0)
+    }
+
+    *,
+    :after,
+    :before {
+        box-sizing: border-box
+    }
+
+    .clearfix:after,
+    .clearfix:before {
+        content: '';
+        display: table
+    }
+
+    .clearfix:after {
+        clear: both;
+        display: block
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none
+    }
+
+    .hr {
+        height: 2px;
+        margin: 60px 0 50px 0;
+        background: rgba(255, 255, 255, .2)
+    }
+
+    .foot {
+        text-align: center
+    }
+
+    .card {
+        width: 500px;
+        /* left: 100px */
+    }
+
+    ::placeholder {
+        color: #b3b3b3
+    }
+
+    ::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+    }
+</style>
 
     </head>
 
     <body>
-        <div class="container d-flex justify-content-center">
-            <div class ="card text-white " style ="width : 500px; height : 650px; opacity: 0.75;">
-              <div class = "card-body bg-dark shadow boder-dark ">
-            <div id="error">
-                <?php
-                    if($success){
-                        echo '<div class="alert alert-success col-sm-6 mx-auto" role="alert"><b>'.$success.'</b></div>';
-                    } 
-                    if($failure){
-                        echo '<div class="alert alert-danger col-sm-6 mx-auto" role="alert"><b>'.$failure.'</b></div>';
-                    }            
-                ?>
-            </div>
-             <form action="" method="post" id="signUpForm">
-                <h2 class="card-header bg-dark text-white d-flex justify-content-center"> Dashboard Sign up</h2>
+        <div class="container-fluid" style="margin-top: 30px;">
+        <div id="error">
+                                            <?php
+                                                if($success){
+                                                    echo '<div class="alert alert-success col-sm-6 mx-auto" role="alert"><b>'.$success.'</b></div>';
+                                                } 
+                                                if($failure){
+                                                    echo '<div class="alert alert-danger col-sm-6 mx-auto" role="alert"><b>'.$failure.'</b></div>';
+                                                }            
+                                            ?>
+                                        </div>
+            <div class="row ">
+                <div class="col-md-6 mx-auto p-0 d-flex justify-content-center">
+                    <div class="card">
+                        <div class="login-box">
+                            <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">SIGN UP</label> <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">LOGIN</label>
+                                <div class="login-space">
+                                    <div class="login">
+                                    <form action="" method="post" id="signUpForm">
+                <!-- <h2 class="card-header bg-dark text-white d-flex justify-content-center">Dashboard Sign up</h2> -->
                 <br>
-                 <div class="form-group row d-flex justify-content-center links">
-                    <div class="col-8 align-self-center">
+                 <div class="form-group row ">
+                    <div class="col-12 align-self-center">
                         <label for="">Email</label>
-                        <input type="email" class="form-control " name="email" placeholder="Your Email address">
+                        <input type="email" class="col-sm-12 form-control " name="email" placeholder="Your Email address">
                         <small id="emailHelp" class="form-text text-white">Email will not be shared</small>
                     </div>
                 </div>
-                <div class="form-group  row d-flex justify-content-center links ">
-                    <div class="col-8 align-self-center">
+                <div class="form-group  row  ">
+                    <div class="col-12 align-self-center">
                         <label for="">Password</label>
                         <input type="password" class="form-control" name="password" placeholder="Your password">
                         <small id="pwdHelp" class="form-text text-white">-> Atleast: 8 characters (Max 20), one number, one upper & lower case <-</small>
                     </div>
                 </div>
-                <div class="d-flex justify-content-center links">
+                <div class="">
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input " name="stayloggedin" value=1 checked>
                     <label class="form-check-label"  for="stayloggedin">Stay logged in</label>
                 </div>
                 </div>
                 <br>
-                <div class="d-flex justify-content-center links">
+                <div class="">
                 <div class="form-group">
                     <input type="hidden" name="signup" value=1>
                 </div> 
-                <input type="submit" name="submit" value="Sign Up" class="btn btn-primary">
+                <input type="submit" name="submit" value="Sign Up" class=" col-12 btn btn-primary">
                 <br><br> 
                 </div>
                 <br>
-                <div class ="d-flex justify-content-center links">
+                <!-- <div class ="">
                 <div class="row">
                     <div class="col-6 ">Already signed up?<br> Please Log in.</div>
                     <div class="col-6 ">
                         <a class= "btn btn-primary toggleForm float-left" role="button"><span id="toggleFormButton">Log In</span></a> 
                     </div>
                 </div>
-                </div>
-            </form>
-
-            <!-- login  -->
-
-            <form action="" method="post" id="loginForm">
-                <h2 class="card-header bg-dark text-white d-flex justify-content-center"> Dashboard Login</h2>
+                </div> -->
+            </form> 
+                                    </div>
+                                    <div class="sign-up-form">
+                                    <form action="" method="post" id="loginForm">
+                <!-- <h2 class="card-header bg-dark text-white d-flex justify-content-center">Dashboard Login</h2> -->
                 <br>
                 <div class="form-group row  d-flex justify-content-center link">
-                    <div class="col-8 align-self-center">
+                    <div class="col-12 align-self-center">
                         <label for="">Email</label>
                         <input type="email" class="form-control" name="email"  placeholder="Your registered login email address">
                     </div>
                  </div>  
                 <div class="form-group row  d-flex justify-content-center  link">
-                    <div class="col-8 align-self-center">
+                    <div class="col-12 align-self-center">
                         <label for="">Password</label>
                         <input type="password"  class="form-control" name="password" placeholder="Your Login password">
                     </div>
                 </div>
-                <div class="d-flex justify-content-center  link">
+                <div class="">
                 <div class="form-check">
                     <input type="checkbox" name="stayloggedin" class="form-check-input" value=1 checked>                    
                     <label class="form-check-label" for="stayloggedin">Stay logged in</label>
@@ -284,21 +455,26 @@
                     <input type="hidden" name="signup" value=0>
                 </div> 
                 <div class="d-flex justify-content-center  links ">
-                <input type="submit" name="submit" value="Login" class="btn btn-primary">
+                <input type="submit" name="submit" value="Login" class="col-12 btn btn-primary">
                 <br><br> 
                 </div>
-                <br>
+                <!-- <br>
                 <div class="row ">
                     <div class="col-6 my-auto text-right padding-0">Not Signed up?</div>
                     <div class="col-6 padding-0">
                         <a class= "btn btn-primary toggleForm float-left" role="button"><span id="toggleFormButton">Sign Up</span></a> 
                     </div>
-                </div>
+                </div> -->
             </form>
-              </div>
-        </div>
-      </div>
 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script type="text/javascript">
             $(".toggleForm").click(function(){
                 $("#signUpForm").toggle();
@@ -306,6 +482,4 @@
                 $("#error").empty();
             })
         </script>
-
     </body>
-</html>
