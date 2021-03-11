@@ -48,7 +48,7 @@ if(array_key_exists("email",$_SESSION)){
     
     <!-- The sidebar -->
     <div class="sidebar shadow" id="grad12">
-      <a class="fa fa-tachometer fa-2x" href="dashboard.html"><span> Dashboard</span></a>
+      <a class="fa fa-tachometer fa-2x" href="dashboard.php"><span> Dashboard</span></a>
       <a class="fa fa-map-marker active fa-2x" href="location.php"><span> Location</span></a>
       <a class=" fa fa-sign-out fa-2x" href="register.php?logout=1"><span> Logout</span></a>
     </div>    
