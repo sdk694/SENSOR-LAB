@@ -58,7 +58,7 @@ if(array_key_exists("email",$_SESSION)){
     <!-- Page content -->
       <div class="content">
         <div class="card shadow">
-          <h5 class="card-header bg-dark text-white" >Status and Locations of the panles</h5>
+          <h5 class="card-header bg-dark text-white" >Status and Locations of the panels</h5>
           <div class="card-body">
             <div class="row">
                 <div class="col-sm-3">
