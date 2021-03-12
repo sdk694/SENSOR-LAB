@@ -388,7 +388,7 @@ if(array_key_exists("email",$_SESSION)){
             <div class="row">
               <div class="col-sm-12">
                 <div class="card">
-                  <div class="card-body bg-light" style="height: 550px;">
+                  <div class="card-body bg-light">
                     <h4 class="card-title">Power Consumed In The Last 30 Days</h4>
                     <br>
                     <div class="shadow" id="consumed"></div>
