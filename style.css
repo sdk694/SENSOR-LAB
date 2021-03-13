@@ -20,6 +20,8 @@ h4 {
 }  
 .jumbotron {
   background-color: #f4511e;
+   /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom right, #f4511e, rgb(247, 189, 28));
   color: #fff;
   padding: 100px 25px;
   font-family: Montserrat, sans-serif;
@@ -101,14 +103,14 @@ h4 {
   background-color: white !important;
 }
 .panel-footer h3 {
-  font-size: 32px;
+  font-size: 30px;
 }
 .panel-footer h4 {
   color: #aaa;
   font-size: 14px;
 }
 .panel-footer .btn {
-  margin: 15px 0;
+  margin: 5px 0;
   background-color: #f4511e;
   color: #fff;
 }
