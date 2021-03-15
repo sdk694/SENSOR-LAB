@@ -226,7 +226,7 @@ if(array_key_exists("email",$_SESSION)){
               </div>
               <div class="col-sm-3">
                 <div class="card shadow">
-                  <div class="card-body bg-light" style="height: 410px ;">
+                  <div class="card-body bg-light">
                     <h4 class="card-title">Today's Weather </h4>
                     <div class="card border-light" >
                       <div class="card-body bg-light">
