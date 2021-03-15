@@ -238,7 +238,7 @@ if(array_key_exists("email",$_SESSION)){
                     </div>
                     <br>
                     <div class="card border-light shadow bg-light">
-                      <div class="card-body" style="height: 200px;">                       
+                      <div class="card-body">                       
                         <p><span class="h5" id="maincurr"></span></p>
                         <p class="h5">Tempt = <span class="h5" id="tempcurr"></span></p>
                         <p class="h5">Humidity    = <span  class="h5"id="humiditycurr"></span></p>
