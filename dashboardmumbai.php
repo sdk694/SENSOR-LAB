@@ -90,7 +90,7 @@ if(array_key_exists("email",$_SESSION)){
                               <button type="button" class="btn btn-primary col-8 text-uppercase shadow"><span id="description1"></span></button>
                               <button type="button" class="btn btn-light col-4 shadow"><img id="icon1"></button>  
                               <div class="card border-light col-12 shadow" style=" margin-top: 20px;">
-                                <div class="card-body" style="height: 300px">
+                                <div class="card-body">
                                   <!-- add content here -->
                                   <p class="btn btn-success" id="date1"></p>
                                   <p class="h5" > Temp = <span class="h4" id="temptrature1"></span> </p>
@@ -137,7 +137,7 @@ if(array_key_exists("email",$_SESSION)){
                               <button type="button" class="btn btn-primary col-8 shadow text-uppercase"><span id="description2"></span></button>
                               <button type="button" class="btn btn-light col-4 shadow"><img id="icon2"></button>
                               <div class="card col-sm-12 border-light shadow" style="margin-top: 20px;">
-                                <div class="card-body"  style="height: 300px">
+                                <div class="card-body">
                                   <!-- add content here -->
                                   <p class="btn btn-success" id="date2"></p>                           
                                   <p class="h5"> Temp = <span class="h4" id="temptrature2"></span> </p>
