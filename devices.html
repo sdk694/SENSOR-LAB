@@ -1,0 +1,463 @@
+<!-- <?php
+
+session_start();
+if(array_key_exists("email",$_COOKIE)){
+
+    $_SESSION["email"] = $_COOKIE["email"];
+    //echo 'Logged In user email is: '.$_COOKIE["email"];
+    
+}
+
+if(array_key_exists("email",$_SESSION)){
+
+    include ("sqlconnect2.php");
+
+} else{
+
+   header("Location: register.php");
+
+}
+?> -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha484-Gn5484xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E264XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="devices.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <script src="plotly.min.js"></script>
+    <script>
+        function getforecast1() {
+          var key = '27721ab96215a82e4a4d03fe0220858a';
+          var city = "Mumbai"
+          fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=' + key + '&units=metric')
+          .then(response => response.json())
+          .then(data => {
+          console.log(data);
+          cardforecast(data)
+          }
+          )
+          fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + key + '&units=metric')
+          .then(response => response.json())
+          .then(data1 => {
+          console.log(data1);
+          todayweather(data1);
+          }
+          )
+
+        }
+
+        window.onload = function() {
+          getmap1()
+          getforecast1()
+        }
+    </script>
+    
+
+
+  </head>
+  <body>
+   <!-- ============================================================== -->
+    <!-- main wrapper -->
+    <!-- ============================================================== -->
+    <div class="dashboard-main-wrapper">
+        <!-- ============================================================== -->
+        <!-- navbar -->
+        <!-- ============================================================== -->
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #f6d55c;">
+                <a class="navbar-brand text-dark" href="index.html" style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">Solar surveil</a>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end navbar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- left sidebar -->
+        <!-- ============================================================== -->
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-darktext-dark">
+                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link  text-white" href="dashboard.html"  aria-expanded="false"><i class="fa fa-fw fa-tachometer fa-xl "></i>Dashboard <span class="badge badge-success">6</span></a>
+                                <div id="submenu-1" class="collapse submenu">
+                                </div>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active text-dark" href="devices.html"  aria-expanded="false"><i class="fa fa-fw fa-microchip fa-xl"></i>Devices <span class="badge badge-success">6</span></a>
+                                <div id="submenu-1" class="collapse submenu">
+                                </div>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link text-white" href="register.php?logout=1"  aria-expanded="false"><i class="fa fa-fw fa-sign-out fa-xl"></i>Logout<span class="badge badge-success">6</span></a>
+                                <div id="submenu-1" class="collapse submenu">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end left sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="dashboard-ecommerce">
+                <div class="container-fluid dashboard-content ">
+                    <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="card d-flex justify-content-center">
+                        <div class="container ">
+                            <form style="margin-top: 15px;">
+                                <div class="form-row align-items-center">
+                                  <div class="col-6  mb-4">
+                                    <label class="mr-sm-2 text-center" for="inlineFormCustomSelect">Kindly select the Node Name</label>
+                                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                      <option selected> NOD1MU</option>
+                                      <option value="1">NOD2MU</option>
+                                      <option value="2">NOD1WL</option>
+                                      <option value="3">NOD2WL</option>
+                                      <option value="4">NOD3WL</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-">
+                                    <button type="submit" class="btn btn-success rounded-top rounded-bottom">Go</button>
+                                  </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card d-flex justify-content-center" style="height: 380px;">
+                                <div class="card-body">
+                                    <div class="alert border-dark" role="alert" style="background-color: #ed553b ; margin-top: 20px;">
+                                        
+                                        <h3 class="text-white">Energy in kWh :</h3> 
+                                    </div>
+                                    <div class="alert border-dark" role="alert">
+                                        <h3 class="text-dark">Power in kW :</h3> 
+                                    </div>
+                                    <div class="alert border-dark" role="alert" style="background-color: #ed553b ; margin-top: 20px;">
+                                        <h3 class="text-white">Voltage :</h3>
+                                    </div>
+                                    <div class="alert border-dark" role="alert">
+                                        <h3 class="text-dark">Current :</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="card" style="height: 380px;">
+                            <div class="card-body">
+                                <div id="map"> </div>
+                                    <script>
+        
+                                        function getmap1() {
+                                        var map = L.map('map').setView([19.1292529, 72.9270092], 12); 
+            
+                                        L.tileLayer('https://api.maptiler.com/maps/streets/256/{z}/{x}/{y}.png?key=7Ip6PYWSWb3StlNV6AsB', {
+                                            attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+                                        }).addTo(map);
+            
+                                        var marker1 = L.marker([19.1292529, 72.9270092], { title : "Mahavir Majestik"}).addTo(map).bindPopup('<h2> Node: NOD1MU  </h2> <h3>Small Panel DC setup</h3> <p> View the status of the panels on grafana</p><a class="btn btn-success d-flex justify-content-center" href="http://34.121.146.230:3000/d/nU5ErMJMz/final?orgId=1&refresh=10s&kiosk" >Visit Dashboard</a>');
+
+                                        }
+        
+                                    </script>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-sm-6">
+                                <div class="card text-white" style="background-color: #3caea3;">
+                                    <div class="card-body">
+                                        <div class="weather-date-location">
+                                            <h3 class="text-white">Today's Weather</h3>
+                                        </div>
+                                        <div class="weather-data d-flex ">
+                                            <div class="mr-auto">
+                                                <div style="display: flex">
+                                                    <div style="margin-right: 10px;">
+                                                        <div style="display: block">
+                                                            <div style="font-size: 15px;">
+                                                                Temperature
+                                                            </div>
+                                                            <div  class="display-6">
+                                                                 <span id="tempcurr"></span><span class="symbol">°</span>C 
+                                                            </div>
+                                                        </div>                                                   
+                                                    </div>
+                                                    <div style="margin-right: 10px; margin-left: 30px;">
+                                                        <div style="display: block">
+                                                            <div style="font-size: 15px;">
+                                                                Humidity
+                                                            </div>
+                                                            <div  class="display-6" >
+                                                                 <span id="humiditycurr"></span><span class="symbol">%</span>
+                                                            </div>
+                                                        </div>                                                   
+                                                    </div>
+                                                    <div style="margin-right: 10px; margin-left: 30px;">
+                                                        <div style="display: block">
+                                                            <div style="font-size: 15px;">
+                                                                Windspeed
+                                                            </div>
+                                                            <div  class="display-6" >
+                                                                <span id="windspeedcurr"></span> <span class="symbol" >m/s</span>
+                                                            </div>
+                                                        </div>                                                   
+                                                    </div>
+
+
+                                                </div>
+                                                <p id="maincurr">  </p>
+                                            </div>
+                                        </div>
+                                        <script>
+                                            function todayweather(data){
+                                                       var main        = data['weather'][0]['main'];
+                                                       var temptrature = data['main']['temp'];
+                                                       var humidity    = data['main']['humidity'];
+                                                       var windspeed   = data['wind']['speed'];
+       
+       
+                                                       document.getElementById('maincurr').innerHTML      = main 
+                                                       document.getElementById('tempcurr').innerHTML      = temptrature;
+                                                       document.getElementById('humiditycurr').innerHTML  = humidity;
+                                                       document.getElementById('windspeedcurr').innerHTML = windspeed;
+       
+                                                   }
+                                           </script>
+                                    </div>
+                                    <div class="card-body p-0" style="margin-bottom: 10px; margin-left: 5px;">
+                                        <div class="d-flex  weakly-weather">
+                                            <div class=" col-sm-4 weakly-weather-item" style="display: block;">
+                                                <p class="mb-0"> Tomorrow</p> 
+                                                <div style="display: flex;">
+                                                    <p style="margin-right: 5px;"><span id="temptrature1"></span><span>°</span></p>
+                                                    <p style="margin-right: 5px;"><span id="humidity1"></span><span>%</span></p>
+                                                    <p style="margin-right: 5px;"><span id="windspeed1"></span><span>m/s</span></p>  
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 weakly-weather-item" style="margin-left: 20px;">
+                                                <p class="mb-1"> Day After Tomorrow</p>
+                                                <div style="display: flex;">
+                                                    <p style="margin-right: 5px;"><span id="temptrature2"></span><span>°</span></p>
+                                                    <p style="margin-right: 5px;"><span id="humidity2"></span><span>%</span></p>
+                                                    <p style="margin-right: 5px;"><span id="windspeed2"></span><span>m/s</span></p>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script>                              
+                                        function cardforecast(data) {
+                                            var temptrature1 = data['list'][9]['main']['temp'];
+                                           var humidity1    =  data['list'][9]['main']['humidity'];
+                                           var windspeed1   =  data['list'][9]['wind']['speed'];
+                                           var temptrature2 =  data['list'][17]['main']['temp'];
+                                           var humidity2    =  data['list'][17]['main']['humidity'];
+                                           var windspeed2   =  data['list'][17]['wind']['speed'];
+          
+                                           document.getElementById('temptrature1').innerHTML = temptrature1;
+                                           document.getElementById('humidity1').innerHTML    = humidity1;
+                                           document.getElementById('windspeed1').innerHTML   = windspeed1;
+                                           document.getElementById('temptrature2').innerHTML = temptrature2;
+                                           document.getElementById('humidity2').innerHTML    = humidity2;
+                                           document.getElementById('windspeed2').innerHTML   = windspeed2;
+                                        }
+                                     </script>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card" style="height: 255px;">
+                                    <h3 class="card-header  text-white" style="background-color: #20639b;"> Expected power generation today by the panel.</h3>
+                                    <div class="card-body" >
+                                        <h1 class="text-center" style="margin-top: 20px;">2000W </h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card" style="height: 255px;">
+                                    <h3 class="card-header text-white" style="background-color: #20639b;"> Total power generated by the panel.</h3>
+                                    <div class="card-body">
+                                        <h1 class="text-center" style="margin-top: 20px;" id="p1"></h1>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                          <div class="card ">
+                            <div class="card-body ">
+                              <h4 class="card-title ">Power Generated In The Last 30 Days</h4>
+                              <br>
+                              <div class="shadow" id="generated"></div>
+                              <script>
+                                fetch("power.json")
+                                  .then(response => response.json())
+                                  .then(data => {
+                                    console.log(data)
+                                    var x = []
+                                    var y = []
+                                    // document.querySelector("#debug").innerHTML =  data
+                                    // document.getElementById("debug").innerHTML = JSON.stringify(data.series[0].values)
+                                    data.series[0].values.forEach(element => {
+                                      x.push(element[0])
+                                      y.push(element[1])
+                                    });
+                                    
+                                    var sum = y.reduce(function(a,b) {
+                                      return  (a + b);
+                                    },0);
+                                    var avg = (sum / y.length) ;
+                                    console.log(sum)
+                                    document.getElementById('p1').innerHTML = sum.toFixed(5);
+                                    // document.getElementById('p2').innerHTML = avg.toFixed(4);
+                                    var trace1 = {
+                                      x: x,
+                                      y: y,
+                                      type: 'scatter',
+                                      name: 'Power'
+                                      // line: {
+                                      //   color: 'rgb(52, 12, 121)',
+                                      //   width: 3
+                                      // },
+                                      
+                                      
+                                    };
+                                    var data = [trace1];
+          
+                                    var layout = { 
+                                        title: '',
+                                        font: {size: 18}
+                                      };
+          
+                                    var config = {responsive: true}
+          
+                                    Plotly.newPlot('generated', data, layout, config);
+                                  })
+          
+                              </script>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="card">
+                            <div class="card-body">
+                              <h4 class="card-title">Power Consumed In The Last 30 Days</h4>
+                              <br>
+                              <div class="shadow" id="consumed"></div>
+                              <script>
+                                fetch("powerc.json")
+                                  .then(response => response.json())
+                                  .then(data => {
+                                    console.log(data)
+                                    var x = []
+                                    var y = []
+                                    // document.querySelector("#debug").innerHTML =  data
+                                    // document.getElementById("debug").innerHTML = JSON.stringify(data.series[0].values)
+                                    data.series[0].values.forEach(element => {
+                                      x.push(element[0])
+                                      y.push(element[1])
+                                    });
+                                    var sum = y.reduce(function(a,b) {
+                                      return  (a + b);
+                                    },0);
+                                    var avg = (sum / y.length)
+                                    console.log(sum)
+                                    // document.getElementById('p3').innerHTML = sum.toFixed(2);
+                                    // document.getElementById('p0').innerHTML = avg.toFixed(4)
+                                    var trace1 = {
+                                      x: x,
+                                      y: y,
+                                      type: 'scatter'
+                                    };
+          
+          
+                                    var data = [trace1];
+                                    var layout = { 
+                                        title: '',
+                                        font: {size: 18}
+                                      };
+          
+                                    var config = {responsive: true}
+          
+                                    Plotly.newPlot('consumed', data, layout, config);
+                                  })
+                              </script>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+
+                    <!-- ============================================================== -->
+                    <!-- end pageheader  -->
+                    <!-- ============================================================== -->
+
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <div class="footer">
+                <div class="container-fluid">
+                    <div class="row text-center">
+                        <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 col-12 text-xl-center">
+                             Copyright © 2021 Solar Surveil. All rights reserved. Dashboard by <a href="index.html">Solar Surveil Team</a>.
+                        </div>
+                        <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="text-md-right footer-links d-none d-sm-block">
+                                <a href="javascript: void(0);">About</a>
+                                <a href="javascript: void(0);">Support</a>
+                                <a href="javascript: void(0);">Contact Us</a>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- end footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- end wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
