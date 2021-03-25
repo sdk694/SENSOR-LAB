@@ -595,6 +595,8 @@ if(array_key_exists("email",$_SESSION)){
                                       x: x,
                                       y: y,
                                       name : 'Consumed ',
+                                      height: 500,
+                                      width: 5000,
                                       type: 'bar'
                                     };
 
@@ -602,6 +604,9 @@ if(array_key_exists("email",$_SESSION)){
                                        x: x,
                                        y: z,
                                        name: 'Generated',
+                                       autosize : true,
+                                       width: 5000,
+                                       height: 500,
                                        type :'bar' 
                                     }
           
@@ -660,7 +665,8 @@ if(array_key_exists("email",$_SESSION)){
                                     var trace1 = {
                                       x: x,
                                       y: y,
-                                      type: 'scatter'
+                                      width: 5000,
+                                      type: 'bar'
                                     };
           
           
