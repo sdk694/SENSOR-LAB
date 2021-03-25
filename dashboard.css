@@ -7004,3 +7004,10 @@ Media Query
     /* For browsers that do not support gradients */
    background-image: linear-gradient(to bottom right, #ed553b, #f88d7a);
 }
+
+
+#navbar1 {
+    background-color: #20639b;
+    /* background-image: linear-gradient(to bottom, #20639b, rgb(135, 178, 216)); */
+
+}

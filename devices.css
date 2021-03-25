@@ -1229,7 +1229,7 @@ Top Header
     -webkit-box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
     box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
     -webkit-transition: all 0.3s ease;
-    min-height: 60px;
+    min-height: 70px;
 }
 
 
@@ -6955,7 +6955,7 @@ Media Query
 
 #map { 
     margin: 20px;
-    height: 340px; 
+    height: 390px; 
     position: absolute;
     top: 0;
     bottom: 0;
@@ -6989,22 +6989,10 @@ Media Query
     border-bottom: .25rem solid rgb(255, 255, 255)!important;
 }
 
-#one{
-    background-color: #3ba2e3;
-    /* For browsers that do not support gradients */
-   background-image: linear-gradient(to bottom right, #3ba2e3, rgb(122, 205, 238));
+
+#navbar1 {
+    background-color: #20639b;
+    height: 0px;
+    /* background-image: linear-gradient(to bottom, #20639b, rgb(135, 178, 216)); */
+
 }
-
-#two{
-    background-color: #5cb85c;
-    /* For browsers that do not support gradients */
-   background-image: linear-gradient(to bottom right, #5cb85c, rgb(157, 243, 107));
-}
-
-#three{
-    background-color: #d9534f;
-    /* For browsers that do not support gradients */
-   background-image: linear-gradient(to bottom right, #d9534f, rgb(243, 89, 89));
-}
-
-

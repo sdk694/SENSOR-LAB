@@ -74,8 +74,9 @@ if(array_key_exists("email",$_SESSION)){
         <!-- navbar -->
         <!-- ============================================================== -->
         <div class="dashboard-header">
-            <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #f6d55c;">
-                <a class="navbar-brand text-dark" href="index.html" style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">Solar surveil</a>
+            <nav class="navbar navbar-expand-lg fixed-top" id="navbar1">
+                <a href="index.html" class=""><img src="solarsurveiltransparent.png" alt="" height="40px" style="margin-left: 10px;"></a>
+                <a class="navbar-brand text-light" href="index.html" style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">Solar surveil</a>
                     </ul>
                 </div>
             </nav>
@@ -130,53 +131,88 @@ if(array_key_exists("email",$_SESSION)){
                     <!-- ============================================================== -->
                     <!-- pageheader  -->
                     <!-- ============================================================== -->
-                    <div class="card d-flex justify-content-center">
-                        <div class="container ">
-                            <form style="margin-top: 15px;">
-                                <div class="form-row align-items-center">
-                                  <div class="col-6  mb-4">
-                                    <label class="mr-sm-2 text-center" for="inlineFormCustomSelect">Kindly select the Node Name</label>
-                                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                                      <option selected> NOD1MU</option>
-                                      <option value="1">NOD2MU</option>
-                                      <option value="2">NOD1WL</option>
-                                      <option value="3">NOD2WL</option>
-                                      <option value="4">NOD3WL</option>
-                                    </select>
-                                  </div>
-                                  <div class="col-">
-                                    <button type="submit" class="btn btn-success rounded-top rounded-bottom">Go</button>
-                                  </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <div class="container ">
+                                    <div class="dropdown" style="margin-bottom: 20px;">
+                                        <label for="">Select the Node Name</label>
+                                        <button class="btn dropdown-toggle col-12" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #f6d55c;">
+                                          Nodename
+                                        </button>
+                                        <div class="dropdown-menu col-12" aria-labelledby="dropdownMenuButton">
+                                          <a class="dropdown-item" href="devices.html?node=nod1mu">nod1mu</a>
+                                          <a class="dropdown-item" href="devices.html?node=nod2mu">nod2mu</a>
+                                          <a class="dropdown-item" href="devices.html?node=nod1wl">nod1wl</a>
+                                          <a class="dropdown-item" href="devices.html?node=nod2wl">nod2wl</a>
+                                          <a class="dropdown-item" href="devices.html?node=nod3wl">nod3wl</a>
+                                        </div>
+                                      </div>
                                 </div>
-                            </form>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card" style="height: 88px;">
+                                <div class="card-body">
+                                    <h2 class="text-uppercase"> <span id="nodename"></span> <span> : - Maharastra, India</span></h2>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <br>
                     <div class="row">
-                        <div class="col-sm-6">
-                            <div class="card d-flex justify-content-center" style="height: 380px;">
+                        <div class="col-sm-4">
+                            <div class="card d-flex justify-content-center" >
                                 <div class="card-body">
-                                    <div class="alert border-dark" role="alert" style="background-color: #ed553b ; margin-top: 20px;">
-                                        
-                                        <h3 class="text-white">Energy in kWh :</h3> 
+                                    <h4> Readings</h4>
+                                    <div class="alert border-dark" role="alert" style="  background-color: #d4f3f0;">
+                                        <div style="display: block;">
+                                            <div class="text-dark" style="font-size: 15px;">
+                                                Energy
+                                            </div>
+                                            <div style="font-size: 25px; color: black;">
+                                                 <span id="energy"></span><span> KWh</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="alert border-dark" role="alert">
-                                        <h3 class="text-dark">Power in kW :</h3> 
+                                    <div class="alert border-dark" role="alert" style="  background-color: #d4f3f0;">
+                                        <div style="display: block;">
+                                            <div class="text-dark" style="font-size: 15px;">
+                                                Power
+                                            </div>
+                                            <div style="font-size: 25px; color: black;">
+                                              <span id="power"></span><span> W</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="alert border-dark" role="alert" style="background-color: #ed553b ; margin-top: 20px;">
-                                        <h3 class="text-white">Voltage :</h3>
+                                    <div class="alert border-dark" role="alert" style="  background-color: #d4f3f0;">
+                                        <div style="display: block;">
+                                            <div class="text-dark" style="font-size: 15px;">
+                                                Voltage
+                                            </div>
+                                            <div style="font-size: 25px; color: black;">
+                                                <span id="voltage"></span><span> V</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="alert border-dark" role="alert">
-                                        <h3 class="text-dark">Current :</h3>
+                                    <div class="alert border-dark" role="alert" style="  background-color: #d4f3f0;">
+                                        <div style="display: block;">
+                                            <div class="text-dark" style="font-size: 15px;">
+                                                Current
+                                            </div>
+                                            <div style="font-size: 25px; color: black;">
+                                                <span id="current"></span><span> A</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                          <div class="card" style="height: 380px;">
+                        <div class="col-sm-8">
+                          <div class="card" style="height: 486px;">
                             <div class="card-body">
-                                <div id="map"> </div>
-                                    <script>
+                                <h4 class=" bg-white text-dark"> Location of the node</h4>
+                                <div id="map" style="margin-top: 70px;"> </div>
+                                    <!-- <script>
         
                                         function getmap1() {
                                         var map = L.map('map').setView([19.1292529, 72.9270092], 12); 
@@ -189,17 +225,94 @@ if(array_key_exists("email",$_SESSION)){
 
                                         }
         
-                                    </script>
+                                    </script> -->
                             </div>
                           </div>
                         </div>
                     </div>
+                    <script>
+                        console.log(window.location.href);
+                        var url_string = window.location.href;
+                        console.log(url_string);
+                        var url = new URL(url_string);
+                        var nodename = url.searchParams.get("node");
+                        console.log(nodename);
+
+                        fetch("power_" +nodename + ".json" )
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log(data)
+                            var time = []
+                            var energy = []
+                            var power = []
+                            var voltage = []
+                            var current = []
+
+                            data.series[0].values.forEach(element => {
+                                      time.push(element[0])  
+                                      energy.push(element[1])
+                                      power.push(element[2])
+                                      voltage.push(element[3])
+                                      current.push(element[4])
+                                    });
+
+                            var energyl  = energy[energy.length -1]
+                            var powerl   = power[power.length -1]
+                            var voltagel = voltage[voltage.length -1]
+                            var currentl = current[current.length -1]        
+                            
+                            console.log(energyl)
+                            console.log(powerl)
+                            console.log(voltagel)
+                            console.log(currentl)
+
+                            document.getElementById("energy").innerHTML   = energyl;
+                            document.getElementById("power").innerHTML    = powerl;
+                            document.getElementById("voltage").innerHTML  = voltagel;
+                            document.getElementById("current").innerHTML  = currentl;
+                            document.getElementById("nodename").innerHTML = nodename; 
+                            
+
+
+                        })
+
+                        function getmap1() {
+                                        var map = L.map('map').setView([19.5292529, 72.9270092], 8); 
+            
+                                        L.tileLayer('https://api.maptiler.com/maps/streets/256/{z}/{x}/{y}.png?key=7Ip6PYWSWb3StlNV6AsB', {
+                                            attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+                                        }).addTo(map);
+
+                                        if (nodename == 'nod1mu'){
+                                            var marker1 = L.marker([19.1292529, 72.9270092], { title : "Mahavir Majestik"}).addTo(map).bindPopup('<h2> Node: NOD1MU  </h2> <h3>Small Panel DC setup</h3> <p> View the status of the panels on grafana</p><a class="btn btn-success d-flex justify-content-center" href="http://34.121.146.230:3000/d/nU5ErMJMz/final?orgId=1&refresh=10s&kiosk" >Visit Dashboard</a>');
+
+                                        }
+                                        else if(nodename == 'nod2mu'){
+                                            var marker2 = L.marker([19.0933, 72.8924], { title : "Mini Solar Setup"}).addTo(map).bindPopup('<h2> Node: NOD2MU</h2><h3>Mini Solar Setup</h3><p> View the status of the node on grafana</p><a class="btn btn-success d-flex justify-content-center" href="http://34.121.146.230:3000/d/nU5ErMJMz/final?orgId=1&refresh=10s&kiosk" >Visit Dashboard</a>');
+
+                                        }
+                                        else if(nodename == 'nod1wl'){
+                                            var marker3 = L.marker([19.90101264, 73.21809223], { title : "State Highway turning to walvanda"}).addTo(map).bindPopup('<h2>Checkpoint </h2><h3>State Highway turning to walvanda</h3>');
+
+                                        }
+                                        else if(nodename == 'nod2wl'){
+                                            var marker4 = L.marker([19.83774295,73.19422424], { title : "Fanaspada Charging point"}).addTo(map).bindPopup('<h2> Node: NOD1WL</h2><h3>Fanaspada Charging point</h3><p> View the status of the node on grafana</p><a class="btn btn-success d-flex justify-content-center" href="http://34.121.146.230:3000/d/nU5ErMJMz/final?orgId=1&refresh=10s&kiosk" >Visit Dashboard</a>');
+                                        }
+                                        else if(nodename == 'nod3wl'){
+                                            var marker6 = L.marker([19.84879223,  73.19108605], { title : "Walvanda Don Bosco ITI Terrace"}).addTo(map).bindPopup('<h2> Node: NOD3WL</h2><h3>Walvanda Don Bosco ITI Terrace</h3><p> View the status of the node on grafana</p><a class="btn btn-success d-flex justify-content-center" href="http://34.121.146.230:3000/d/nU5ErMJMz/final?orgId=1&refresh=10s&kiosk" >Visit Dashboard</a>');
+
+                                        }
+
+                                        }
+
+
+                    </script>
                     <div class="row">
                             <div class="col-sm-6">
                                 <div class="card text-white" style="background-color: #3caea3;">
                                     <div class="card-body">
                                         <div class="weather-date-location">
-                                            <h3 class="text-white">Today's Weather</h3>
+                                            <h3 class="text-white">Today's Weather <span style="margin-left: 90px;">Date: </span> <span id="todaydate"></span></h3>
                                         </div>
                                         <div class="weather-data d-flex ">
                                             <div class="mr-auto">
@@ -214,7 +327,7 @@ if(array_key_exists("email",$_SESSION)){
                                                             </div>
                                                         </div>                                                   
                                                     </div>
-                                                    <div style="margin-right: 10px; margin-left: 30px;">
+                                                    <div style="margin-right: 10px; margin-left: 10px;">
                                                         <div style="display: block">
                                                             <div style="font-size: 15px;">
                                                                 Humidity
@@ -224,7 +337,7 @@ if(array_key_exists("email",$_SESSION)){
                                                             </div>
                                                         </div>                                                   
                                                     </div>
-                                                    <div style="margin-right: 10px; margin-left: 30px;">
+                                                    <div style="margin-right: 10px; margin-left: 10px;">
                                                         <div style="display: block">
                                                             <div style="font-size: 15px;">
                                                                 Windspeed
@@ -246,12 +359,21 @@ if(array_key_exists("email",$_SESSION)){
                                                        var temptrature = data['main']['temp'];
                                                        var humidity    = data['main']['humidity'];
                                                        var windspeed   = data['wind']['speed'];
-       
+
+                                                       var today = new Date();
+                                                       var dd = String(today.getDate()).padStart(2, '0');
+                                                       var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                                                       var yyyy = today.getFullYear();
+
+                                                       today = mm + '/' + dd + '/' + yyyy;
+                                                       
+                                                        
        
                                                        document.getElementById('maincurr').innerHTML      = main 
                                                        document.getElementById('tempcurr').innerHTML      = temptrature;
                                                        document.getElementById('humiditycurr').innerHTML  = humidity;
                                                        document.getElementById('windspeedcurr').innerHTML = windspeed;
+                                                       document.getElementById('todaydate').innerHTML     = today;
        
                                                    }
                                            </script>
@@ -297,7 +419,7 @@ if(array_key_exists("email",$_SESSION)){
                             </div>
                             <div class="col-sm-3">
                                 <div class="card" style="height: 255px;">
-                                    <h3 class="card-header  text-white" style="background-color: #20639b;"> Expected power generation today by the panel.</h3>
+                                    <h3 class="card-header  text-white" style="background-color: #3caea3;"> Expected power generation today by the panel.</h3>
                                     <div class="card-body" >
                                         <h1 class="text-center" style="margin-top: 20px;">2000W </h1>
                                     </div>
@@ -305,7 +427,7 @@ if(array_key_exists("email",$_SESSION)){
                             </div>
                             <div class="col-sm-3">
                                 <div class="card" style="height: 255px;">
-                                    <h3 class="card-header text-white" style="background-color: #20639b;"> Total power generated by the panel.</h3>
+                                    <h3 class="card-header text-white" style="background-color: #3caea3;"> Total power generated by the panel.</h3>
                                     <div class="card-body">
                                         <h1 class="text-center" style="margin-top: 20px;" id="p1"></h1>
                                     </div>
@@ -316,11 +438,18 @@ if(array_key_exists("email",$_SESSION)){
                         <div class="col-sm-12">
                           <div class="card ">
                             <div class="card-body ">
-                              <h4 class="card-title ">Power Generated In The Last 30 Days</h4>
+                              <h4 class="card-title ">Power Generated</h4>
                               <br>
                               <div class="shadow" id="generated"></div>
                               <script>
-                                fetch("power.json")
+                                console.log(window.location.href);
+                                var url_string = window.location.href;
+                                console.log(url_string);
+                                var url = new URL(url_string);
+                                var nodename = url.searchParams.get("node");
+                                console.log(nodename);
+
+                                fetch("power_" +nodename +".json")
                                   .then(response => response.json())
                                   .then(data => {
                                     console.log(data)
@@ -330,7 +459,7 @@ if(array_key_exists("email",$_SESSION)){
                                     // document.getElementById("debug").innerHTML = JSON.stringify(data.series[0].values)
                                     data.series[0].values.forEach(element => {
                                       x.push(element[0])
-                                      y.push(element[1])
+                                      y.push(element[5])
                                     });
                                     
                                     var sum = y.reduce(function(a,b) {
@@ -373,11 +502,143 @@ if(array_key_exists("email",$_SESSION)){
                         <div class="col-sm-12">
                           <div class="card">
                             <div class="card-body">
-                              <h4 class="card-title">Power Consumed In The Last 30 Days</h4>
+                              <h4 class="card-title">Power Consumed</h4>
                               <br>
                               <div class="shadow" id="consumed"></div>
                               <script>
-                                fetch("powerc.json")
+                                console.log(window.location.href);
+                                var url_string = window.location.href;
+                                console.log(url_string);
+                                var url = new URL(url_string);
+                                var nodename = url.searchParams.get("node");
+                                console.log(nodename);
+
+                                fetch("power_" +nodename +".json")
+                                  .then(response => response.json())
+                                  .then(data => {
+                                    console.log(data)
+                                    var x = []
+                                    var y = []
+                                    // document.querySelector("#debug").innerHTML =  data
+                                    // document.getElementById("debug").innerHTML = JSON.stringify(data.series[0].values)
+                                    data.series[0].values.forEach(element => {
+                                      x.push(element[0])
+                                      y.push(element[2])
+                                    });
+                                    var sum = y.reduce(function(a,b) {
+                                      return  (a + b);
+                                    },0);
+                                    var avg = (sum / y.length)
+                                    console.log(sum)
+                                    // document.getElementById('p3').innerHTML = sum.toFixed(2);
+                                    // document.getElementById('p0').innerHTML = avg.toFixed(4)
+                                    var trace1 = {
+                                      x: x,
+                                      y: y,
+                                      type: 'scatter'
+                                    };
+          
+          
+                                    var data = [trace1];
+                                    var layout = { 
+                                        title: '',
+                                        font: {size: 18}
+                                      };
+          
+                                    var config = {responsive: true}
+          
+                                    Plotly.newPlot('consumed', data, layout, config);
+                                  })
+                              </script>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="card">
+                            <div class="card-body">
+                              <h4 class="card-title">Power Generated vs Power Consumed</h4>
+                              <br>
+                              <div class="shadow" id="pconvspgen"></div>
+                              <script>
+                                console.log(window.location.href);
+                                var url_string = window.location.href;
+                                console.log(url_string);
+                                var url = new URL(url_string);
+                                var nodename = url.searchParams.get("node");
+                                console.log(nodename);
+
+                                fetch("power_" +nodename +".json")
+                                  .then(response => response.json())
+                                  .then(data => {
+                                    console.log(data)
+                                    var x = []
+                                    var y = []
+                                    var z = []
+                                    // document.querySelector("#debug").innerHTML =  data
+                                    // document.getElementById("debug").innerHTML = JSON.stringify(data.series[0].values)
+                                    data.series[0].values.forEach(element => {
+                                      x.push(element[0])
+                                      y.push(element[2])
+                                      z.push(element[5])
+                                    });
+                                    // var sum = y.reduce(function(a,b) {
+                                    //   return  (a + b);
+                                    // },0);
+                                    // var avg = (sum / y.length)
+                                    // console.log(sum)
+                                    // document.getElementById('p3').innerHTML = sum.toFixed(2);
+                                    // document.getElementById('p0').innerHTML = avg.toFixed(4)
+                                    var trace1 = {
+                                      x: x,
+                                      y: y,
+                                      name : 'Consumed ',
+                                      type: 'bar'
+                                    };
+
+                                    var trace2 = {
+                                       x: x,
+                                       y: z,
+                                       name: 'Generated',
+                                       type :'bar' 
+                                    }
+          
+          
+                                    var data = [trace1, trace2];
+                                    var layout = { 
+                                        title: '',
+                                        font: {size: 18},
+                                        barmode: 'group'
+                                      };
+          
+                                    var config = {responsive: true}
+          
+                                    Plotly.newPlot('pconvspgen', data, layout, config);
+                                  })
+                              </script>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="card">
+                            <div class="card-body">
+                              <h4 class="card-title">Energy Consumed</h4>
+                              <br>
+                              <div class="shadow" id="econsumed"></div>
+                              <script>
+                                console.log(window.location.href);
+                                var url_string = window.location.href;
+                                console.log(url_string);
+                                var url = new URL(url_string);
+                                var nodename = url.searchParams.get("node");
+                                console.log(nodename);
+
+                                fetch("power_" +nodename +".json")
                                   .then(response => response.json())
                                   .then(data => {
                                     console.log(data)
@@ -411,13 +672,14 @@ if(array_key_exists("email",$_SESSION)){
           
                                     var config = {responsive: true}
           
-                                    Plotly.newPlot('consumed', data, layout, config);
+                                    Plotly.newPlot('econsumed', data, layout, config);
                                   })
                               </script>
                             </div>
                           </div>
                         </div>
                       </div>
+
                 </div>
 
                     <!-- ============================================================== -->
@@ -432,7 +694,7 @@ if(array_key_exists("email",$_SESSION)){
             <div class="footer">
                 <div class="container-fluid">
                     <div class="row text-center">
-                        <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 col-12 text-xl-center">
+                        <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 col-12 text-xl-center ">
                              Copyright © 2021 Solar Surveil. All rights reserved. Dashboard by <a href="index.html">Solar Surveil Team</a>.
                         </div>
                         <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
