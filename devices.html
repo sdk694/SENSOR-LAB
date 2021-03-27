@@ -293,7 +293,7 @@ if(array_key_exists("email",$_SESSION)){
 
                                         }
                                         else if(nodename == 'nod1wl'){
-                                            var marker3 = L.marker([19.90101264, 73.21809223], { title : "State Highway turning to walvanda"}).addTo(map).bindPopup('<h2>Checkpoint </h2><h3>State Highway turning to walvanda</h3>');
+                                            var marker3 = L.marker([19.90101264, 73.21009223], { title : "State Highway turning to walvanda"}).addTo(map).bindPopup('<h2>Checkpoint </h2><h3>State Highway turning to walvanda</h3>');
 
                                         }
                                         else if(nodename == 'nod2wl'){
@@ -488,8 +488,8 @@ if(array_key_exists("email",$_SESSION)){
           
                                     var layout = { 
                                         title: '',
-                                        font: {size: 18},
-
+                                        font: {size: 10},
+                                      
                                       };
           
                                     var config = {responsive: true}
@@ -546,7 +546,7 @@ if(array_key_exists("email",$_SESSION)){
                                     var data = [trace1];
                                     var layout = { 
                                         title: '',
-                                        font: {size: 18}
+                                        font: {size: 10}
                                       };
           
                                     var config = {responsive: true}
@@ -601,6 +601,7 @@ if(array_key_exists("email",$_SESSION)){
                                       name : 'Consumed ',
                                       height: 500,
                                       width: 5000,
+                                      fill: 'tonexty',
                                       type: 'bar'
                                     };
 
@@ -611,6 +612,7 @@ if(array_key_exists("email",$_SESSION)){
                                        autosize : true,
                                        width: 5000,
                                        height: 500,
+                                       fill: 'tozeroy',
                                        type :'bar' 
                                     }
           
@@ -618,7 +620,7 @@ if(array_key_exists("email",$_SESSION)){
                                     var data = [trace1, trace2];
                                     var layout = { 
                                         title: '',
-                                        font: {size: 18},
+                                        font: {size: 10},
                                         barmode: 'group'
                                       };
           
@@ -677,7 +679,7 @@ if(array_key_exists("email",$_SESSION)){
                                     var data = [trace1];
                                     var layout = { 
                                         title: '',
-                                        font: {size: 18}
+                                        font: {size: 10}
                                       };
           
                                     var config = {responsive: true}
@@ -689,8 +691,59 @@ if(array_key_exists("email",$_SESSION)){
                           </div>
                         </div>
                       </div>
+                      <!-- <div class="card">
+                          <div class="card-body">
+                            <canvas id="myChart"></canvas>
+                          </div>
+                      </div>
+                      
 
-                </div>
+                      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+                      <script>
+
+                        var ctx = document.getElementById("myChart").getContext('2d');
+
+                              console.log(window.location.href);
+                                var url_string = window.location.href;
+                                console.log(url_string);
+                                var url = new URL(url_string);
+                                var nodename = url.searchParams.get("node");
+                                console.log(nodename);
+                                fetch("power_" +nodename +".json")
+                                  .then(response => response.json())
+                                  .then(data => {
+                                    console.log(data)
+                                    var x = []
+                                    var y = []
+                                    // document.querySelector("#debug").innerHTML =  data
+                                    // document.getElementById("debug").innerHTML = JSON.stringify(data.series[0].values)
+                                    data.series[0].values.forEach(element => {
+                                      x.push(element[0])
+                                      y.push(element[2])
+                                    });
+                                    var myChart = new Chart(ctx, {
+                            type: 'line',
+                            data: {
+                                labels: x,
+                                datasets: [{
+                                    label: 'Series 1', // Name the series
+                                    data: y, // Specify the data values array
+                                    fill: false,
+                                    borderColor: '#2196f3', // Add custom color border (Line)
+                                    backgroundColor: '#2196f3', // Add custom color background (Points and Fill)
+                                    borderWidth: 1 // Specify bar border width
+                                }]},
+                            options: {
+                              responsive: true, // Instruct chart js to respond nicely.
+                              maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height 
+                            }
+                        });
+                                  })        
+
+                      </script>
+
+                </div> -->
 
                     <!-- ============================================================== -->
                     <!-- end pageheader  -->
