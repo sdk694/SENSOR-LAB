@@ -39,6 +39,7 @@ if(array_key_exists("email",$_SESSION)){
         function getforecast1() {
           var key = '27721ab96215a82e4a4d03fe0220858a';
           var city = "Mumbai"
+
           fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=' + key + '&units=metric')
           .then(response => response.json())
           .then(data => {
@@ -105,7 +106,7 @@ if(array_key_exists("email",$_SESSION)){
                                 </div>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active text-dark" href="devices.html"  aria-expanded="false"><i class="fa fa-fw fa-microchip fa-xl"></i>Devices <span class="badge badge-success">6</span></a>
+                                <a class="nav-link active text-dark" href="devices.html"  aria-expanded="false"><i class=" text-dark fa fa-fw fa-microchip fa-xl"></i>Devices <span class="badge badge-success">6</span></a>
                                 <div id="submenu-1" class="collapse submenu">
                                 </div>
                             </li>
@@ -137,7 +138,7 @@ if(array_key_exists("email",$_SESSION)){
                                 <div class="container ">
                                     <div class="dropdown" style="margin-bottom: 20px;">
                                         <label for="">Select the Node Name</label>
-                                        <button class="btn dropdown-toggle col-12" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #f6d55c;">
+                                        <button class="btn dropdown-toggle col-12 text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #3caea3;">
                                           Nodename
                                         </button>
                                         <div class="dropdown-menu col-12" aria-labelledby="dropdownMenuButton">
@@ -467,7 +468,7 @@ if(array_key_exists("email",$_SESSION)){
                                     },0);
                                     var avg = (sum / y.length) ;
                                     console.log(sum)
-                                    document.getElementById('p1').innerHTML = sum.toFixed(5);
+                                    document.getElementById('p1').innerHTML = sum.toFixed(4);
                                     // document.getElementById('p2').innerHTML = avg.toFixed(4);
                                     var trace1 = {
                                       x: x,
@@ -481,11 +482,14 @@ if(array_key_exists("email",$_SESSION)){
                                       
                                       
                                     };
+
+                                  
                                     var data = [trace1];
           
                                     var layout = { 
                                         title: '',
-                                        font: {size: 18}
+                                        font: {size: 18},
+
                                       };
           
                                     var config = {responsive: true}
@@ -666,7 +670,7 @@ if(array_key_exists("email",$_SESSION)){
                                       x: x,
                                       y: y,
                                       width: 5000,
-                                      type: 'bar'
+                                      type: 'scatter'
                                     };
           
           
