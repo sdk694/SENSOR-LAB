@@ -1241,7 +1241,7 @@ Top Header
     white-space: nowrap;
     padding: 11px 20px;
     font-size: 30px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-weight: 700;
     color: #007bff;
 }
@@ -1780,7 +1780,7 @@ Leftsidebar - dark
 ------------------------- */
 
 .sidebar-dark {
-    background-color: #173f5f;
+    background-color: #20639b;
     -webkit-box-shadow: 0px 0px 28px 0px rgba(174, 174, 175, 0.13);
     box-shadow: 0px 0px 28px 0px rgba(189, 189, 189, 0.13);
     -webkit-transition: all 0.3s ease;
@@ -6991,7 +6991,7 @@ Media Query
 
 
 #navbar1 {
-    background-color: #20639b;
+    background-color: #173f5f;
     height: 0px;
     /* background-image: linear-gradient(to bottom, #20639b, rgb(135, 178, 216)); */
 
