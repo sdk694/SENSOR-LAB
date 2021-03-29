@@ -183,6 +183,20 @@ footer .glyphicon {
     font-size: 150px;
   }
 }
+
+.col-sm-2 {width: 20%;}
+
+
+/* This is very important for mobile phones */
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+}
+
+
 ::-webkit-scrollbar {
     width: 7px;
 }
