@@ -15,7 +15,8 @@
 }
 
 footer {
-    background-color: #eeeee4;    
+    background-color: #173f5f;
+    color: white;    
 }
 
 ::-webkit-scrollbar {
