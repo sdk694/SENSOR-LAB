@@ -369,7 +369,7 @@
     </head>
 
     <body>
-        <div class="container-fluid border-light" style="">
+        <div class="container-fluid" style="margin-top: 30px;">
         <div id="error">
                                             <?php
                                                 if($success){
