@@ -235,7 +235,7 @@
     .login-space .group .input,
     .login-space .group .button {
         border: none;
-        padding: 15px 20px;
+        padding: 15px 25px;
         /* border-radius: 25px; */
         background: rgba(255, 255, 255, .1)
     }
