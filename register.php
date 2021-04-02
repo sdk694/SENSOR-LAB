@@ -172,7 +172,6 @@
         position: absolute;
         padding: 90px 70px 50px 70px;
         background: #173f5f;
-        margin-bottom : 10px;
     }
 
     .login-snip .login,
@@ -462,7 +461,7 @@
 
                 </div>
                 <br><br>
-                <a class="d-flex justify-content-center text-white" href="index.html">Go back to main page</a>
+                <a class="d-flex justify-content-center text-white" href="index.html" style ="margin-bottom : 10px;">Go back to main page</a>
                 <!-- <br>
                 <div class="row ">
                     <div class="col-6 my-auto text-right padding-0">Not Signed up?</div>
