@@ -394,14 +394,14 @@
                     <div class="col-12 align-self-center">
                         <label for="">Email</label>
                         <input type="email" class="col-sm-12 form-control " name="email" placeholder="Your Email address">
-                        <small id="emailHelp" class="form-text text-white">Email will not be shared</small>
+                        <small id="emailHelp" class="form-text text-white-50">Email will not be shared</small>
                     </div>
                 </div>
                 <div class="form-group  row text-white ">
                     <div class="col-12 align-self-center">
                         <label for="">Password</label>
                         <input type="password" class="form-control" name="password" placeholder="Your password">
-                        <small id="pwdHelp" class="form-text text-white">-> Atleast: 8 characters (Max 20), one number, one upper & lower case <-</small>
+                        <small id="pwdHelp" class="form-text text-white-50">-> Atleast: 8 characters (Max 20), one number, one upper & lower case <-</small>
                     </div>
                 </div>
                 <div class="">
@@ -416,7 +416,6 @@
                     <input type="hidden" name="signup" value=1>
                 </div> 
                 <input type="submit" name="submit" value="Sign Up" class=" col-12 btn btn-primary">
-                <br><br>
                 <a class="d-flex justify-content-center text-white" href="index.html">Go back to main page</a>
                 <br><br> 
                 </div>
@@ -461,7 +460,7 @@
 
                 </div>
                 <br><br>
-                <a class="d-flex justify-content-center text-white" href="index.html" style ="margin-bottom : 10px;">Go back to main page</a>
+                <a class="d-flex justify-content-center text-white" href="index.html">Go back to main page</a>
                 <!-- <br>
                 <div class="row ">
                     <div class="col-6 my-auto text-right padding-0">Not Signed up?</div>
