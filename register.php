@@ -390,7 +390,7 @@
                                     <form action="" method="post" id="signUpForm">
                 <!-- <h2 class="card-header bg-dark text-white d-flex justify-content-center">Dashboard Sign up</h2> -->
                 <br>
-                 <div class="form-group row ">
+                 <div class="form-group row text-white">
                     <div class="col-12 align-self-center">
                         <label for="">Email</label>
                         <input type="email" class="col-sm-12 form-control " name="email" placeholder="Your Email address">
