@@ -171,7 +171,7 @@
         /* height: 100%; */
         position: absolute;
         padding: 90px 70px 50px 70px;
-        background: #3caea3;
+        background: #173f5f;
     }
 
     .login-snip .login,
