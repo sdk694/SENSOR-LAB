@@ -410,12 +410,12 @@
                     <label class="form-check-label text-white"  for="stayloggedin">Stay logged in</label>
                 </div>
                 </div>
-                <br>
                 <div class="">
                 <div class="form-group">
                     <input type="hidden" name="signup" value=1>
                 </div> 
                 <input type="submit" name="submit" value="Sign Up" class=" col-12 btn btn-primary">
+                <br>
                 <a class="d-flex justify-content-center text-white" href="index.html">Go back to main page</a>
                 <br><br> 
                 </div>
