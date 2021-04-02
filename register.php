@@ -210,7 +210,7 @@
     .login-snip .sign-in:checked+.tab,
     .login-snip .sign-up:checked+.tab {
         color: #fff;
-        border-color: #1161ee
+        /* border-color: #1161ee */
     }
 
     .login-space {
