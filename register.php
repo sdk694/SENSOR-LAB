@@ -168,7 +168,7 @@
 
     .login-snip {
         width: 100%;
-        /* height: 100%; */
+        height: 100%;
         position: absolute;
         padding: 90px 70px 50px 70px;
         background: #173f5f;
@@ -430,7 +430,7 @@
                 </div>
                 </div> -->
             </form> 
-                                    </div>
+            </div>
                                     <div class="sign-up-form">
                                     <form action="" method="post" id="loginForm">
                 <!-- <h2 class="card-header bg-dark text-white d-flex justify-content-center">Dashboard Login</h2> -->
