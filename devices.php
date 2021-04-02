@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 
 session_start();
 if(array_key_exists("email",$_COOKIE)){
@@ -17,7 +17,7 @@ if(array_key_exists("email",$_SESSION)){
    header("Location: register.php");
 
 }
-?> -->
+?>
 
 <!doctype html>
 <html lang="en">
