@@ -210,7 +210,7 @@
     .login-snip .sign-in:checked+.tab,
     .login-snip .sign-up:checked+.tab {
         color: #fff;
-        /* border-color: #1161ee */
+        border-color: #1161ee
     }
 
     .login-space {
@@ -382,7 +382,7 @@
                                         </div>
             <div class="row ">
                 <div class="col-md-6 mx-auto p-0 d-flex justify-content-center">
-                    <div class="card">
+                    <div class="card border-light">
                         <div class="login-box">
                             <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">SIGN UP</label> <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">LOGIN</label>
                                 <div class="login-space">
