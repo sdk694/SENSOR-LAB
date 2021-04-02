@@ -397,7 +397,7 @@
                         <small id="emailHelp" class="form-text text-white">Email will not be shared</small>
                     </div>
                 </div>
-                <div class="form-group  row  ">
+                <div class="form-group  row text-white ">
                     <div class="col-12 align-self-center">
                         <label for="">Password</label>
                         <input type="password" class="form-control" name="password" placeholder="Your password">
@@ -407,7 +407,7 @@
                 <div class="">
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input " name="stayloggedin" value=1 checked>
-                    <label class="form-check-label"  for="stayloggedin">Stay logged in</label>
+                    <label class="form-check-label text-white"  for="stayloggedin">Stay logged in</label>
                 </div>
                 </div>
                 <br>
@@ -417,7 +417,7 @@
                 </div> 
                 <input type="submit" name="submit" value="Sign Up" class=" col-12 btn btn-primary">
                 <br><br>
-                <a class="d-flex justify-content-center" href="index.html">Go back to main page</a>
+                <a class="d-flex justify-content-center text-white" href="index.html">Go back to main page</a>
                 <br><br> 
                 </div>
                 <br>
@@ -435,13 +435,13 @@
                                     <form action="" method="post" id="loginForm">
                 <!-- <h2 class="card-header bg-dark text-white d-flex justify-content-center">Dashboard Login</h2> -->
                 <br>
-                <div class="form-group row  d-flex justify-content-center link">
+                <div class="form-group row  d-flex justify-content-center link text-white">
                     <div class="col-12 align-self-center">
                         <label for="">Email</label>
                         <input type="email" class="form-control" name="email"  placeholder="Your registered login email address">
                     </div>
                  </div>  
-                <div class="form-group row  d-flex justify-content-center  link">
+                <div class="form-group row  d-flex justify-content-center  link text-white">
                     <div class="col-12 align-self-center">
                         <label for="">Password</label>
                         <input type="password"  class="form-control" name="password" placeholder="Your Login password">
@@ -450,7 +450,7 @@
                 <div class="">
                 <div class="form-check">
                     <input type="checkbox" name="stayloggedin" class="form-check-input" value=1 checked>                    
-                    <label class="form-check-label" for="stayloggedin">Stay logged in</label>
+                    <label class="form-check-label text-white" for="stayloggedin">Stay logged in</label>
                 </div>
                 </div>
                 <div class="form-group">
@@ -461,7 +461,7 @@
 
                 </div>
                 <br><br>
-                <a class="d-flex justify-content-center" href="index.html">Go back to main page</a>
+                <a class="d-flex justify-content-center text-white" href="index.html">Go back to main page</a>
                 <!-- <br>
                 <div class="row ">
                     <div class="col-6 my-auto text-right padding-0">Not Signed up?</div>
