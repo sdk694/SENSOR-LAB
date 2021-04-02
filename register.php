@@ -260,7 +260,7 @@
         /* border-radius: 2px; */
         position: relative;
         display: inline-block;
-        /* background: rgba(255, 255, 255, .1) */
+        background: rgba(255, 255, 255, .1)
     }
 
     .login-space .group label .icon:before,
@@ -369,7 +369,7 @@
     </head>
 
     <body>
-        <div class="container-fluid" style="margin-top: 30px;">
+        <div class="container-fluid border-light" style="margin-top: 30px;">
         <div id="error">
                                             <?php
                                                 if($success){
