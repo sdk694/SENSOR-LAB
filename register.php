@@ -237,7 +237,7 @@
         border: none;
         padding: 15px 25px;
         /* border-radius: 25px; */
-        background: rgba(255, 255, 255, .1)
+        /* background: rgba(255, 255, 255, .1) */
     }
 
     .login-space .group input[data-type="password"] {
