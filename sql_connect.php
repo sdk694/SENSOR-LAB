@@ -1,6 +1,6 @@
 <?php
  
-$dbServername = "34.121.146.230";
+$dbServername = "localhost";
 $dbUsername = "lora-rms";
 $dbPassword = "rms-lora";
 $dbName = "solarnexus";
