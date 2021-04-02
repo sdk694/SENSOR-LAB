@@ -236,7 +236,7 @@
     .login-space .group .button {
         border: none;
         padding: 15px 20px;
-        border-radius: 25px;
+        /* border-radius: 25px; */
         background: rgba(255, 255, 255, .1)
     }
 
@@ -257,7 +257,7 @@
     .login-space .group label .icon {
         width: 15px;
         height: 15px;
-        border-radius: 2px;
+        /* border-radius: 2px; */
         position: relative;
         display: inline-block;
         background: rgba(255, 255, 255, .1)
