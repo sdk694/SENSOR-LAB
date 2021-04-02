@@ -14,7 +14,7 @@
     
     } //Else if user has not pressed logout, it takes it back to thw Logged In page!! wao! 
     else if ((array_key_exists("email",$_SESSION) AND $_SESSION["email"]) OR (array_key_exists("email",$_COOKIE) AND $_COOKIE["email"])){
-        header("Location:dashboardmumbai.php");
+        header("Location:dashboard.php");
 
     }
 
@@ -72,7 +72,7 @@
                                 setcookie("email",$_POST["email"],time()+60*60*24*365);
                             
                             }
-                            header("Location: dashboardmumbai.php");
+                            header("Location: dashboard.php");
     
                         } else {
                             $failure = "ERROR signing up!";
@@ -110,7 +110,7 @@
                             setcookie("email",$_POST["email"],time()+60*60*24*365);
                         
                         }
-                        header("Location: dashboardmumbai.php");
+                        header("Location: dashboard.php");
 
                     } else {
                         $failure = "Wrong Username or Password";
