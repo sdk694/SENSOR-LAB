@@ -79,12 +79,12 @@ if(array_key_exists("email",$_SESSION)){
                                 Menu
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active text-dark" href="dashboard.html"  aria-expanded="false"><i class="text-dark    fa fa-fw fa-tachometer fa-xl "></i>Dashboard <span class="badge badge-success">6</span></a>
+                                <a class="nav-link active text-dark" href="dashboard.php"  aria-expanded="false"><i class="text-dark    fa fa-fw fa-tachometer fa-xl "></i>Dashboard <span class="badge badge-success">6</span></a>
                                 <div id="submenu-1" class="collapse submenu">
                                 </div>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link text-light" href="devices.html"  aria-expanded="false"><i class="fa fa-fw fa-microchip fa-xl"></i>Devices <span class="badge badge-success">6</span></a>
+                                <a class="nav-link text-light" href="devices.php"  aria-expanded="false"><i class="fa fa-fw fa-microchip fa-xl"></i>Devices <span class="badge badge-success">6</span></a>
                                 <div id="submenu-1" class="collapse submenu">
                                 </div>
                             </li>
