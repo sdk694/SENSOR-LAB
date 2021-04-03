@@ -1244,6 +1244,8 @@ Top Header
     /* text-transform: uppercase; */
     font-weight: 700;
     color: #007bff;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
 }
 .navbar-brand:hover{
     color: #007bff;
