@@ -53,8 +53,8 @@ if(array_key_exists("email",$_SESSION)){
         <!-- navbar -->
         <!-- ============================================================== -->
         <div class="dashboard-header">
-            <nav class="navbar navbar-expand-lg fixed-top" id="navbar1" style ="margin-left = 20px">
-                <a href="index.html" class=""><img src="solarsurveiltransparent.png" alt="" height="40px" style="margin-left: 10px;"></a>
+            <nav class="navbar navbar-expand-lg fixed-top" id="navbar1">
+                <a href="index.html" class=""><img src="solarsurveiltransparent.png" alt="" height="40px" style="margin-left: 20px;"></a>
                 <a class="navbar-brand text-white" href="index.html" style ="font-family:  Montserrat, sans-serif; letter-spacing: 4px; font-weight: 500; font-size: 20px;">SOLAR SURVEIL</a>
                     </ul>
                 </div>
