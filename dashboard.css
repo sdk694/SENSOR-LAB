@@ -1247,9 +1247,7 @@ Top Header
 .navbar-brand {
     color: #fff !important;
 }
-.navbar-brand:hover{
-    color: #007bff;
-}
+
 .navbar-right-top {}
 
 .navbar-right-top .nav-item {
