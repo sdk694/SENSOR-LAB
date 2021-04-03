@@ -1247,17 +1247,6 @@ Top Header
 
 .navbar-brand {
     color: #fff !important;
-    display: inline-block;
-    margin-right: 1rem;
-    line-height: inherit;
-    white-space: nowrap;
-    padding: 11px 20px;
-    font-size: 30px;
-    text-transform: uppercase;
-    font-weight: 500;
-    color: #007bff;
-    line-height: 1.42857143 !important;
-    letter-spacing: 8px;
 }
 
 .navbar-right-top {}
