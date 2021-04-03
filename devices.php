@@ -142,11 +142,11 @@ if(array_key_exists("email",$_SESSION)){
                                           Nodename
                                         </button>
                                         <div class="dropdown-menu col-12" aria-labelledby="dropdownMenuButton">
-                                          <a class="dropdown-item" href="devices.html?node=nod1mu">nod1mu</a>
-                                          <a class="dropdown-item" href="devices.html?node=nod2mu">nod2mu</a>
-                                          <a class="dropdown-item" href="devices.html?node=nod1wl">nod1wl</a>
-                                          <a class="dropdown-item" href="devices.html?node=nod2wl">nod2wl</a>
-                                          <a class="dropdown-item" href="devices.html?node=nod3wl">nod3wl</a>
+                                          <a class="dropdown-item" href="devices.php?node=nod1mu">nod1mu</a>
+                                          <a class="dropdown-item" href="devices.php?node=nod2mu">nod2mu</a>
+                                          <a class="dropdown-item" href="devices.php?node=nod1wl">nod1wl</a>
+                                          <a class="dropdown-item" href="devices.php?node=nod2wl">nod2wl</a>
+                                          <a class="dropdown-item" href="devices.php?node=nod3wl">nod3wl</a>
                                         </div>
                                       </div>
                                 </div>
