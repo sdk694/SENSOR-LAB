@@ -55,7 +55,7 @@ if(array_key_exists("email",$_SESSION)){
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg fixed-top" id="navbar1">
                 <a href="index.html" class=""><img src="solarsurveiltransparent.png" alt="" height="40px" style="margin-left: 10px;"></a>
-                <a class="navbar-brand text-light" href="index.html" style=" font-family: Montserrat, sans-serif;">Solar Surveil</a>
+                <a class="navbar-brand text-light" href="index.html">SOLAR SURVEIL</a>
                     </ul>
                 </div>
             </nav>
