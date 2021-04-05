@@ -1234,7 +1234,7 @@ Top Header
 
 .navbar {
     margin-bottom: 0;
-    background-color: #;
+    /* background-color: ; */
     z-index: 9999;
     border: 0;
     font-size: 12px !important;
