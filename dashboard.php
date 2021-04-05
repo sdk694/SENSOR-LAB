@@ -126,7 +126,7 @@ if(array_key_exists("email",$_SESSION)){
                               <div class="card-body">
                                   <div class="row align-items-center">
                                       <div class="col mr-2">
-                                          <div class="h6 font-weight-bold text-white text-uppercase mb-1">active Nodes</div>
+                                          <div class="h6 font-weight-bold text-white text-uppercase mb-1">Active Nodes</div>
                                           <div><span class="h1 mb-0 font-weight-bold text-white align-self-md-end">4</span> </div>
                                       </div>
                                   </div> 
