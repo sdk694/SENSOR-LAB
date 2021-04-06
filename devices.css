@@ -1734,9 +1734,6 @@ Left Navigation Sidebar
     
 }
 
-.navbar-toggler-icon{
-    background-image: url("");
-}
 /* -----------------------
 Leftsidebar - Primary
 ------------------------- */
@@ -6846,6 +6843,16 @@ Media Query
         border-bottom: 1px solid #dee2e6;
         border-right: transparent !important;
     }
+
+    .dbit {
+        display: none;
+     }
+     .mtts {
+        display: none;
+     }
+     .sight {
+         display: none;
+     }
 
 
 }

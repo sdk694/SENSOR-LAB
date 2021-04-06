@@ -6835,6 +6835,16 @@ Media Query
     }
 
 
+
+    .dbit {
+        display: none;
+     }
+     .mtts {
+        display: none;
+     }
+     .sight {
+         display: none;
+     }
 }
 
 
