@@ -1,22 +1,22 @@
 <?php
 
-session_start();
-if(array_key_exists("email",$_COOKIE)){
+    session_start();
+    if(array_key_exists("email",$_COOKIE)){
 
-    $_SESSION["email"] = $_COOKIE["email"];
-    //echo 'Logged In user email is: '.$_COOKIE["email"];
-    
-}
+        $_SESSION["email"] = $_COOKIE["email"];
+        //echo 'Logged In user email is: '.$_COOKIE["email"];
+        
+    }
 
-if(array_key_exists("email",$_SESSION)){
+    if(array_key_exists("email",$_SESSION)){
 
-    include ("sqlconnect2.php");
+        include ("sqlconnect2.php");
 
-} else{
+    } else{
 
-   header("Location: register.php");
+    header("Location: register.php");
 
-}
+    }
 ?>
 
 <!doctype html>
@@ -54,9 +54,15 @@ if(array_key_exists("email",$_SESSION)){
         <!-- ============================================================== -->
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg fixed-top" id="navbar1">
-                <a href="index.html" class=""><img src="solarsurveiltransparent.png" alt="" height="40px" style="margin-left: 20px;"></a>
-                <a class="navbar-brand   text-light" href="index.html" style="font-family: Montserrat, sans-serif; letter-spacing: 4px; font-weight: 500; font-size: 20px; margin-left: 20px ;"> SOLAR SURVEIL</a>
-                    </ul>
+                <div>
+                    <a href="index.html" class=""><img src="solarsurveiltransparent.png" alt="" height="40px" style="margin-left: 20px;"></a>
+                    <a class="navbar-brand   text-light" href="index.html" style="font-family: Montserrat, sans-serif; letter-spacing: 4px; font-weight: 500; font-size: 20px; margin-left: 20px ;"> SOLAR SURVEIL</a>
+                </div>
+
+                <div>
+                    <img src="dbit.png"  alt="" style="height: 40px; width: 40px;">
+                    <img src="mttsnt.jpg" alt="" style="height: 40px; width: 50px;">
+                    <img src="sight.png" alt="" style="height: 40px; width: 70px;">
                 </div>
             </nav>
         </div>
@@ -90,6 +96,9 @@ if(array_key_exists("email",$_SESSION)){
                                 <a class="nav-link text-light" href="register.php?logout=1"  aria-expanded="false"><i class="fa fa-fw fa-sign-out fa-xl"></i>Logout<span class="badge badge-success">6</span></a>
                                 <div id="submenu-1" class="collapse submenu">
                                 </div>
+                            </li>
+                            <li class="nav-item ">
+                                
                             </li>
                         </ul>
                     </div>
