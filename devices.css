@@ -2044,7 +2044,7 @@ Pageheader
     /*position: absolute; bottom: 0;*/
 }
 
-.footer-links {}
+/* .footer-links {} */
 
 .footer .footer-links a {
     color: #71748d;
@@ -2139,7 +2139,7 @@ Pageheader
     background-color: #ededfa;
 }
 
-.campaign-table {}
+/* .campaign-table {} */
 
 .campaign-table .dropdown-toggle::after {
     display: none;
@@ -2231,12 +2231,12 @@ Pageheader
     border-top-left-radius: 0px;
 }
 
-.review-block {}
+/* .review-block {}
 
 .review-text {}
 
 
-/* ==========================================================================
+/* /* ==========================================================================
   5. Dashboard Ecommerce
    ========================================================================== */
 
@@ -2280,7 +2280,7 @@ Pageheader
 .traffic-sales-amount {
     float: right;
     color: #3d405c;
-}
+} *
 
 
 /* -------------- country sales -------------------*/
@@ -2289,7 +2289,7 @@ Pageheader
 
 .country-sales-content {
     padding: 20px !important;
-}
+} */
 
 
 
