@@ -1723,6 +1723,7 @@ Left Navigation Sidebar
     border: 1px solid transparent;
     border-radius: .25rem;
 }
+
 /* -----------------------
 Leftsidebar - Primary
 ------------------------- */
@@ -6840,6 +6841,7 @@ Media Query
 /* Extra Small Devices, Phones */
 
 @media only screen and (max-width:480px) {
+
     .dashboard-content {
     padding: 20px 20px 60px 20px;
 }
@@ -6935,13 +6937,24 @@ Media Query
 .product-carousel .carousel-indicators{bottom: -30px;}
 .simple-card .nav.nav-tabs .nav-item .nav-link {
     padding: 17px 29px;}
+ .dbit {
+    display: none;
+ }
+ .mtts {
+    display: none;
+ }
+ .sight {
+     display: none;
+ }
+
 }
 
 
 
 
 /* Custom, iPhone Retina */
-@media only screen and (max-width:320px) {}
+@media only screen and (max-width:320px) {
+}
 
 
 #map { height: 380px; 

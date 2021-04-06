@@ -58,12 +58,6 @@
                     <a href="index.html" class=""><img src="solarsurveiltransparent.png" alt="" height="40px" style="margin-left: 20px;"></a>
                     <a class="navbar-brand   text-light" href="index.html" style="font-family: Montserrat, sans-serif; letter-spacing: 4px; font-weight: 500; font-size: 20px; margin-left: 20px ;"> SOLAR SURVEIL</a>
                 </div>
-
-                <div>
-                    <img src="dbit.png"  alt="" style="height: 40px; width: 40px;">
-                    <img src="mttsnt.jpg" alt="" style="height: 40px; width: 50px;">
-                    <img src="sight.png" alt="" style="height: 40px; width: 70px;">
-                </div>
             </nav>
         </div>
         <!-- ============================================================== -->
@@ -73,9 +67,13 @@
         <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light" style ="background-color: #20639b">
-                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                    <a class="d-xl-none d-lg-none" href="#">                                
+                        <img src="dbit.png" id="dbit" alt="" style="height: 50px; width: 50px;">
+                        <img src="mttsnt.jpg" id="mtts" alt="" style="height: 50px; width: 60px;">
+                        <img src="sight.png" id="sight" alt="" style="height: 50px; width: 110px;">
+                    </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                        <span class="fa fa-bars"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav flex-column">
@@ -97,8 +95,10 @@
                                 <div id="submenu-1" class="collapse submenu">
                                 </div>
                             </li>
-                            <li class="nav-item ">
-                                
+                            <li class="nav-item " style="margin-top:40px;">
+                                <img class="dbit" src="dbit.png" alt="" style="height: 50px; width: 50px;">
+                                <img class="mtts" src="mttsnt.jpg" alt="" style="height: 50px; width: 60px;">
+                                <img class="sight" src="sight.png" alt="" style="height: 50px; width: 110px;">
                             </li>
                         </ul>
                     </div>

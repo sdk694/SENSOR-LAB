@@ -76,9 +76,9 @@ if(array_key_exists("email",$_SESSION)){
         <!-- ============================================================== -->
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg fixed-top" id="navbar1" style = "min-height: 60px; ">
+                <div>
                 <a href="index.html" class=""><img src="solarsurveiltransparent.png" alt="" height="40px" style="margin-left: 20px;"></a>
-                <a class="navbar-brand   text-light" href="index.html" style="font-family: Montserrat, sans-serif; letter-spacing: 4px; font-weight: 500; font-size: 20px;">SOLAR SURVEIL</a>
-                    </ul>
+                <a class="navbar-brand   text-white" href="index.html" style="font-family: Montserrat, sans-serif; letter-spacing: 4px; font-weight: 500; font-size: 20px;">SOLAR SURVEIL</a>
                 </div>
             </nav>
         </div>
@@ -91,9 +91,13 @@ if(array_key_exists("email",$_SESSION)){
         <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-darktext-dark">
-                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                    <a class="d-xl-none d-lg-none" href="#">
+                        <img src="dbit.png" id="dbit" alt="" style="height: 50px; width: 50px;">
+                        <img src="mttsnt.jpg" id="mtts" alt="" style="height: 50px; width: 60px;">
+                        <img src="sight.png" id="sight" alt="" style="height: 50px; width: 110px;">
+                    </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                        <span class="fa fa-bars"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav flex-column">
@@ -114,6 +118,11 @@ if(array_key_exists("email",$_SESSION)){
                                 <a class="nav-link text-white" href="register.php?logout=1"  aria-expanded="false"><i class="fa fa-fw fa-sign-out fa-xl"></i>Logout<span class="badge badge-success">6</span></a>
                                 <div id="submenu-1" class="collapse submenu">
                                 </div>
+                            </li>
+                            <li class="nav-item " style="margin-top:40px;">
+                                <img class="dbit" src="dbit.png" alt="" style="height: 50px; width: 50px;">
+                                <img class="mtts" src="mttsnt.jpg" alt="" style="height: 50px; width: 60px;">
+                                <img class="sight" src="sight.png" alt="" style="height: 50px; width: 110px;">
                             </li>
                         </ul>
                     </div>

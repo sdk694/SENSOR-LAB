@@ -1731,6 +1731,11 @@ Left Navigation Sidebar
     background-color: transparent;
     border: 1px solid transparent;
     border-radius: .25rem;
+    
+}
+
+.navbar-toggler-icon{
+    background-image: url("");
 }
 /* -----------------------
 Leftsidebar - Primary
@@ -6944,6 +6949,16 @@ Media Query
 .product-carousel .carousel-indicators{bottom: -30px;}
 .simple-card .nav.nav-tabs .nav-item .nav-link {
     padding: 17px 29px;}
+
+    .dbit {
+        display: none;
+     }
+     .mtts {
+        display: none;
+     }
+     .sight {
+         display: none;
+     }
 }
 
 
