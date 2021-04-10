@@ -124,7 +124,7 @@
                                   <div class="row align-items-center">
                                       <div class="col mr-2">
                                           <div class=" h6 font-weight-bold text-white text-uppercase mb-1">Total Number Of NOdes</div>
-                                          <div><span class="h1 mb-0 font-weight-bold text-white align-self-md-end">5</span> </div>
+                                          <div><span class="h1 mb-0 font-weight-bold text-white align-self-md-end" id="totnodes"></span> </div>
                                       </div>
                                   </div>                      
                               </div>
@@ -136,7 +136,7 @@
                                   <div class="row align-items-center">
                                       <div class="col mr-2">
                                           <div class="h6 font-weight-bold text-white text-uppercase mb-1">Active Nodes</div>
-                                          <div><span class="h1 mb-0 font-weight-bold text-white align-self-md-end">4</span> </div>
+                                          <div><span class="h1 mb-0 font-weight-bold text-white align-self-md-end" id="activenodes"></span> </div>
                                       </div>
                                   </div> 
                               </div>
@@ -148,12 +148,149 @@
                                   <div class="row align-items-center">
                                       <div class="col mr-2">
                                           <div class="h6 font-weight-bold text-white text-uppercase mb-1">Inactive nodes</div>
-                                          <div><span class="h1 mb-0 font-weight-bold text-white align-self-md-end">1</span> </div>
+                                          <div><span class="h1 mb-0 font-weight-bold text-white align-self-md-end" id="inactivenodes"></span> </div>
                                       </div>
                                   </div> 
                                 </div>
                               </div>
                         </div>
+
+                        <script>
+
+                            var activenodes = 0;
+                            var inactivenodes = 0;
+                            var totnodes = 0;
+
+                            fetch("power_nod1mu.json" )
+                            .then(response => response.json())
+                            .then(data => {
+                                console.log(data)
+                                var voltage = []
+
+
+                                data.series[0].values.forEach(element => {
+                                        voltage.push(element[3])
+                                        });
+
+
+                                var voltagel = voltage[voltage.length -1]
+                                if(voltagel > 200){
+                                    activenodes = activenodes + 1;
+                                }
+                                else{
+                                    inactivenodes = inactivenodes + 1;
+                                }
+                                
+                            })
+
+                            
+                            fetch("power_nod2mu.json" )
+                            .then(response => response.json())
+                            .then(data => {
+                                console.log(data)
+
+                                var voltage = []
+
+
+                                data.series[0].values.forEach(element => {
+                                        voltage.push(element[3])
+                                        });
+
+
+                                var voltagel = voltage[voltage.length -1]
+                                if(voltagel > 200){
+                                    activenodes = activenodes + 1;
+                                }
+                                else{
+                                    inactivenodes = inactivenodes + 1;
+                                }
+                                
+                            })
+
+
+                            
+                            fetch("power_nod1wl.json" )
+                            .then(response => response.json())
+                            .then(data => {
+                                console.log(data)
+
+                                var voltage = []
+
+
+                                data.series[0].values.forEach(element => {
+                                        voltage.push(element[3])
+                                        });
+
+
+                                var voltagel = voltage[voltage.length -1]
+                                if(voltagel > 200){
+                                    activenodes = activenodes + 1; 
+                                }
+                                else{
+                                    inactivenodes = inactivenodes + 1;
+                                    }
+                                
+                            })
+
+                            
+                            fetch("power_nod2wl.json" )
+                            .then(response => response.json())
+                            .then(data => {
+                                console.log(data)
+
+                                var voltage = []
+
+
+                                data.series[0].values.forEach(element => {
+                                        voltage.push(element[3])
+                                        });
+
+
+                                var voltagel = voltage[voltage.length -1]
+                                if(voltagel > 200){
+                                    activenodes = activenodes + 1;
+                                }
+                                else{
+                                    inactivenodes = inactivenodes + 1;
+                                }
+                                
+                            })
+
+                            
+                            fetch("power_nod3wl.json" )
+                            .then(response => response.json())
+                            .then(data => {
+                                console.log(data)
+
+                                var voltage = []
+
+
+                                data.series[0].values.forEach(element => {
+                                        voltage.push(element[3])
+                                        });
+
+
+                                var voltagel = voltage[voltage.length -1]
+                                if(voltagel > 200){
+                                    activenodes = activenodes + 1;
+                                }
+                                else{
+                                    inactivenodes = inactivenodes + 1;
+                                }
+                                totnodes = activenodes + inactivenodes;
+                                console.log(activenodes)
+                                console.log(inactivenodes)
+                                console.log(totnodes)
+
+                                document.getElementById('activenodes').innerHTML = activenodes;
+                                document.getElementById('inactivenodes').innerHTML = inactivenodes;
+                                document.getElementById('totnodes').innerHTML = totnodes;
+                            })
+                                    
+
+                                 
+                        </script>
+
                     </div>
 
                     <div class="card shadow" style="height: 580px;">

@@ -244,6 +244,7 @@ if(array_key_exists("email",$_SESSION)){
                         console.log(window.location.href);
                         var url_string = window.location.href;
                         console.log(url_string);
+
                         var url = new URL(url_string);
                         var nodename = url.searchParams.get("node");
                         console.log(nodename);
@@ -269,7 +270,9 @@ if(array_key_exists("email",$_SESSION)){
                             var energyl  = energy[energy.length -1]
                             var powerl   = power[power.length -1]
                             var voltagel = voltage[voltage.length -1]
-                            var currentl = current[current.length -1]        
+                            var currentl = current[current.length -1]      
+                            
+
                             
                             console.log(energyl)
                             console.log(powerl)
