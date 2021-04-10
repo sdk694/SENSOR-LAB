@@ -431,9 +431,21 @@ if(array_key_exists("email",$_SESSION)){
                                 <div class="card" style="height: 255px;">
                                     <h3 class="card-header  text-white" style="background-color: #3caea3;"> Expected power generation today by the panel.</h3>
                                     <div class="card-body" >
-                                        <h1 class="text-center" style="margin-top: 20px;">2000W </h1>
+                                        <h1 class="text-center" style="margin-top: 20px;"><span id ="ep"></span> <span> W</span></h1>
                                     </div>
                                 </div>
+
+                                <script>
+                                  fetch("predict.json")
+                                  .then(response => response.json())
+                                  .then(data => {
+                                    console.log(data)
+                                    var p = data;
+                                    console.log(p)
+                                    document.getElementById('ep').innerHTML = p;
+                                  })
+                                 
+                                </script>
                             </div>
                             <div class="col-sm-3">
                                 <div class="card" style="height: 255px;">
