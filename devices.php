@@ -174,7 +174,7 @@ if(array_key_exists("email",$_SESSION)){
                                           for(var i =0 ; i < nodename.length; i++){
                                             var optn = nodename[i];
                                             var el = document.createElement("a");
-                                            el.href = "devices.html?node=" +optn;
+                                            el.href = "devices.php?node=" +optn;
                                             el.innerHTML = optn;
                                             el.className = "dropdown-item";
                                             down.appendChild(el);
@@ -183,7 +183,7 @@ if(array_key_exists("email",$_SESSION)){
 
 
 
-                                          var nodeURL = "devices.html?node="+node1;
+                                          var nodeURL = "devices.php?node="+node1;
 
 
 
