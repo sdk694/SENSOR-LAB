@@ -31,10 +31,13 @@ if(array_key_exists("email",$_SESSION)){
     <link rel="stylesheet" href="devices.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <!-- leaflet javascript maps library -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
+    <!-- Plotly CDN graphs library -->
     <script src="plotly.min.js"></script>
+
     <script>
         function getforecast1() {
           var key = '27721ab96215a82e4a4d03fe0220858a';
@@ -377,14 +380,14 @@ if(array_key_exists("email",$_SESSION)){
                                             var marker2 = L.marker([19.0933, 72.8924], { title : "Mini Solar Setup"}).addTo(map).bindPopup('<h2> Node: NOD2MU</h2><h3>Mini Solar Setup</h3><p> View the status of the node on grafana</p><a class="btn btn-success d-flex justify-content-center" href="http://34.121.146.230:3000/d/NOD2MU/nod2mu?orgId=1&kiosk" >Visit Dashboard</a>');
 
                                         }
-                                        else if(nodename == 'nod1wl'){
+                                        else if(nodename == 'nod1sol'){
                                             var marker3 = L.marker([19.90101264, 73.21009223], { title : "State Highway turning to walvanda"}).addTo(map).bindPopup('<h2>Checkpoint </h2><h3>State Highway turning to walvanda</h3>');
 
                                         }
-                                        else if(nodename == 'nod2wl'){
+                                        else if(nodename == 'nod2sol'){
                                             var marker4 = L.marker([19.83774295,73.19422424], { title : "Fanaspada Charging point"}).addTo(map).bindPopup('<h2> Node: NOD1WL</h2><h3>Fanaspada Charging point</h3><p> View the status of the node on grafana</p><a class="btn btn-success d-flex justify-content-center" href="http://34.121.146.230:3000/d/nU5ErMJMz/nod1wl?orgId=1&refresh=10s&kiosk" >Visit Dashboard</a>');
                                         }
-                                        else if(nodename == 'nod3wl'){
+                                        else if(nodename == 'nod3sol'){
                                             var marker6 = L.marker([19.84879223,  73.19108605], { title : "Walvanda Don Bosco ITI Terrace"}).addTo(map).bindPopup('<h2> Node: NOD3WL</h2><h3>Walvanda Don Bosco ITI Terrace</h3><p> View the status of the node on grafana</p><a class="btn btn-success d-flex justify-content-center" href="http://34.121.146.230:3000/d/nU5ErMJMz/nod3wl?orgId=1&refresh=10s&kiosk" >Visit Dashboard</a>');
 
                                         }
@@ -393,6 +396,7 @@ if(array_key_exists("email",$_SESSION)){
 
 
                     </script>
+
                     <div class="row">
                             <div class="col-sm-6">
                                 <div class="card text-white" style="background-color: #3caea3;">
@@ -532,6 +536,7 @@ if(array_key_exists("email",$_SESSION)){
                                 </div>
                             </div>
                     </div>
+
                     <div class="row">
                         <div class="col-sm-12">
                           <div class="card ">
@@ -614,6 +619,7 @@ if(array_key_exists("email",$_SESSION)){
                           </div>
                         </div>
                       </div>
+
                       <div class="row">
                         <div class="col-sm-12">
                           <div class="card">
@@ -840,7 +846,59 @@ if(array_key_exists("email",$_SESSION)){
                           </div>
                         </div>
                       </div>
+                      
+                <!-- code to add cards in the devices tab        -->
 
+                <!-- <div class="row">
+                <div class="col-sm-3">
+                  <div class="card border-left-warning shadow" style="height: 130px;">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total number of panels installed</div>
+                                <div class="h2 mb-0 font-weight-bold text-gray-800 align-self-md-end">20</div>
+                            </div>
+                        </div>                      
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="card border-left-warning shadow" style="height: 130px;">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total number of nodes deployed</div>
+                                <div class="h2 mb-0 font-weight-bold text-gray-800 align-self-md-end">30</div>
+                            </div>
+                        </div> 
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card border-left-warning shadow" style="height: 130px;">
+                      <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total number of registered users</div>
+                                <div class="h2 mb-0 font-weight-bold text-gray-800 align-self-md-end">20</div>
+                            </div>
+                        </div> 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                     <div class="card border-left-warning shadow" style="height: 130px;">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total number of appliance powered</div>
+                                    <div class="h2 mb-0 font-weight-bold text-gray-800 align-self-md-end">5</div>
+                                </div>
+                            </div> 
+                        </div>
+                     </div>
+                  </div>
+              </div> -->
 
                       <!-- Insted of plotly i have also used charts.js in this the below commented code is for chart.js             -->
 
@@ -937,6 +995,6 @@ if(array_key_exists("email",$_SESSION)){
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>  
   </body>
 </html>
