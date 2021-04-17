@@ -315,7 +315,7 @@
                     <br>
                     <div class="shadow" id="generated"></div>
                     <script>
-                      fetch("power.json")
+                      fetch("power_nod1mu.json")
                         .then(response => response.json())
                         .then(data => {
                           console.log(data)
@@ -325,7 +325,7 @@
                           // document.getElementById("debug").innerHTML = JSON.stringify(data.series[0].values)
                           data.series[0].values.forEach(element => {
                             x.push(element[0])
-                            y.push(element[1])
+                            y.push(element[5])
                           });
                           
                           var sum = y.reduce(function(a,b) {

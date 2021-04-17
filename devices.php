@@ -509,9 +509,9 @@ if(array_key_exists("email",$_SESSION)){
                             </div>
                             <div class="col-sm-3">
                                 <div class="card" style="height: 255px;">
-                                    <h3 class="card-header  text-white" style="background-color: #3caea3;"> Expected power generation today by the panel.</h3>
+                                    <h3 class="card-header  text-white" style="background-color: #3caea3;"> Expected Energy generation today by the panel.</h3>
                                     <div class="card-body" >
-                                        <h2 class="text-center" style="margin-top: 20px;"><span id ="ep"></span> <span> W</span></h2>
+                                        <h2 class="text-center" style="margin-top: 20px;"><span id ="ep"></span> <span> Wh</span></h2>
                                     </div>
                                 </div>
 
