@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 session_start();
 if(array_key_exists("email",$_COOKIE)){
@@ -17,7 +17,7 @@ if(array_key_exists("email",$_SESSION)){
    header("Location: register.php");
 
 }
-?>
+?> -->
 
 <!doctype html>
 <html lang="en">
@@ -144,9 +144,9 @@ if(array_key_exists("email",$_SESSION)){
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="card">
-                                <div class="container ">
-                                    <div class="dropdown" style="margin-bottom: 20px;">
-                                        <label for="">Select the Node Name</label>
+                                <div class="container " style="height: 110px;">
+                                    <div class="dropdown" style="margin: 20px 0;">
+                                        <label for="" class="text-dark">Select the Node Name</label>
                                         <button class="btn dropdown-toggle col-12 text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #3caea3;">
                                           Nodename
                                         </button>
@@ -205,9 +205,19 @@ if(array_key_exists("email",$_SESSION)){
                             </div>
                         </div>
                         <div class="col-sm-8">
-                            <div class="card" style="height: 88px;">
-                                <div class="card-body">
-                                    <h2 class="text-uppercase"> <span id="nodename"></span> <span> : - Maharastra, India</span></h2>
+                            <div class="card" style="height: 110px;">
+                                <div class="container-fluid card-body">
+                    
+                                    <div class=" col-12 col-sm-12 alert border-dark" role="alert" style="background-color: #d4f3f0; padding: 5px;">
+                                      <div  style="display: block;">
+                                          <div class="text-dark" style="font-size: 15px;">
+                                            <strong class="text-uppercase" id="nodename"></strong><span> : Last Reading on</span>
+                                          </div>
+                                          <div style="font-size: 20px; color: black;">
+                                               <span id="lastactive"></span>
+                                          </div>
+                                      </div>
+                                  </div>
                                 </div>
                             </div>
                         </div>
@@ -325,7 +335,8 @@ if(array_key_exists("email",$_SESSION)){
                             var energyl  = energy[energy.length -1]
                             var powerl   = power[power.length -1]
                             var voltagel = voltage[voltage.length -1]
-                            var currentl = current[current.length -1]      
+                            var currentl = current[current.length -1]
+                            var timel = time[time.length -1]      
                             
 
                             
@@ -334,11 +345,14 @@ if(array_key_exists("email",$_SESSION)){
                             // console.log(voltagel)
                             // console.log(currentl)
 
-                            document.getElementById("energy").innerHTML   = energyl;
-                            document.getElementById("power").innerHTML    = powerl;
-                            document.getElementById("voltage").innerHTML  = voltagel;
-                            document.getElementById("current").innerHTML  = currentl;
-                            document.getElementById("nodename").innerHTML = nodename; 
+                            //ternary operator  condition ? true : false;
+
+                            document.getElementById("energy").innerHTML   = energyl !== undefined ? energyl : "";
+                            document.getElementById("power").innerHTML    = powerl  !== undefined ? powerl : "";
+                            document.getElementById("voltage").innerHTML  = voltagel  !== undefined ? voltagel : "";
+                            document.getElementById("current").innerHTML  = currentl  !== undefined ? currentl : "";
+                            document.getElementById("nodename").innerHTML = nodename  !== undefined ? nodename : "";
+                            document.getElementById("lastactive").innerHTML = timel  !== undefined ? new Date(timel).toLocaleString() : "";
                             
 
 
@@ -565,7 +579,7 @@ if(array_key_exists("email",$_SESSION)){
                                     },0);
                                     var avg = (sum / y.length) ;
                                     // console.log(sum)
-                                    document.getElementById('p1').innerHTML = sum.toFixed(4);
+                                    document.getElementById('p1').innerHTML = sum.toFixed(2);
                                     // document.getElementById('p2').innerHTML = avg.toFixed(4);
                                     var trace1 = {
                                       x: x,
@@ -826,6 +840,11 @@ if(array_key_exists("email",$_SESSION)){
                           </div>
                         </div>
                       </div>
+
+
+                      <!-- Insted of plotly i have also used charts.js in this the below commented code is for chart.js             -->
+
+
                       <!-- <div class="card">
                           <div class="card-body">
                             <canvas id="myChart"></canvas>
