@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 session_start();
 if(array_key_exists("email",$_COOKIE)){
@@ -17,7 +17,7 @@ if(array_key_exists("email",$_SESSION)){
    header("Location: register.php");
 
 }
-?>
+?> -->
 
 <!doctype html>
 <html lang="en">
@@ -43,14 +43,14 @@ if(array_key_exists("email",$_SESSION)){
           fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=' + key + '&units=metric')
           .then(response => response.json())
           .then(data => {
-          // console.log(data);
+          console.log(data);
           cardforecast(data)
           }
           )
           fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + key + '&units=metric')
           .then(response => response.json())
           .then(data1 => {
-          // console.log(data1);
+          console.log(data1);
           todayweather(data1);
           }
           )
@@ -146,68 +146,56 @@ if(array_key_exists("email",$_SESSION)){
                             <div class="card">
                                 <div class="container ">
                                     <div class="dropdown" style="margin-bottom: 20px;">
-                                        <label for="">Select the Node Name</label>
-                                        <button class="btn dropdown-toggle col-12 text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #3caea3;">
-                                          Nodename
-                                        </button>
+                                        <label for="" style="margin-top: 20px; margin-right: 6pxda;" >Enter the Node Name </label>
+
+                                       <input type="text" id="nodename" >
+
+                                        <button class="btn btn-primary" onclick="mynodenameFunction()">Go</button>
+ 
+                                        <p id="demo"></p>
 
                                         <script>
-                                          fetch("nodes.json")
-                                          .then(response => response.json())
-                                          .then(data => {
-                                          // console.log(data)
-
-                                          var time = []
-                                          var nodename = []
-
-                                          data.series[0].values.forEach(element => {
-                                                    time.push(element[0])  
-                                                    nodename.push(element[1])
-                                          });
-
-
-
-                                                  
-                                          var down = document.getElementById("div0");
-
-
-                                          for(var i =0 ; i < nodename.length; i++){
-                                            var optn = nodename[i];
-                                            var el = document.createElement("a");
-                                            el.href = "devices.html?node=" +optn;
-                                            el.innerHTML = optn;
-                                            el.className = "dropdown-item";
-                                            down.appendChild(el);
-                                          }
-
-
-
-
-                                          var nodeURL = "devices.html?node="+node1;
-
-
-
-                                      })
-                                         
+                                            function mynodenameFunction() {
+                                            var nodename = document.getElementById("nodename").value;
+                                            document.getElementById("demo").innerHTML = nodename;
+                                            location.href = "devices1.html?node=" + nodename;
+                                            }
                                         </script>
 
-                                        <div class="dropdown-menu col-12" aria-labelledby="dropdownMenuButton" id="div0">
-                                          <!-- <a class="dropdown-item" href="devices.html" id="n1" onclick="location.href=this.href+'?node='+node0;return false;"></a>
-                                          <a class="dropdown-item" href="{! 'devices.html?node='+ node1 }" id="n2"></a>
-                                          <a class="dropdown-item" href="devices.html?node=nod1wl" id="n3"></a>
-                                          <a class="dropdown-item" href="devices.html?node=nod2wl">nod2wl</a>
-                                          <a class="dropdown-item" href="devices.html?node=nod3wl">nod3wl</a> -->
+                                            <!-- <input class="col-sm-8 col-12" type="text" id="myText">
+                                            <button class="btn btn-primary col-sm-3 col-12" type="submit" onclick="myFunction()"> Go</button>
+                                            <p id="demo"></p>
+                                            <script> 
+                                                function myFunction() {
 
-                                        </div>
+                                                    var x = document.getElementById("myText").value;
+                                                    alert(nodename1);
+                                                    document.getElementById("demo".innerHTML) = x;
+                                                    // window.location.href = "devices1.html?" + nodename1;
+                                                }                                                                                       
 
+                                            </script> -->
+
+
+                                        <!-- <input type="text">
+                                        <button class="btn dropdown-toggle  text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #3caea3;"> -->
+                                          
+                                        <!-- </button>
+                                        <div class="dropdown-menu col-12" aria-labelledby="dropdownMenuButton">
+                                          <a class="dropdown-item" href="devices.php?node=nod1mu">nod1mu</a>
+                                          <a class="dropdown-item" href="devices.php?node=nod2mu">nod2mu</a>
+                                          <a class="dropdown-item" href="devices.php?node=nod1wl">nod1wl</a>
+                                          <a class="dropdown-item" href="devices.php?node=nod2wl">nod2wl</a>
+                                          <a class="dropdown-item" href="devices.php?node=nod3wl">nod3wl</a>
+                                        </div> -->
                                       </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-8">
-                            <div class="card" style="height: 88px;">
+                            <div class="card" style="height: 77px;">
                                 <div class="card-body">
-                                    <h2 class="text-uppercase"> <span id="nodename"></span> <span> : - Maharastra, India</span></h2>
+                                    <h3> <span id=""></span> <span> </span>Click on Go button to see the results.</h3>
                                 </div>
                             </div>
                         </div>
@@ -284,43 +272,31 @@ if(array_key_exists("email",$_SESSION)){
                         </div>
                     </div>
                     <script>
-                        // console.log(window.location.href);
+                        console.log(window.location.href);
                         var url_string = window.location.href;
-                        // console.log(url_string);
+                        console.log(url_string);
 
                         var url = new URL(url_string);
                         var nodename = url.searchParams.get("node");
-                        // console.log(nodename);
+                        console.log(nodename);
 
-                        fetch("acdata.json")
+                        fetch("power_" +nodename + ".json" )
                         .then(response => response.json())
                         .then(data => {
-                            // console.log(data)
+                            console.log(data)
                             var time = []
                             var energy = []
                             var power = []
                             var voltage = []
                             var current = []
 
-
-                            var nodedeatils = [];
-
-                            for(var i = 0; i< data.series[0].values.length ; i++){
-                              if(data.series[0].values[i][5] == nodename){
-                                nodedeatils.push(data.series[0].values[i]);
-                              }
-                            }
-
-                            // console.log(nodedeatils)
-                            nodedeatils.forEach(element => {
+                            data.series[0].values.forEach(element => {
                                       time.push(element[0])  
                                       energy.push(element[1])
                                       power.push(element[2])
                                       voltage.push(element[3])
                                       current.push(element[4])
                                     });
-
-
 
                             var energyl  = energy[energy.length -1]
                             var powerl   = power[power.length -1]
@@ -329,10 +305,10 @@ if(array_key_exists("email",$_SESSION)){
                             
 
                             
-                            // console.log(energyl)
-                            // console.log(powerl)
-                            // console.log(voltagel)
-                            // console.log(currentl)
+                            console.log(energyl)
+                            console.log(powerl)
+                            console.log(voltagel)
+                            console.log(currentl)
 
                             document.getElementById("energy").innerHTML   = energyl;
                             document.getElementById("power").innerHTML    = powerl;
@@ -351,15 +327,11 @@ if(array_key_exists("email",$_SESSION)){
                                             attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
                                         }).addTo(map);
 
-                                        if (nodename == 'nod1ac'){
+                                        if (nodename == 'nod1mu'){
                                             var marker1 = L.marker([19.1292529, 72.9270092], { title : "Mahavir Majestik"}).addTo(map).bindPopup('<h2> Node: NOD1MU  </h2> <h3>Small Panel DC setup</h3> <p> View the status of the panels on grafana</p><a class="btn btn-success d-flex justify-content-center" href="http://34.121.146.230:3000/d/NOD1MU/nod1mu?orgId=1&kiosk" >Visit Dashboard</a>');
 
                                         }
-                                        else if(nodename == 'nod2ac'){
-                                            var marker2 = L.marker([19.0933, 72.8924], { title : "Mini Solar Setup"}).addTo(map).bindPopup('<h2> Node: NOD2MU</h2><h3>Mini Solar Setup</h3><p> View the status of the node on grafana</p><a class="btn btn-success d-flex justify-content-center" href="http://34.121.146.230:3000/d/NOD2MU/nod2mu?orgId=1&kiosk" >Visit Dashboard</a>');
-
-                                        }
-                                        else if(nodename == 'nod3ac'){
+                                        else if(nodename == 'nod2mu'){
                                             var marker2 = L.marker([19.0933, 72.8924], { title : "Mini Solar Setup"}).addTo(map).bindPopup('<h2> Node: NOD2MU</h2><h3>Mini Solar Setup</h3><p> View the status of the node on grafana</p><a class="btn btn-success d-flex justify-content-center" href="http://34.121.146.230:3000/d/NOD2MU/nod2mu?orgId=1&kiosk" >Visit Dashboard</a>');
 
                                         }
@@ -501,9 +473,9 @@ if(array_key_exists("email",$_SESSION)){
                                   fetch("predict.json")
                                   .then(response => response.json())
                                   .then(data => {
-                                    // console.log(data)
+                                    console.log(data)
                                     var p = data;
-                                    // console.log(p)
+                                    console.log(p)
                                     document.getElementById('ep').innerHTML = p;
                                   })
                                  
@@ -526,51 +498,36 @@ if(array_key_exists("email",$_SESSION)){
                               <br>
                               <div class="shadow" id="generated"></div>
                               <script>
-                                // console.log(window.location.href);
+                                console.log(window.location.href);
                                 var url_string = window.location.href;
-                                // console.log(url_string);
+                                console.log(url_string);
                                 var url = new URL(url_string);
                                 var nodename = url.searchParams.get("node");
-                                // console.log(nodename);
+                                console.log(nodename);
 
-                                fetch("acdata.json")
+                                fetch("power_" +nodename +".json")
                                   .then(response => response.json())
                                   .then(data => {
-                                    // console.log(data)
+                                    console.log(data)
                                     var x = []
                                     var y = []
-
-
-                                    var nodedeatils = [];
-
-                                      for(var i = 0; i< data.series[0].values.length ; i++){
-                                        if(data.series[0].values[i][5] == nodename){
-                                          nodedeatils.push(data.series[0].values[i]);
-                                        }
-                                      }
-
-                                      // console.log(nodedeatils)
-
-
-
                                     // document.querySelector("#debug").innerHTML =  data
                                     // document.getElementById("debug").innerHTML = JSON.stringify(data.series[0].values)
-                                    nodedeatils.forEach(element => {
+                                    data.series[0].values.forEach(element => {
                                       x.push(element[0])
-                                      y.push(element[6])
+                                      y.push(element[5])
                                     });
                                     
                                     var sum = y.reduce(function(a,b) {
                                       return  (a + b);
                                     },0);
                                     var avg = (sum / y.length) ;
-                                    // console.log(sum)
+                                    console.log(sum)
                                     document.getElementById('p1').innerHTML = sum.toFixed(4);
                                     // document.getElementById('p2').innerHTML = avg.toFixed(4);
                                     var trace1 = {
                                       x: x,
                                       y: y,
-                                      // mode: 'markers',
                                       type: 'scatter',
                                       name: 'Power'
                                       // line: {
@@ -608,45 +565,30 @@ if(array_key_exists("email",$_SESSION)){
                               <br>
                               <div class="shadow" id="consumed"></div>
                               <script>
-                                // console.log(window.location.href);
+                                console.log(window.location.href);
                                 var url_string = window.location.href;
-                                // console.log(url_string);
+                                console.log(url_string);
                                 var url = new URL(url_string);
                                 var nodename = url.searchParams.get("node");
-                                // console.log(nodename);
+                                console.log(nodename);
 
-                                fetch("acdata.json")
+                                fetch("power_" +nodename +".json")
                                   .then(response => response.json())
                                   .then(data => {
-                                    // console.log(data)
+                                    console.log(data)
                                     var x = []
                                     var y = []
-
-                                    var nodedeatils = [];
-
-                                      for(var i = 0; i< data.series[0].values.length ; i++){
-                                        if(data.series[0].values[i][5] == nodename){
-                                          nodedeatils.push(data.series[0].values[i]);
-                                        }
-                                      }
-
-                                      // console.log(nodedeatils)
-                                      nodedeatils.forEach(element => {
-                                                x.push(element[0])  
-                                                y.push(element[2])
-                                              });
-
-
-                                      // document.querySelector("#debug").innerHTML =  data
-                                      // document.getElementById("debug").innerHTML = JSON.stringify(data.series[0].values)
                                     // document.querySelector("#debug").innerHTML =  data
                                     // document.getElementById("debug").innerHTML = JSON.stringify(data.series[0].values)
-
+                                    data.series[0].values.forEach(element => {
+                                      x.push(element[0])
+                                      y.push(element[2])
+                                    });
                                     var sum = y.reduce(function(a,b) {
                                       return  (a + b);
                                     },0);
                                     var avg = (sum / y.length)
-                                    // console.log(sum)
+                                    console.log(sum)
                                     // document.getElementById('p3').innerHTML = sum.toFixed(2);
                                     // document.getElementById('p0').innerHTML = avg.toFixed(4)
                                     var trace1 = {
@@ -680,40 +622,27 @@ if(array_key_exists("email",$_SESSION)){
                               <br>
                               <div class="shadow" id="pconvspgen"></div>
                               <script>
-                                // console.log(window.location.href);
+                                console.log(window.location.href);
                                 var url_string = window.location.href;
-                                // console.log(url_string);
+                                console.log(url_string);
                                 var url = new URL(url_string);
                                 var nodename = url.searchParams.get("node");
-                                // console.log(nodename);
+                                console.log(nodename);
 
-                                fetch("acdata.json")
+                                fetch("power_" +nodename +".json")
                                   .then(response => response.json())
                                   .then(data => {
-                                    // console.log(data)
+                                    console.log(data)
                                     var x = []
                                     var y = []
                                     var z = []
                                     // document.querySelector("#debug").innerHTML =  data
                                     // document.getElementById("debug").innerHTML = JSON.stringify(data.series[0].values)
-
-
-                                    
-                                    var nodedeatils = [];
-
-                                      for(var i = 0; i< data.series[0].values.length ; i++){
-                                        if(data.series[0].values[i][5] == nodename){
-                                          nodedeatils.push(data.series[0].values[i]);
-                                        }
-                                      }
-
-                                      // console.log(nodedeatils)
-                                      nodedeatils.forEach(element => {
-                                                x.push(element[0])  
-                                                y.push(element[2])
-                                                z.push(element[6])
-                                              });
-
+                                    data.series[0].values.forEach(element => {
+                                      x.push(element[0])
+                                      y.push(element[2])
+                                      z.push(element[5])
+                                    });
                                     // var sum = y.reduce(function(a,b) {
                                     //   return  (a + b);
                                     // },0);
@@ -728,7 +657,7 @@ if(array_key_exists("email",$_SESSION)){
                                       height: 500,
                                       width: 5000,
                                       fill: 'tonexty',
-                                      type: 'scatter'
+                                      type: 'bar'
                                     };
 
                                     var trace2 = {
@@ -739,7 +668,7 @@ if(array_key_exists("email",$_SESSION)){
                                        width: 5000,
                                        height: 500,
                                        fill: 'tozeroy',
-                                       type :'scatter' 
+                                       type :'bar' 
                                     }
           
           
@@ -768,39 +697,30 @@ if(array_key_exists("email",$_SESSION)){
                               <br>
                               <div class="shadow" id="econsumed"></div>
                               <script>
-                                // console.log(window.location.href);
+                                console.log(window.location.href);
                                 var url_string = window.location.href;
-                                // console.log(url_string);
+                                console.log(url_string);
                                 var url = new URL(url_string);
                                 var nodename = url.searchParams.get("node");
-                                // console.log(nodename);
+                                console.log(nodename);
 
-                                fetch("acdata.json")
+                                fetch("power_" +nodename +".json")
                                   .then(response => response.json())
                                   .then(data => {
-                                    // console.log(data)
+                                    console.log(data)
                                     var x = []
                                     var y = []
                                     // document.querySelector("#debug").innerHTML =  data
                                     // document.getElementById("debug").innerHTML = JSON.stringify(data.series[0].values)
-                                    var nodedeatils = [];
-
-                                    for(var i = 0; i< data.series[0].values.length ; i++){
-                                      if(data.series[0].values[i][5] == nodename){
-                                        nodedeatils.push(data.series[0].values[i]);
-                                      }
-                                    }
-
-                                    // console.log(nodedeatils)
-                                    nodedeatils.forEach(element => {
-                                              x.push(element[0])  
-                                              y.push(element[1])
-                                            });
+                                    data.series[0].values.forEach(element => {
+                                      x.push(element[0])
+                                      y.push(element[1])
+                                    });
                                     var sum = y.reduce(function(a,b) {
                                       return  (a + b);
                                     },0);
                                     var avg = (sum / y.length)
-                                    // console.log(sum)
+                                    console.log(sum)
                                     // document.getElementById('p3').innerHTML = sum.toFixed(2);
                                     // document.getElementById('p0').innerHTML = avg.toFixed(4)
                                     var trace1 = {

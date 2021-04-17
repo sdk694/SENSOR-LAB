@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
     session_start();
     if(array_key_exists("email",$_COOKIE)){
@@ -17,7 +17,7 @@
     header("Location: register.php");
 
     }
-?>
+?> -->
 
 <!doctype html>
 <html lang="en">
@@ -161,133 +161,53 @@
                             var inactivenodes = 0;
                             var totnodes = 0;
 
-                            fetch("power_nod1mu.json" )
+
+                            fetch("nodes.json")
                             .then(response => response.json())
                             .then(data => {
-                                console.log(data)
-                                var voltage = []
+                                var nodeDetails = {};
+                                var nodename = [];
+                                data.series[0].values.forEach(element =>{
+                                    nodename.push(element[1]);
+                                    nodeDetails[element[1]] = [];
+                                });
 
+                                fetch("acdata.json")
+                                .then(response => response.json())
+                                .then(data => {
+ 
+                                    data.series[0].values.forEach(nodeData => {
+                                        var formattedData = {
+                                           time: nodeData[0],
+                                           energy: nodeData[1],
+                                           power: nodeData[2],
+                                           voltage: nodeData[3],
+                                           current: nodeData[4],
+                                           pgen: nodeData[6],
+                                           rsi: nodeData[7], 
+                                           snr: nodeData[8],
 
-                                data.series[0].values.forEach(element => {
-                                        voltage.push(element[3])
-                                        });
-
-
-                                var voltagel = voltage[voltage.length -1]
-                                if(voltagel > 200){
-                                    activenodes = activenodes + 1;
-                                }
-                                else{
-                                    inactivenodes = inactivenodes + 1;
-                                }
-                                
-                            })
-
-                            
-                            fetch("power_nod2mu.json" )
-                            .then(response => response.json())
-                            .then(data => {
-                                console.log(data)
-
-                                var voltage = []
-
-
-                                data.series[0].values.forEach(element => {
-                                        voltage.push(element[3])
-                                        });
-
-
-                                var voltagel = voltage[voltage.length -1]
-                                if(voltagel > 200){
-                                    activenodes = activenodes + 1;
-                                }
-                                else{
-                                    inactivenodes = inactivenodes + 1;
-                                }
-                                
-                            })
-
-
-                            
-                            fetch("power_nod1wl.json" )
-                            .then(response => response.json())
-                            .then(data => {
-                                console.log(data)
-
-                                var voltage = []
-
-
-                                data.series[0].values.forEach(element => {
-                                        voltage.push(element[3])
-                                        });
-
-
-                                var voltagel = voltage[voltage.length -1]
-                                if(voltagel > 200){
-                                    activenodes = activenodes + 1; 
-                                }
-                                else{
-                                    inactivenodes = inactivenodes + 1;
-                                    }
-                                
-                            })
-
-                            
-                            fetch("power_nod2wl.json" )
-                            .then(response => response.json())
-                            .then(data => {
-                                console.log(data)
-
-                                var voltage = []
-
-
-                                data.series[0].values.forEach(element => {
-                                        voltage.push(element[3])
-                                        });
-
-
-                                var voltagel = voltage[voltage.length -1]
-                                if(voltagel > 200){
-                                    activenodes = activenodes + 1;
-                                }
-                                else{
-                                    inactivenodes = inactivenodes + 1;
-                                }
-                                
-                            })
-
-                            
-                            fetch("power_nod3wl.json" )
-                            .then(response => response.json())
-                            .then(data => {
-                                console.log(data)
-
-                                var voltage = []
-
-
-                                data.series[0].values.forEach(element => {
-                                        voltage.push(element[3])
-                                        });
-
-
-                                var voltagel = voltage[voltage.length -1]
-                                if(voltagel > 200){
-                                    activenodes = activenodes + 1;
-                                }
-                                else{
-                                    inactivenodes = inactivenodes + 1;
-                                }
-                                totnodes = activenodes + inactivenodes;
-                                console.log(activenodes)
-                                console.log(inactivenodes)
-                                console.log(totnodes)
-
-                                document.getElementById('activenodes').innerHTML = activenodes;
-                                document.getElementById('inactivenodes').innerHTML = inactivenodes;
-                                document.getElementById('totnodes').innerHTML = totnodes;
-                            })
+                                        }
+                                        nodeDetails[nodeData[5]].push(formattedData);
+                                    });
+                                    // console.log(nodeDetails);
+                                    
+                                    nodename.forEach(node => {
+                                    if(nodeDetails[node][nodeDetails[node].length -1].voltage > 200 )
+                                        activenodes = activenodes + 1;
+                                    else
+                                        inactivenodes = inactivenodes + 1;
+                                    })
                                     
 
+                                    totnodes = activenodes + inactivenodes;
+
+                                    document.getElementById('activenodes').innerHTML = activenodes;
+                                    document.getElementById('inactivenodes').innerHTML = inactivenodes;
+                                    document.getElementById('totnodes').innerHTML = totnodes;
+
+                                })
+                            })    
                                  
                         </script>
 
