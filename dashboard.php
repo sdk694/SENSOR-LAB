@@ -172,7 +172,7 @@
                                     nodeDetails[element[1]] = [];
                                 });
 
-                                fetch("acdata.json")
+                                fetch("data.json")
                                 .then(response => response.json())
                                 .then(data => {
  

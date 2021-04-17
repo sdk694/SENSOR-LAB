@@ -302,7 +302,7 @@ if(array_key_exists("email",$_SESSION)){
                         var nodename = url.searchParams.get("node");
                         // console.log(nodename);
 
-                        fetch("acdata.json")
+                        fetch("data.json")
                         .then(response => response.json())
                         .then(data => {
                             // console.log(data)
@@ -547,7 +547,7 @@ if(array_key_exists("email",$_SESSION)){
                                 var nodename = url.searchParams.get("node");
                                 // console.log(nodename);
 
-                                fetch("acdata.json")
+                                fetch("data.json")
                                   .then(response => response.json())
                                   .then(data => {
                                     // console.log(data)
@@ -629,7 +629,7 @@ if(array_key_exists("email",$_SESSION)){
                                 var nodename = url.searchParams.get("node");
                                 // console.log(nodename);
 
-                                fetch("acdata.json")
+                                fetch("data.json")
                                   .then(response => response.json())
                                   .then(data => {
                                     // console.log(data)
@@ -701,7 +701,7 @@ if(array_key_exists("email",$_SESSION)){
                                 var nodename = url.searchParams.get("node");
                                 // console.log(nodename);
 
-                                fetch("acdata.json")
+                                fetch("data.json")
                                   .then(response => response.json())
                                   .then(data => {
                                     // console.log(data)
@@ -789,7 +789,7 @@ if(array_key_exists("email",$_SESSION)){
                                 var nodename = url.searchParams.get("node");
                                 // console.log(nodename);
 
-                                fetch("acdata.json")
+                                fetch("data.json")
                                   .then(response => response.json())
                                   .then(data => {
                                     // console.log(data)
