@@ -640,7 +640,7 @@ if(array_key_exists("email",$_SESSION)){
                                     },0);
                                     var avg = (sum / y.length) ;
                                     // console.log(sum)
-                                    document.getElementById('p1').innerHTML = sum.toFixed(2);
+                                    document.getElementById('p1').innerHTML = sum.toFixed(1);
                                     // document.getElementById('p2').innerHTML = avg.toFixed(4);
                                     var trace1 = {
                                       x: x,
