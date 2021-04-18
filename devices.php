@@ -546,7 +546,7 @@ if(array_key_exists("email",$_SESSION)){
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-gray-800 text-uppercase mb-1">TOTAL ENERGY CONSUMED </div>
+                                <div class="text-xs font-weight-bold text-gray-800 text-uppercase mb-1">TOTAL ENERGY CONSUMED (Wh)</div>
                                 <div class="h2 mb-0 font-weight-bold text-dark align-self-md-end" id="totenergy"></div>
                             </div>
                         </div>                      
@@ -583,7 +583,7 @@ if(array_key_exists("email",$_SESSION)){
                               <div class="card-body">
                                   <div class="row no-gutters align-items-center">
                                       <div class="col mr-2">
-                                          <div class="text-xs font-weight-bold text-gray-800 text-uppercase mb-1">Total bill generated till today</div>
+                                          <div class="text-xs font-weight-bold text-gray-800 text-uppercase mb-1">Total bill generated (As per rates)</div>
                                           <div class="h2 mb-0 font-weight-bold text-dark align-self-md-end" id="billgenerated"></div>
                                       </div>
                                   </div> 
