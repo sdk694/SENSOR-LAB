@@ -39,6 +39,9 @@ if(array_key_exists("email",$_SESSION)){
     <script src="plotly.min.js"></script>
 
     <script>
+        var sum1;
+        var rate1;
+        var unit1;
         function getforecast1() {
           var key = '27721ab96215a82e4a4d03fe0220858a';
           var city = "Mumbai"
@@ -186,7 +189,7 @@ if(array_key_exists("email",$_SESSION)){
 
 
 
-                                          var nodeURL = "devices.php?node="+node1;
+                                          // var nodeURL = "devices.php?node="+node1;
 
 
 
@@ -538,6 +541,58 @@ if(array_key_exists("email",$_SESSION)){
                     </div>
 
                     <div class="row">
+                <div class="col-sm-3">
+                  <div class="card border-left-warning shadow" style="height: 130px;">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-gray-800 text-uppercase mb-1">TOTAL ENERGY CONSUMED </div>
+                                <div class="h2 mb-0 font-weight-bold text-dark align-self-md-end" id="totenergy"></div>
+                            </div>
+                        </div>                      
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                        <div class="card border-left-warning shadow" style="height: 130px;">
+                          <div class="card-body">
+                              <div class="row no-gutters align-items-center">
+                                  <div class="col mr-2">
+                                      <div class="text-xs font-weight-bold text-gray-800 text-uppercase mb-1">Total number of units consumed</div>
+                                      <div class="h2 mb-0 font-weight-bold text-dark align-self-md-end" id="totunits"></div>
+                                  </div>
+                              </div> 
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-3">
+                          <div class="card border-left-warning shadow" style="height: 130px;">
+                            <div class="card-body">
+                              <div class="row no-gutters align-items-center">
+                                  <div class="col mr-2">
+                                      <div class="text-xs font-weight-bold text-gray-800 text-uppercase mb-1" >Enter Rate per kwh as per the slabs </div>
+                                      <!-- <div class="h2 mb-0 font-weight-bold text-gray-800 align-self-md-end">20</div> -->
+                                      <input type="number" onchange="rateupdate()" id="rateperunit" >
+                                  </div>
+                              </div> 
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-3">
+                          <div class="card border-left-warning shadow" style="height: 130px;">
+                              <div class="card-body">
+                                  <div class="row no-gutters align-items-center">
+                                      <div class="col mr-2">
+                                          <div class="text-xs font-weight-bold text-gray-800 text-uppercase mb-1">Total bill generated till today</div>
+                                          <div class="h2 mb-0 font-weight-bold text-dark align-self-md-end" id="billgenerated"></div>
+                                      </div>
+                                  </div> 
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
                         <div class="col-sm-12">
                           <div class="card ">
                             <div class="card-body ">
@@ -816,12 +871,22 @@ if(array_key_exists("email",$_SESSION)){
                                               x.push(element[0])  
                                               y.push(element[1])
                                             });
-                                    var sum = y.reduce(function(a,b) {
+                                     sum1 = y.reduce(function(a,b) {
                                       return  (a + b);
                                     },0);
-                                    var avg = (sum / y.length)
+                                     unit1 = sum1/1000;
+                                    var avg = (sum1 / y.length)
                                     // console.log(sum)
-                                    // document.getElementById('p3').innerHTML = sum.toFixed(2);
+                                    document.getElementById('totenergy').innerHTML = sum1.toFixed(2);
+                                    document.getElementById('totunits').innerHTML = sum1.toFixed(2);
+
+
+                                    // parseFloat(document.getElementById("rateperunit").value) ;
+                                    
+
+                                    
+
+                                    
                                     // document.getElementById('p0').innerHTML = avg.toFixed(4)
                                     var trace1 = {
                                       x: x,
@@ -841,6 +906,15 @@ if(array_key_exists("email",$_SESSION)){
           
                                     Plotly.newPlot('econsumed', data, layout, config);
                                   })
+
+                                  function rateupdate(){
+                                    console.log(unit1)
+                                    console.log(rate1)
+                                    rate1 = parseFloat(document.getElementById("rateperunit").value) ;
+                                    var billgen = rate1 * unit1;
+                                    document.getElementById("billgenerated").innerHTML = billgen;
+                                  }
+
                               </script>
                             </div>
                           </div>

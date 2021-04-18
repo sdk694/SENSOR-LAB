@@ -6991,3 +6991,8 @@ Media Query
     /* background-image: linear-gradient(to bottom, #20639b, rgb(135, 178, 216)); */
 
 }
+
+.border-left-warning {
+    border-left: .25rem solid #3caea3!important;
+    /* background-color: #d4f3f0; */
+  }
