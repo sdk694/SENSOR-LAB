@@ -228,7 +228,7 @@
                                 <div class="tab-content" id="nav-tabContent">
                                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">                                       
                                         <br>
-                                        <p class="lead text-center text-dark">Kindly zoom in on the map and click on the marker to find more details.</p>
+                                        <p class="text-center text-dark">Kindly zoom in on the map and click on the marker to find more details.</p>
                                         <div class="card">
                                             <div class="card-body">
                                                 <div id="map"></div>

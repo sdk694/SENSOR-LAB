@@ -403,7 +403,7 @@ if(array_key_exists("email",$_SESSION)){
                     <div class="row">
                             <div class="col-sm-6">
                                 <div class="card text-white" style="background-color: #3caea3;">
-                                    <div class="card-body">
+                                    <div class="card-body" id = "weatherdata">
                                         <div class="weather-date-location">
                                             <h3 class="text-white">Today's Weather <span style="margin-left: 90px;">Date: </span> <span id="todaydate"></span></h3>
                                         </div>
