@@ -912,7 +912,7 @@ if(array_key_exists("email",$_SESSION)){
                                     console.log(rate1)
                                     rate1 = parseFloat(document.getElementById("rateperunit").value) ;
                                     var billgen = rate1 * unit1;
-                                    document.getElementById("billgenerated").innerHTML = billgen.toFixed(2);
+                                    document.getElementById("billgenerated").innerHTML = billgen.toFixed(4);
                                   }
 
                               </script>
