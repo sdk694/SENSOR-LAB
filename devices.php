@@ -878,7 +878,7 @@ if(array_key_exists("email",$_SESSION)){
                                     var avg = (sum1 / y.length)
                                     // console.log(sum)
                                     document.getElementById('totenergy').innerHTML = sum1.toFixed(2);
-                                    document.getElementById('totunits').innerHTML = sum1.toFixed(2);
+                                    document.getElementById('totunits').innerHTML = unit1.toFixed(2);
 
 
                                     // parseFloat(document.getElementById("rateperunit").value) ;
