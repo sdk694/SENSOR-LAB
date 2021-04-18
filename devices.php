@@ -542,7 +542,7 @@ if(array_key_exists("email",$_SESSION)){
 
                     <div class="row">
                 <div class="col-sm-3">
-                  <div class="card border-left-warning shadow" style="height: 130px;">
+                  <div class="card border-left-warning shadow" style="height: 135px;">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
@@ -554,7 +554,7 @@ if(array_key_exists("email",$_SESSION)){
                   </div>
                 </div>
                 <div class="col-sm-3">
-                        <div class="card border-left-warning shadow" style="height: 130px;">
+                        <div class="card border-left-warning shadow" style="height: 135px;">
                           <div class="card-body">
                               <div class="row no-gutters align-items-center">
                                   <div class="col mr-2">
@@ -566,24 +566,25 @@ if(array_key_exists("email",$_SESSION)){
                         </div>
                       </div>
                       <div class="col-sm-3">
-                          <div class="card border-left-warning shadow" style="height: 130px;">
+                          <div class="card border-left-warning shadow" style="height: 135px;">
                             <div class="card-body">
                               <div class="row no-gutters align-items-center">
                                   <div class="col mr-2">
                                       <div class="text-xs font-weight-bold text-gray-800 text-uppercase mb-1" >Enter Rate per kwh as per the slabs </div>
                                       <!-- <div class="h2 mb-0 font-weight-bold text-gray-800 align-self-md-end">20</div> -->
-                                      <input type="number" onchange="rateupdate()" id="rateperunit" >
+                                      <input class="col-12" type="number"  id="rateperunit" >
+                                      <button class="col-8 btn text-white" style="margin-top: 5px; background-color: #3caea3;" onclick ="rateupdate()" >Calculate Bill</button>
                                   </div>
                               </div> 
                             </div>
                           </div>
                         </div>
                         <div class="col-sm-3">
-                          <div class="card border-left-warning shadow" style="height: 130px;">
+                          <div class="card border-left-warning shadow" style="height: 135px;">
                               <div class="card-body">
                                   <div class="row no-gutters align-items-center">
                                       <div class="col mr-2">
-                                          <div class="text-xs font-weight-bold text-gray-800 text-uppercase mb-1">Total bill generated (As per rates)</div>
+                                          <div class="text-xs font-weight-bold text-gray-800 text-uppercase mb-1">Total bill generated (As per the rate)</div>
                                           <div class="h2 mb-0 font-weight-bold text-dark align-self-md-end" id="billgenerated"></div>
                                       </div>
                                   </div> 
