@@ -4397,7 +4397,7 @@ Pills vertical
 
 .spark-chart-info {
     display: inline-block;
-    float: right;
+    /* float: right; */
 }
 
 
