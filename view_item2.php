@@ -269,7 +269,7 @@
                                 </div>
                               </div> 
                               <br>
-                              <button type="submit" class="btn btn-info" name="submit5">Click Here</button>
+                              <button type="submit" class="btn btn-info" name="submit5">Get Inverter details</button>
                             </form>  
     
                         </div>
