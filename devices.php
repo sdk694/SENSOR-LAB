@@ -211,7 +211,7 @@ if(array_key_exists("email",$_SESSION)){
                                       <div class=" col-12 col-sm-12 alert border-dark" role="alert" style="background-color: #d4f3f0; padding: 5px;">
                                         <div  style="display: block;">
                                             <div class="text-dark" style="font-size: 15px;">
-                                              <strong class="text-uppercase text-center" id="nodename"></strong>
+                                              <strong class="text-uppercase text-center d-flex justify-content-center" id="nodename"></strong>
                                             </div>
                                         </div>
                                       </div>
@@ -220,12 +220,12 @@ if(array_key_exists("email",$_SESSION)){
                         </div>
                         <div class="col-sm-8">
                             <div class="card" style="height: 140px;">
-                                <div class="container-fluid card-body">
+                                <div class="container-fluid card-body ">
                     
-                                    <div class=" col-12 col-sm-12 alert border-dark" role="alert" style="background-color: #d4f3f0; padding: 5px;">
+                                    <div class=" col-12 col-sm-12 alert border-dark" role="alert" style="background-color: #d4f3f0; padding: 15px; ">
                                       <div  style="display: block;">
-                                          <div class="text-dark" style="font-size: 15px;">
-                                            <strong class="text-uppercase" id="nodename"></strong><span> : Last Reading on</span>
+                                          <div class="text-dark" style="font-size: 25px;">
+                                            <strong class="text-uppercase" id="nodename"></strong><span>Last Reading on</span>
                                           </div>
                                           <div style="font-size: 20px; color: black;">
                                                <span id="lastactive"></span>
