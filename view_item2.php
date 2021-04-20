@@ -53,7 +53,7 @@
             <span class="navbar-toggler-icon"></span>
             </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a href="" class="pull-left"><img src="solarsurveiltransparent.png" alt="" height="40px" style="margin-right: 12px; margin-top: 2px;"></a>
+            <a href="index.html" class="pull-left"><img src="solarsurveiltransparent.png" alt="" height="40px" style="margin-right: 12px; margin-top: 2px;"></a>
             <a class="navbar-brand" href="index.html">SOLAR SURVEIL</a>
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
@@ -67,7 +67,7 @@
             </li>
             </ul>
             <span class="navbar-text text-white">
-            LoRa RMS Team
+            Solar Surveil Team
             </span>
         </div>
     </nav>
