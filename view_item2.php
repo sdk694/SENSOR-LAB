@@ -26,10 +26,11 @@
           background-color: #ffc404;
           color: black;
           column-gap: 10px;
+          border: solid;
         }
         tr:nth-child(even) {
           background-color: #f2f2f2;
-         
+          border :solid;
         }
         ::-webkit-scrollbar {
               width: 7px;
