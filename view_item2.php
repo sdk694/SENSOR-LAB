@@ -125,7 +125,7 @@
                                             </select>
                                         </div>
                                     </div> 
-                                    <button type="submit" class="btn btn-info" name="submit2">Click Here</button>
+                                    <button type="submit" class="btn btn-info" name="submit2">Get panel details</button>
                                     
                         </div>
                       </div>
@@ -159,7 +159,7 @@
                                 </select>
                             </div>
                         </div> 
-                            <button type="submit" class="btn btn-info" name="submit3">Click Here</button>
+                            <button type="submit" class="btn btn-info" name="submit3">Get Battery details</button>
                         </div>
                       </div>
                     </div>
@@ -177,7 +177,7 @@
                                     </select>
                                     </div>
                                 </div> 
-                                <button type="submit" class="btn btn-info" name="submit6">Click Here</button>
+                                <button type="submit" class="btn btn-info" name="submit6">Get Items</button>
                           </div>
                         </div>
                       </div>
@@ -233,7 +233,7 @@
                                     </select>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-info" name="submit4">Click Here</button>
+                                <button type="submit" class="btn btn-info" name="submit4">Get CC details</button>
     
                         </div>
                       </div>
@@ -241,51 +241,36 @@
                     <div class="col-sm-6">
                       <div class="card shadow">
                         <div class="card-body">
-                            <div class="form-row">
-                                <div class="form-group col-md-6"> 
-                                    <label for="inputCharge1"><h5>Charge Controller Current Rating (A)</h5></label>
-                                    <select id="inputCharge1" class="form-control" name="ampererating">
-                                        <option selected disabled>Required current rating</option>
-                                        <option>6</option>
-                                        <option>10</option>
-                                        <option>20</option>
-                                        <option>20</option>
-                                        <option>50</option>
-                                        <option>50</option>
-                                        <option>10</option>
-                                        <option>60</option>
-                                        <option>30</option>
-                                        <option>60</option>
-                                        <option>30</option>
-                                        <option>50</option>
-                                        <option>50</option>
-                                        <option>10</option>
-                                        <option>20</option>
-                                        <option>10</option></option>
-                                        <option>40</option>
-                                        <option>30</option>
-                                        <option>60</option>
-                                        <option>40</option>
-                                        <option>80</option>
-                                        <option>40</option>
-                                    </select>
-                                    </div>
-                                    <div class="form-group col-md-6"> 
-                                    <label for="inputCharge2"><h5>Charge Controller Voltage (V)</h5></label>
-                                    <select id="inputCharge2r" class="form-control" name="voltagerating">
-                                        <option selected disabled>Voltage (same as battery)</option>
-                                        <option>12</option>
-                                        <option>24</option>
-                                        <option>48</option>
-                                        <option>12|24</option>
-                                        <option>24|48</option>
-                                        <option>24|36</option>
-                                        <option>24|36|48</option>
-                                        <option>12|24|36|48</option>
-                                    </select>
-                                    </div>
-                                </div> 
-                                <button type="submit" class="btn btn-info" name="submit4">Click Here</button>
+                        <form method="post">
+                              <div class="form-row">
+                                <div class="form-group col-md-3"> 
+                                <label for="inputInverter1">Inverter Voltage (V Same as battery)</label>
+                                  <select id="inputInverter1" class="form-control" name="voltage">
+                                    <option selected disabled>Voltage (same as battery)</option>
+                                    <option>12</option>
+                                    <option>24</option>
+                                  </select>
+                                </div>
+                                <div class="form-group col-md-3"> 
+                                <label for="inputInverter2">Inverter Power (VA)</label>
+                                  <select id="inputInverter2" class="form-control" name="capacity">
+                                    <option selected disabled>Inverter power</option>
+                                    <option>300 W / 400 VA</option>
+                                    <option>560 W / 700 VA</option>
+                                    <option>720 W / 900 VA</option>
+                                    <option>880 W / 1735 VA</option>
+                                    <option>1KW / 1265 VA</option>
+                                    <option>1KW / 1135 VA</option>
+                                    <option>1.3 KW / 1735 VA</option>
+                                    <option>1.8 KW / 2335 VA</option>
+                                    <option>800 W / 1KVA</option>
+                                    <option>2.2 KW / 2.2KVA</option>
+                                  </select>
+                                </div>
+                              </div> 
+                              <br>
+                              <button type="submit" class="btn btn-info" name="submit5">Click Here</button>
+                            </form>  
     
                         </div>
                       </div>
@@ -320,7 +305,7 @@
                 <th>Voltage Rating</th> 
                 <th>Price</th> 
                 <th>Price Per Watt</th>
-                <th><a>Link</a></th>
+                <th>Link</th>
                 <th>Inverter Id</th>
                 <th>CCID</th>
                 </tr>";
@@ -530,7 +515,53 @@
    // echo "<div class='alert alert-danger col-sm-4' role='alert'>".$failure."</div>";
  // }  
 ?> 
+   <?php
+      include 'sql_connect.php';     
+     // $success = "";
+     // $failure = "";   
 
+      if(isset($_POST['submit5'])){ 
+        
+        //print_r ($_POST);
+        $selectwhereQuery5 = "SELECT * FROM solarinverter WHERE voltage = $_POST[voltage] AND capacity = '$_POST[capacity]'"; 
+        $result5 = mysqli_query($conne,$selectwhereQuery5);
+        $resultsCheck4 = mysqli_num_rows($result5);
+        if ($resultsCheck4 > 0) 
+        {
+          // output data of each row
+          echo " <table>
+          <tr>
+            <th>Inverter ID</th> 
+            <th>Brand</th>
+            <th>Type</th> 
+            <th>Capacity</th>
+            <th>Voltage</th> 
+            <th>CC Rating</th>
+            <th>Price</th>
+            <th>Link</th> 
+          </tr>";
+
+          while($row = mysqli_fetch_assoc($result5)) 
+          {
+            echo "<tr><td>" . $row["inverterid"] . "</td><td>" . $row["brand"]. "</td><td>" . $row["type"] . "</td><td>" . $row["capacity"] . "</td><td>" . $row["voltage"] . "</td><td>" . $row["ccrating"] . "</td><td>" . $row["price"] . "</td><td>" . $row["link"] . "</td></tr>";
+          }
+          echo "</table>";
+        }
+      
+       // else{
+        //echo "0 results";
+       // }
+        
+       // if (!$result5){ 
+        //  $failure = "Error viewing data.";
+       // }
+        $conne->close();        
+       }
+ 
+     // if($failure){
+       // echo "<div class='alert alert-danger col-sm-4' role='alert'>".$failure."</div>";
+     // }  
+    ?> 
 
 
 
