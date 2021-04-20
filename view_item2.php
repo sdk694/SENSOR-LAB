@@ -312,7 +312,7 @@
 
                 while($row = mysqli_fetch_assoc($result2)) 
                 {
-                echo "<tr><td>" . $row["panelid"] . "</td><td>" . $row["brand"]. "</td><td>" . $row["type"] . "</td><td>" . $row["powerrating"] . "</td><td>" . $row            ["voltagerating"] . "</td><td>" . $row["price"] . "</td><td>" . $row["priceperwatt"] . "</td><a><td>" . $row["link"] . "</td></a><td>" . $row["inverterid"]             . "</td><td>" . $row["ccid"] . "</td></tr>";
+                echo "<tr><td>" . $row["panelid"] . "</td><td>" . $row["brand"]. "</td><td>" . $row["type"] . "</td><td>" . $row["powerrating"] . "</td><td>" . $row            ["voltagerating"] . "</td><td>" . $row["price"] . "</td><td>" . $row["priceperwatt"] . "</td><td><a>" . $row["link"] . "</a></td><td>" . $row["inverterid"]             . "</td><td>" . $row["ccid"] . "</td></tr>";
                 }
                 echo "</table>";
             }
