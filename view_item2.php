@@ -243,16 +243,16 @@
                         <div class="card-body">
                         <form method="post">
                               <div class="form-row">
-                                <div class="form-group col-md-3"> 
-                                <label for="inputInverter1">Inverter Voltage (V Same as battery)</label>
+                                <div class="form-group col-md-6"> 
+                                <label for="inputInverter1"><h5>Inverter Voltage (V Same as battery)</h5></label>
                                   <select id="inputInverter1" class="form-control" name="voltage">
                                     <option selected disabled>Voltage (same as battery)</option>
                                     <option>12</option>
                                     <option>24</option>
                                   </select>
                                 </div>
-                                <div class="form-group col-md-3"> 
-                                <label for="inputInverter2">Inverter Power (VA)</label>
+                                <div class="form-group col-md-6"> 
+                                <label for="inputInverter2"><h5>Inverter Power (VA)</h5></label>
                                   <select id="inputInverter2" class="form-control" name="capacity">
                                     <option selected disabled>Inverter power</option>
                                     <option>300 W / 400 VA</option>
