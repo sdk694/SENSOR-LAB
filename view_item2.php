@@ -60,7 +60,7 @@
                 <a class="nav-link" href="solarcalculator.html">Calculator <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="view_item.php">Get Components</a>
+                <a class="nav-link" href="view_item2.php">Get Components</a>
             </li>
             </ul>
             <span class="navbar-text text-white">
@@ -327,7 +327,7 @@
 
                 while($row = mysqli_fetch_assoc($result2)) 
                 {
-                echo "<tr><td>" . $row["panelid"] . "</td><td>" . $row["brand"]. "</td><td>" . $row["type"] . "</td><td>" . $row["powerrating"] . "</td><td>" . $row            ["voltagerating"] . "</td><td>" . $row["price"] . "</td><td>" . $row["priceperwatt"] . "</td><td>" . $row["link"] . "</td><td>" . $row["inverterid"]             . "</td><td>" . $row["ccid"] . "</td></tr>";
+                echo "<tr><td>" . $row["panelid"] . "</td><td>" . $row["brand"]. "</td><td>" . $row["type"] . "</td><td>" . $row["powerrating"] . "</td><td>" . $row            ["voltagerating"] . "</td><td>" . $row["price"] . "</td><td>" . $row["priceperwatt"] . "</td><td><a>" . $row["link"] . "</a></td><td>" . $row["inverterid"]             . "</td><td>" . $row["ccid"] . "</td></tr>";
                 }
                 echo "</table>";
             }
