@@ -244,7 +244,7 @@
                         <form method="post">
                               <div class="form-row">
                                 <div class="form-group col-md-6"> 
-                                <label for="inputInverter1"><h5>Inverter Voltage (V Same as battery)</h5></label>
+                                <label for="inputInverter1"><h5>Inverter Voltage</h5></label>
                                   <select id="inputInverter1" class="form-control" name="voltage">
                                     <option selected disabled>Voltage (same as battery)</option>
                                     <option>12</option>
