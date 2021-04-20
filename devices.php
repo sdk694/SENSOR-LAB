@@ -151,7 +151,7 @@ if(array_key_exists("email",$_SESSION)){
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="card">
-                                <div class="container " style="height: 110px;">
+                                <div class="container " style="height: 140px;">
                                     <div class="dropdown" style="margin: 20px 0;">
                                         <label for="" class="text-dark">Select the Node Name</label>
                                         <button class="btn dropdown-toggle col-12 text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #3caea3;">
@@ -208,11 +208,18 @@ if(array_key_exists("email",$_SESSION)){
                                         </div>
 
                                       </div>
+                                      <div class=" col-12 col-sm-12 alert border-dark" role="alert" style="background-color: #d4f3f0; padding: 5px;">
+                                        <div  style="display: block;">
+                                            <div class="text-dark" style="font-size: 15px;">
+                                              <strong class="text-uppercase" id="nodename"></strong>
+                                            </div>
+                                        </div>
+                                      </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-8">
-                            <div class="card" style="height: 110px;">
+                            <div class="card" style="height: 140px;">
                                 <div class="container-fluid card-body">
                     
                                     <div class=" col-12 col-sm-12 alert border-dark" role="alert" style="background-color: #d4f3f0; padding: 5px;">
