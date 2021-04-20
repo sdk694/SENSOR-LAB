@@ -883,7 +883,7 @@ if(array_key_exists("email",$_SESSION)){
                                      sum1 = y.reduce(function(a,b) {
                                       return  (a + b);
                                     },0);
-                                     unit1 = sum1/1000;
+                                     unit1 = sum1;
                                     var avg = (sum1 / y.length)
                                     // console.log(sum)
                                     document.getElementById('totenergy').innerHTML = sum1.toFixed(2);
