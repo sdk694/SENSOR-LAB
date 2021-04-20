@@ -320,7 +320,7 @@
                 <th>Voltage Rating</th> 
                 <th>Price</th> 
                 <th>Price Per Watt</th>
-                <th>Link</th>
+                <th><a>Link</a></th>
                 <th>Inverter Id</th>
                 <th>CCID</th>
                 </tr>";
