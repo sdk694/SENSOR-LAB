@@ -57,6 +57,9 @@
             <a class="navbar-brand" href="index.html">SOLAR SURVEIL</a>
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
+                <a class="nav-link" href="solarcalculator.html">Home <span class="sr-only">(current)</span></a>
+            </li> 
+            <li class="nav-item">
                 <a class="nav-link" href="solarcalculator.html">Calculator <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
