@@ -32,6 +32,13 @@
           background-color: #f2f2f2;
           border :solid;
         }
+        tr:nth-child(odd) {
+          border :solid;
+        }
+        td{
+          border :solid;
+        }
+
         ::-webkit-scrollbar {
               width: 7px;
           }
