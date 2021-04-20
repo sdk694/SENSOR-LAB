@@ -85,7 +85,12 @@ if(array_key_exists("email",$_SESSION)){
                 <div>
                 <a href="index.html" class=""><img src="solarsurveiltransparent.png" alt="" height="40px" style="margin-left: 20px;"></a>
                 <a class="navbar-brand   text-white" href="index.html" style="font-family: Montserrat, sans-serif; letter-spacing: 4px; font-weight: 500; font-size: 20px;">SOLAR SURVEIL</a>
-                </div>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                </ul>
+              </div>
             </nav>
         </div>
         <!-- ============================================================== -->
