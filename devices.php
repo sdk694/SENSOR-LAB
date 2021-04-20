@@ -554,7 +554,7 @@ if(array_key_exists("email",$_SESSION)){
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-gray-800 text-uppercase mb-1">TOTAL ENERGY CONSUMED (Wh)</div>
+                                <div class="text-xs font-weight-bold text-gray-800 text-uppercase mb-1">TOTAL ENERGY (KWh) </div>
                                 <div class="h2 mb-0 font-weight-bold text-dark align-self-md-end" id="totenergy"></div>
                             </div>
                         </div>                      
