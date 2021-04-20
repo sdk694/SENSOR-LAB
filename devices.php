@@ -365,7 +365,7 @@ if(array_key_exists("email",$_SESSION)){
                             document.getElementById("power").innerHTML    = powerl  !== undefined ? powerl : "";
                             document.getElementById("voltage").innerHTML  = voltagel  !== undefined ? voltagel : "";
                             document.getElementById("current").innerHTML  = currentl  !== undefined ? currentl : "";
-                            document.getElementById("nodename").innerHTML = nodename  !== undefined ? nodename : "No node selected";
+                            document.getElementById("nodename").innerHTML = nodename  !== null ? nodename : "No node selected";
                             document.getElementById("lastactive").innerHTML = timel  !== undefined ? new Date(timel).toLocaleString() : "";
                             
 
