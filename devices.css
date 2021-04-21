@@ -1209,7 +1209,7 @@ Top Header
 
 .navbar-brand {
     display: inline-block;
-    margin-right: 1rem;
+    /* margin-right: 1rem; */
     line-height: inherit;
     white-space: nowrap;
     padding: 11px 20px;
