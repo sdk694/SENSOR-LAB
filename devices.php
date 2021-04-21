@@ -84,7 +84,7 @@ if(array_key_exists("email",$_SESSION)){
             <nav class="navbar navbar-expand-lg fixed-top" id="navbar1" style = "min-height: 60px; ">
                 <div>
                 <a href="index.html" class=""><img src="solarsurveiltransparent.png" alt="" height="40px" style="margin-left: 20px;"></a>
-                <a class="navbar-brand   text-white" href="index.html" style="font-family: Montserrat, sans-serif; letter-spacing: 4px; font-weight: 500; font-size: 20px;">SOLAR SURVEIL</a>
+                <a class="navbar-brand   text-white" href="index.html" style="margin-right: 0; font-family: Montserrat, sans-serif; letter-spacing: 4px; font-weight: 500; font-size: 20px;">SOLAR SURVEIL</a>
                 <a href="index.html" class="text-white" >Home</a>
               </div>
             </nav>
