@@ -530,9 +530,9 @@ if(array_key_exists("email",$_SESSION)){
                                   fetch("predict.json")
                                   .then(response => response.json())
                                   .then(data => {
-                                    // console.log(data)
+                                    
                                     var p = data;
-                                    // console.log(p)
+                                    
                                     document.getElementById('ep').innerHTML = p;
                                   })
                                  
