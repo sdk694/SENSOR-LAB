@@ -28,12 +28,14 @@ if(array_key_exists("email",$_SESSION)){
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha484-Gn5484xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E264XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="devices.css">
+    <link rel="stylesheet" href="devices.css">  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- leaflet javascript maps library -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <!-- <script type="text/javascript" src="https://get.influxdb.org/influxdb-latest.js"></script> -->
 
     <!-- Plotly CDN graphs library -->
     <script src="plotly.min.js"></script>
@@ -159,6 +161,19 @@ if(array_key_exists("email",$_SESSION)){
                                         </button>
 
                                         <script>
+                                         
+                                        //  influxdb = new InfluxDB({
+                                        //       "host" :"34.121.146.230",
+                                        //       "port" :"8086",
+                                        //       "username" :"root",
+                                        //       "password" :" ",
+                                        //       "database" :"homemon1"
+                                        //  }); 
+
+                                        //   var dataf = readPoint("Energy","Power","Voltage","Current","NodeID","Pgen","RSSI","SNR", homemonfinal);
+                                        //   console.log(dataf)  
+                                            
+                                          
                                           fetch("nodes.json")
                                           .then(response => response.json())
                                           .then(data => {
