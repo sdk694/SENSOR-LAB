@@ -163,21 +163,21 @@
                             var totnodes = 0;
 
 
-                            fetch("nodes.json")
+                            fetch("http://34.121.146.230:1880/nodeid")
                             .then(response => response.json())
                             .then(data => {
                                 var nodeDetails = {};
                                 var nodename = [];
-                                data.series[0].values.forEach(element =>{
+                                data.results[0].series[0].values.forEach(element =>{
                                     nodename.push(element[1]);
                                     nodeDetails[element[1]] = [];
                                 });
 
-                                fetch("data.json")
+                                fetch("http://34.121.146.230:1880/nodedata")
                                 .then(response => response.json())
                                 .then(data => {
  
-                                    data.series[0].values.forEach(nodeData => {
+                                    data.results[0].series[0].values.forEach(nodeData => {
                                         var formattedData = {
                                            time: nodeData[0],
                                            energy: nodeData[1],

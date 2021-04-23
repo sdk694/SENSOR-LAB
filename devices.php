@@ -344,7 +344,7 @@ if(array_key_exists("email",$_SESSION)){
 
                             var nodedeatils = [];
 
-                            for(var i = 0; i< data.series[0].values.length ; i++){
+                            for(var i = 0; i< data.results[0].series[0].values.length ; i++){
                               if(data.series[0].values[i][5] == nodename){
                                 nodedeatils.push(data.series[0].values[i]);
                               }
