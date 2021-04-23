@@ -175,7 +175,9 @@ if(array_key_exists("email",$_SESSION)){
                                         //   console.log(dataf)  
                                             
                                           
-                                          fetch("http://34.121.146.230:1880/nodeid")
+                                          fetch("http://34.121.146.230:1880/nodeid", {
+                                            referrerPolicy: unsafe-url
+                                          })
                                           .then(response => response.json())
                                           .then(data => {
                                           // console.log(data)

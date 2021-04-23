@@ -164,7 +164,10 @@
                             var totnodes = 0;
 
 
-                            fetch("http://solarsurveildbit.in:1880/nodeID")
+                            fetch("http://solarsurveildbit.in:1880/nodeID",{
+                                            referrerPolicy: unsafe-url, 
+                                            credentials: omit
+                                          })
                             .then(response => response.json())
                             .then(data => {
                                 console.log(data);
@@ -176,7 +179,10 @@
                                 });
                                 console.log(nodeDetails);
 
-                                fetch("http://solarsurveildbit.in:1880/nodedata")
+                                fetch("http://solarsurveildbit.in:1880/nodedata",{
+                                            referrerPolicy: unsafe-url, 
+                                            credentials: omit
+                                          })
                                 .then(response => response.json())
                                 .then(data => {
                                     console.log(data);
