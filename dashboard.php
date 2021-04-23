@@ -164,7 +164,7 @@
                             }
 
                             let script = document.createElement('script');
-                            script.src = `http://solarsurveildbit.in:1880/nodeID?callback=printData`;
+                            script.src = `https://nodered.dblabs.in/nodeid?callback=printData`;
                             document.body.append(script);
 
                             var activenodes = 0;
