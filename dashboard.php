@@ -164,7 +164,7 @@
                             var totnodes = 0;
 
 
-                            fetch("http://34.121.146.230:1880/nodeid")
+                            fetch("http://34.121.146.230:1880/nodeID")
                             .then(response => response.json())
                             .then(data => {
                                 console.log(data);
