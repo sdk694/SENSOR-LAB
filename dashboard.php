@@ -1,6 +1,5 @@
 <!-- <?php
-        header("Access-Control-Allow-Origin: *");
-        ...
+
     session_start();
     if(array_key_exists("email",$_COOKIE)){
 
@@ -18,7 +17,8 @@
     header("Location: register.php");
 
     }
-
+    header("Access-Control-Allow-Origin: *");
+    ...
 
 ?> -->
 
