@@ -17,9 +17,6 @@
     header("Location: register.php");
 
     }
-    header("Access-Control-Allow-Origin: *");
-    ...
-
 ?> -->
 
 <!doctype html>
