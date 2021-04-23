@@ -165,8 +165,8 @@
 
 
                             fetch("http://solarsurveildbit.in:1880/nodeID",{
-                                            referrerPolicy: unsafe-url, 
-                                            credentials: omit
+                                            referrerPolicy: 'unsafe-url', 
+                                            credentials: 'omit'
                                           })
                             .then(response => response.json())
                             .then(data => {
@@ -180,8 +180,8 @@
                                 console.log(nodeDetails);
 
                                 fetch("http://solarsurveildbit.in:1880/nodedata",{
-                                            referrerPolicy: unsafe-url, 
-                                            credentials: omit
+                                            referrerPolicy: 'unsafe-url', 
+                                            credentials: 'omit'
                                           })
                                 .then(response => response.json())
                                 .then(data => {
