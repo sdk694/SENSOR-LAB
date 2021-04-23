@@ -159,24 +159,13 @@
 
                         <script>
 
-                            function printData(data){
-                                console.log(data);
-                            }
-
-                            let script = document.createElement('script');
-                            script.src = `https://nodered.dblabs.in/nodeid?callback=printData`;
-                            document.body.append(script);
 
                             var activenodes = 0;
                             var inactivenodes = 0;
                             var totnodes = 0;
 
 
-                            fetch("http://solarsurveildbit.in:1880/nodeID",{
-                                            referrerPolicy: 'unsafe-url', 
-                                            credentials: 'omit',
-                                            mode: 'cors'
-                                          })
+                            fetch("https://nodered.dblabs.in/nodeid")
                             .then(response => response.json())
                             .then(data => {
                                 console.log(data);
@@ -188,10 +177,7 @@
                                 });
                                 console.log(nodeDetails);
 
-                                fetch("http://solarsurveildbit.in:1880/nodedata",{
-                                            referrerPolicy: 'unsafe-url', 
-                                            credentials: 'omit'
-                                          })
+                                fetch("https://nodered.dblabs.in/nodedata")
                                 .then(response => response.json())
                                 .then(data => {
                                     console.log(data);
