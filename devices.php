@@ -174,7 +174,7 @@ if(array_key_exists("email",$_SESSION)){
                                         //   console.log(dataf)  
                                             
                                           
-                                          fetch("nodes.json")
+                                          fetch("http://34.121.146.230:1880/nodeid")
                                           .then(response => response.json())
                                           .then(data => {
                                           // console.log(data)
@@ -182,7 +182,7 @@ if(array_key_exists("email",$_SESSION)){
                                           var time = []
                                           var nodename = []
 
-                                          data.series[0].values.forEach(element => {
+                                          data.results[0].series[0].values.forEach(element => {
                                                     time.push(element[0])  
                                                     nodename.push(element[1])
                                           });
@@ -331,7 +331,7 @@ if(array_key_exists("email",$_SESSION)){
                         var nodename = url.searchParams.get("node");
                         // console.log(nodename);
 
-                        fetch("data.json")
+                        fetch("http://34.121.146.230:1880/nodedata")
                         .then(response => response.json())
                         .then(data => {
                             // console.log(data)
@@ -345,8 +345,8 @@ if(array_key_exists("email",$_SESSION)){
                             var nodedeatils = [];
 
                             for(var i = 0; i< data.results[0].series[0].values.length ; i++){
-                              if(data.series[0].values[i][5] == nodename){
-                                nodedeatils.push(data.series[0].values[i]);
+                              if(data.results[0].series[0].values[i][5] == nodename){
+                                nodedeatils.push(data.results[0].series[0].values[i]);
                               }
                             }
 
@@ -631,7 +631,7 @@ if(array_key_exists("email",$_SESSION)){
                                 var nodename = url.searchParams.get("node");
                                 // console.log(nodename);
 
-                                fetch("data.json")
+                                fetch(" http://34.121.146.230:1880/nodedata")
                                   .then(response => response.json())
                                   .then(data => {
                                     // console.log(data)
@@ -641,9 +641,9 @@ if(array_key_exists("email",$_SESSION)){
 
                                     var nodedeatils = [];
 
-                                      for(var i = 0; i< data.series[0].values.length ; i++){
-                                        if(data.series[0].values[i][5] == nodename){
-                                          nodedeatils.push(data.series[0].values[i]);
+                                      for(var i = 0; i< data.results[0].series[0].values.length ; i++){
+                                        if(data.results[0].series[0].values[i][5] == nodename){
+                                          nodedeatils.push(data.results[0].series[0].values[i]);
                                         }
                                       }
 
@@ -714,7 +714,7 @@ if(array_key_exists("email",$_SESSION)){
                                 var nodename = url.searchParams.get("node");
                                 // console.log(nodename);
 
-                                fetch("data.json")
+                                fetch(" http://34.121.146.230:1880/nodedata")
                                   .then(response => response.json())
                                   .then(data => {
                                     // console.log(data)
@@ -723,9 +723,9 @@ if(array_key_exists("email",$_SESSION)){
 
                                     var nodedeatils = [];
 
-                                      for(var i = 0; i< data.series[0].values.length ; i++){
-                                        if(data.series[0].values[i][5] == nodename){
-                                          nodedeatils.push(data.series[0].values[i]);
+                                      for(var i = 0; i< data.results[0].series[0].values.length ; i++){
+                                        if(data.results[0].series[0].values[i][5] == nodename){
+                                          nodedeatils.push(data.results[0].series[0].values[i]);
                                         }
                                       }
 
@@ -786,7 +786,7 @@ if(array_key_exists("email",$_SESSION)){
                                 var nodename = url.searchParams.get("node");
                                 // console.log(nodename);
 
-                                fetch("data.json")
+                                fetch(" http://34.121.146.230:1880/nodedata")
                                   .then(response => response.json())
                                   .then(data => {
                                     // console.log(data)
@@ -800,9 +800,9 @@ if(array_key_exists("email",$_SESSION)){
                                     
                                     var nodedeatils = [];
 
-                                      for(var i = 0; i< data.series[0].values.length ; i++){
-                                        if(data.series[0].values[i][5] == nodename){
-                                          nodedeatils.push(data.series[0].values[i]);
+                                      for(var i = 0; i< data.results[0].series[0].values.length ; i++){
+                                        if(data.results[0].series[0].values[i][5] == nodename){
+                                          nodedeatils.push(data.results[0].series[0].values[i]);
                                         }
                                       }
 
@@ -874,7 +874,7 @@ if(array_key_exists("email",$_SESSION)){
                                 var nodename = url.searchParams.get("node");
                                 // console.log(nodename);
 
-                                fetch("data.json")
+                                fetch(" http://34.121.146.230:1880/nodedata")
                                   .then(response => response.json())
                                   .then(data => {
                                     // console.log(data)
@@ -884,9 +884,9 @@ if(array_key_exists("email",$_SESSION)){
                                     // document.getElementById("debug").innerHTML = JSON.stringify(data.series[0].values)
                                     var nodedeatils = [];
 
-                                    for(var i = 0; i< data.series[0].values.length ; i++){
-                                      if(data.series[0].values[i][5] == nodename){
-                                        nodedeatils.push(data.series[0].values[i]);
+                                    for(var i = 0; i< data.results[0].series[0].values.length ; i++){
+                                      if(data.results[0].series[0].values[i][5] == nodename){
+                                        nodedeatils.push(data.results[0].series[0].values[i]);
                                       }
                                     }
 

@@ -166,18 +166,21 @@
                             fetch("http://34.121.146.230:1880/nodeid")
                             .then(response => response.json())
                             .then(data => {
+                                console.log(data);
                                 var nodeDetails = {};
                                 var nodename = [];
                                 data.results[0].series[0].values.forEach(element =>{
                                     nodename.push(element[1]);
                                     nodeDetails[element[1]] = [];
                                 });
+                                console.log(nodeDetails);
 
-                                fetch("http://34.121.146.230:1880/nodedata")
+                                fetch(" http://34.121.146.230:1880/nodedata")
                                 .then(response => response.json())
                                 .then(data => {
- 
+                                    console.log(data);
                                     data.results[0].series[0].values.forEach(nodeData => {
+                                    
                                         var formattedData = {
                                            time: nodeData[0],
                                            energy: nodeData[1],
