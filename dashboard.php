@@ -159,6 +159,14 @@
 
                         <script>
 
+                            function printData(data){
+                                console.log(data);
+                            }
+
+                            let script = document.createElement('script');
+                            script.src = `http://solarsurveildbit.in:1880/nodeID?callback=printData`;
+                            document.body.append(script);
+
                             var activenodes = 0;
                             var inactivenodes = 0;
                             var totnodes = 0;
