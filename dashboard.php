@@ -164,7 +164,7 @@
                             var totnodes = 0;
 
 
-                            fetch("http://34.121.146.230:1880/nodeID")
+                            fetch("http://solarsurveildbit.in:1880/nodeID")
                             .then(response => response.json())
                             .then(data => {
                                 console.log(data);
@@ -176,7 +176,7 @@
                                 });
                                 console.log(nodeDetails);
 
-                                fetch(" http://34.121.146.230:1880/nodedata")
+                                fetch(" http://solarsurveildbit.in:1880/nodedata")
                                 .then(response => response.json())
                                 .then(data => {
                                     console.log(data);
