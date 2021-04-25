@@ -165,7 +165,7 @@
                             var totnodes = 0;
 
 
-                            fetch("https://nodered.dblabs.in/nodeid")
+                            fetch("https://nodered.solarsurveildbit.in/nodeid")
                             .then(response => response.json())
                             .then(data => {
                                 console.log(data);
@@ -177,7 +177,7 @@
                                 });
                                 console.log(nodeDetails);
 
-                                fetch("https://nodered.dblabs.in/nodedata")
+                                fetch("https://nodered.solarsurveildbit.in/nodedata")
                                 .then(response => response.json())
                                 .then(data => {
                                     console.log(data);
