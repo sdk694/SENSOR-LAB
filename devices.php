@@ -175,9 +175,7 @@ if(array_key_exists("email",$_SESSION)){
                                         //   console.log(dataf)  
                                             
                                           
-                                          fetch("https://nodered.solarsurveildbit.in/nodeid", {
-                                            referrerPolicy: unsafe-url
-                                          })
+                                          fetch("https://nodered.solarsurveildbit.in/nodeid")
                                           .then(response => response.json())
                                           .then(data => {
                                           // console.log(data)
