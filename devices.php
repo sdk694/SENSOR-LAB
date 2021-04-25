@@ -175,7 +175,7 @@ if(array_key_exists("email",$_SESSION)){
                                         //   console.log(dataf)  
                                             
                                           
-                                          fetch("http://34.121.146.230:1880/nodeid", {
+                                          fetch("https://nodered.solarsurveildbit.in/nodeid", {
                                             referrerPolicy: unsafe-url
                                           })
                                           .then(response => response.json())
@@ -334,7 +334,7 @@ if(array_key_exists("email",$_SESSION)){
                         var nodename = url.searchParams.get("node");
                         // console.log(nodename);
 
-                        fetch("http://34.121.146.230:1880/nodedata")
+                        fetch("https://nodered.solarsurveildbit.in/nodedata")
                         .then(response => response.json())
                         .then(data => {
                             // console.log(data)
@@ -634,7 +634,7 @@ if(array_key_exists("email",$_SESSION)){
                                 var nodename = url.searchParams.get("node");
                                 // console.log(nodename);
 
-                                fetch(" http://34.121.146.230:1880/nodedata")
+                                fetch(" https://nodered.solarsurveildbit.in/nodedata")
                                   .then(response => response.json())
                                   .then(data => {
                                     // console.log(data)
@@ -717,7 +717,7 @@ if(array_key_exists("email",$_SESSION)){
                                 var nodename = url.searchParams.get("node");
                                 // console.log(nodename);
 
-                                fetch(" http://34.121.146.230:1880/nodedata")
+                                fetch(" https://nodered.solarsurveildbit.in/nodedata")
                                   .then(response => response.json())
                                   .then(data => {
                                     // console.log(data)
@@ -789,7 +789,7 @@ if(array_key_exists("email",$_SESSION)){
                                 var nodename = url.searchParams.get("node");
                                 // console.log(nodename);
 
-                                fetch(" http://34.121.146.230:1880/nodedata")
+                                fetch(" https://nodered.solarsurveildbit.in/nodedata")
                                   .then(response => response.json())
                                   .then(data => {
                                     // console.log(data)
@@ -877,7 +877,7 @@ if(array_key_exists("email",$_SESSION)){
                                 var nodename = url.searchParams.get("node");
                                 // console.log(nodename);
 
-                                fetch(" http://34.121.146.230:1880/nodedata")
+                                fetch(" https://nodered.solarsurveildbit.in/nodedata")
                                   .then(response => response.json())
                                   .then(data => {
                                     // console.log(data)
