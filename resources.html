@@ -31,14 +31,28 @@
                 body {
                 padding-top: 56px;
                 }
+                ::-webkit-scrollbar {
+                    width: 7px;
+                }
+
+                ::-webkit-scrollbar-track {
+                    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+                    border-radius: 10px;
+                }
+
+                ::-webkit-scrollbar-thumb {
+                    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+                    border-radius: 10px;
+                }
 
 
   </style>
 </head>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark  fixed-top" style="background-color: #173f5f;">
     <div class="container">
+      <a href="" class="pull-left"><img src="solarsurveiltransparent.png" alt="" height="40px" style="margin-right: 12px; margin-top: 2px;"></a>
       <a class="navbar-brand" href="resources.html">Resources</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -72,20 +86,20 @@
       <!-- Blog Entries Column -->
       <div class="col-md-8">
 
-        <h1 class="my-4">Page Heading
-          <small>Secondary Text</small>
+        <h1 class="my-4">Solar Surveil
+          <small>Resources</small>
         </h1>
 
         <!-- Blog Post -->
         <div class="card mb-4">
-          <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+          <img class="card-img-top" src="nodeinfluxcard.png" alt="Card image cap">
           <div class="card-body">
-            <h2 class="card-title">Node Red, REST API and Dashboard</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-            <a href="blogsdk.html" class="btn btn-primary">Read More</a>
+            <h2 class="card-title">InfluxDb, Node Red and REST API</h2>
+            <p class="card-text">For any website to run efficiently and for a longer period of time it requires a very strong backend along with the front end.  Our website uses InfluxDB , REST API and Node-Red as back end.</p>
+            <a href="blogsdk.html" class="btn" style="background-color: #3caea3 ; color: white;">Read More &rarr;</a>
           </div>
           <div class="card-footer text-muted">
-            Posted on January 1, 2020 by
+            Posted on April 27, 2021 by
             <a href="https://www.linkedin.com/in/sdk694/">Shreyas Kulkarni</a>
           </div>
         </div>
@@ -95,7 +109,7 @@
           <div class="card-body">
             <h2 class="card-title">PZEM Module</h2>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-            <a href="#" class="btn btn-primary">Read More &rarr;</a>
+            <a href="#" class="btn" style="background-color: #3caea3 ; color: white;">Read More &rarr;</a>
           </div>
           <div class="card-footer text-muted">
             Posted on January 1, 2020 by
@@ -109,7 +123,7 @@
           <div class="card-body">
             <h2 class="card-title">ATM90E26</h2>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-            <a href="#" class="btn btn-primary">Read More &rarr;</a>
+            <a href="#" class="btn" style="background-color: #3caea3 ; color: white;">Read More &rarr;</a>
           </div>
           <div class="card-footer text-muted">
             Posted on January 1, 2020 by
@@ -123,7 +137,7 @@
           <div class="card-body">
             <h2 class="card-title">Product 1: Urban Location</h2>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-            <a href="#" class="btn btn-primary">Read More &rarr;</a>
+            <a href="#" class="btn" style="background-color: #3caea3 ; color: white;">Read More &rarr;</a>
           </div>
           <div class="card-footer text-muted">
             Posted on January 1, 2020 by
@@ -137,7 +151,7 @@
             <div class="card-body">
               <h2 class="card-title">Product 2: Rural Location</h2>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-              <a href="#" class="btn btn-primary">Read More &rarr;</a>
+              <a href="#" class="btn" style="background-color: #3caea3 ; color: white;">Read More &rarr;</a>
             </div>
             <div class="card-footer text-muted">
               Posted on January 1, 2020 by
@@ -161,7 +175,7 @@
       <div class="col-md-4">
 
         <!-- Search Widget -->
-        <div class="card my-4">
+        <!-- <div class="card my-4">
           <h5 class="card-header">Search</h5>
           <div class="card-body">
             <div class="input-group">
@@ -171,7 +185,7 @@
               </span>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- Categories Widget -->
         <div class="card my-4">
@@ -225,7 +239,7 @@
   <!-- /.container -->
 
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
+  <footer class="py-3 bg-dark">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; SOLAR SURVEIL 2021</p>
     </div>
