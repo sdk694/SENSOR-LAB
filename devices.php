@@ -396,26 +396,26 @@ if(array_key_exists("email",$_SESSION)){
                                         }).addTo(map);
 
                                         if (nodename == 'nod1ac'){
-                                            var marker1 = L.marker([19.1292529, 72.9270092], { title : "Mahavir Majestik"}).addTo(map).bindPopup('<h2> Node: NOD1MU  </h2> <h3>Small Panel DC setup</h3> <p> View the status of the panels on grafana</p><a class="btn btn-success d-flex justify-content-center" href="http://34.121.146.230:3000/d/NOD1MU/nod1mu?orgId=1&kiosk" >Visit Dashboard</a>');
+                                            var marker1 = L.marker([19.1292529, 72.9270092], { title : "Mahavir Majestik"}).addTo(map).bindPopup('<h2> Node: NOD1AC  </h2> <h3>Small Panel DC setup</h3> <p> View the status of the panels on grafana</p><a class="btn btn-success d-flex justify-content-center" href="https://grafana.solarsurveildbit.in/d/NOD1AC/nod1ac?orgId=1&kiosk" >Visit Dashboard</a>');
 
                                         }
                                         else if(nodename == 'nod2ac'){
-                                            var marker2 = L.marker([19.0933, 72.8924], { title : "Mini Solar Setup"}).addTo(map).bindPopup('<h2> Node: NOD2MU</h2><h3>Mini Solar Setup</h3><p> View the status of the node on grafana</p><a class="btn btn-success d-flex justify-content-center" href="http://34.121.146.230:3000/d/NOD2MU/nod2mu?orgId=1&kiosk" >Visit Dashboard</a>');
+                                            var marker2 = L.marker([19.0933, 72.8924], { title : "Mini Solar Setup"}).addTo(map).bindPopup('<h2> Node: NOD2AC </h2><h3>Mini Solar Setup</h3><p> View the status of the node on grafana</p><a class="btn btn-success d-flex justify-content-center" href="https://grafana.solarsurveildbit.in/d/NOD2AC/nod2ac?orgId=1&kiosk" >Visit Dashboard</a>');
 
                                         }
                                         else if(nodename == 'nod3ac'){
-                                            var marker2 = L.marker([19.0933, 72.8924], { title : "Mini Solar Setup"}).addTo(map).bindPopup('<h2> Node: NOD2MU</h2><h3>Mini Solar Setup</h3><p> View the status of the node on grafana</p><a class="btn btn-success d-flex justify-content-center" href="http://34.121.146.230:3000/d/NOD2MU/nod2mu?orgId=1&kiosk" >Visit Dashboard</a>');
+                                            var marker2 = L.marker([19.0933, 72.8924], { title : "Mini Solar Setup"}).addTo(map).bindPopup('<h2> Node: NOD3AC</h2><h3>Mini Solar Setup</h3><p> View the status of the node on grafana</p><a class="btn btn-success d-flex justify-content-center" href="https://grafana.solarsurveildbit.in/d/NOD3AC/nod3ac?orgId=1&kiosk" >Visit Dashboard</a>');
 
                                         }
                                         else if(nodename == 'nod1sol'){
-                                            var marker3 = L.marker([19.90101264, 73.21009223], { title : "State Highway turning to walvanda"}).addTo(map).bindPopup('<h2>Checkpoint </h2><h3>State Highway turning to walvanda</h3>');
+                                            var marker3 = L.marker([19.90101264, 73.21009223], { title : "State Highway turning to walvanda"}).addTo(map).bindPopup('<h2> Node: NOD1SOL</h2><h3>State Highway turning to walvanda</h3><p> View the status of the node on grafana</p><a class="btn btn-success d-flex justify-content-center" href="https://grafana.solarsurveildbit.in/d/NOD1SOL/nod1sol?orgId=1&kiosk" >Visit Dashboard</a>');
 
                                         }
                                         else if(nodename == 'nod2sol'){
-                                            var marker4 = L.marker([19.83774295,73.19422424], { title : "Fanaspada Charging point"}).addTo(map).bindPopup('<h2> Node: NOD1WL</h2><h3>Fanaspada Charging point</h3><p> View the status of the node on grafana</p><a class="btn btn-success d-flex justify-content-center" href="http://34.121.146.230:3000/d/nU5ErMJMz/nod1wl?orgId=1&refresh=10s&kiosk" >Visit Dashboard</a>');
+                                            var marker4 = L.marker([19.83774295,73.19422424], { title : "Fanaspada Charging point"}).addTo(map).bindPopup('<h2> Node: NOD2SOL</h2><h3>Fanaspada Charging point</h3><p> View the status of the node on grafana</p><a class="btn btn-success d-flex justify-content-center" href="https://grafana.solarsurveildbit.in/d/NOD2SOL/nod2sol?orgId=1&kiosk" >Visit Dashboard</a>');
                                         }
                                         else if(nodename == 'nod3sol'){
-                                            var marker6 = L.marker([19.84879223,  73.19108605], { title : "Walvanda Don Bosco ITI Terrace"}).addTo(map).bindPopup('<h2> Node: NOD3WL</h2><h3>Walvanda Don Bosco ITI Terrace</h3><p> View the status of the node on grafana</p><a class="btn btn-success d-flex justify-content-center" href="http://34.121.146.230:3000/d/nU5ErMJMz/nod3wl?orgId=1&refresh=10s&kiosk" >Visit Dashboard</a>');
+                                            var marker6 = L.marker([19.84879223,  73.19108605], { title : "Walvanda Don Bosco ITI Terrace"}).addTo(map).bindPopup('<h2> Node: NOD3SOL</h2><h3>Walvanda Don Bosco ITI Terrace</h3><p> View the status of the node on grafana</p><a class="btn btn-success d-flex justify-content-center" href="https://grafana.solarsurveildbit.in/d/NOD3SOL/nod3sol?orgId=1&kiosk" >Visit Dashboard</a>');
 
                                         }
 
