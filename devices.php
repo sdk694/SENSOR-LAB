@@ -396,11 +396,11 @@ if(array_key_exists("email",$_SESSION)){
                                         }).addTo(map);
 
                                         if (nodename == 'nod1ac'){
-                                            var marker1 = L.marker([19.1292529, 72.9270092], { title : "Mahavir Majestik"}).addTo(map).bindPopup('<h2> Node: NOD1AC  </h2> <h3>Small Panel DC setup</h3> <p> View the status of the panels on grafana</p><a class="btn btn-success d-flex justify-content-center" href="https://grafana.solarsurveildbit.in/d/NOD1AC/nod1ac?orgId=1&kiosk" >Visit Dashboard</a>');
+                                            var marker1 = L.marker([19.1292529, 72.9270092], { title : "Mahavir Majestik"}).addTo(map).bindPopup('<h2> Node: NOD1AC  </h2> <h3>Small Panel DC setup</h3> <p> View the status of the panels on grafana</p><a class="btn btn-success d-flex justify-content-center" href="https://grafana.solarsurveildbit.in/d/NOD1AC/nod1ac?orgId=1&kiosk target="_blank" rel="noopener noreferrer"" >Visit Dashboard</a>');
 
                                         }
                                         else if(nodename == 'nod2ac'){
-                                            var marker2 = L.marker([19.0933, 72.8924], { title : "Mini Solar Setup"}).addTo(map).bindPopup('<h2> Node: NOD2AC </h2><h3>Mini Solar Setup</h3><p> View the status of the node on grafana</p><a class="btn btn-success d-flex justify-content-center" href="https://grafana.solarsurveildbit.in/d/NOD2AC/nod2ac?orgId=1&kiosk" >Visit Dashboard</a>');
+                                            var marker2 = L.marker([19.0933, 72.8924], { title : "Mini Solar Setup"}).addTo(map).bindPopup('<h2> Node: NOD2AC </h2><h3>Mini Solar Setup</h3><p> View the status of the node on grafana</p><a class="btn btn-success d-flex justify-content-center" href="https://grafana.solarsurveildbit.in/d/NOD2AC/nod2ac?orgId=1&kiosk" target="_blank" rel="noopener noreferrer"">Visit Dashboard</a>');
 
                                         }
                                         else if(nodename == 'nod3ac'){
