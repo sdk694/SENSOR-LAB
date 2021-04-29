@@ -55,14 +55,14 @@
   <nav class="navbar navbar-expand-lg navbar-dark  fixed-top" style="background-color: #173f5f;">
     <div class="container">
       <a href="" class="pull-left"><img src="solarsurveiltransparent.png" alt="" height="40px" style="margin-right: 12px; margin-top: 2px;"></a>
-      <a class="navbar-brand" href="resources.html">Resources</a>
+      <a class="navbar-brand" href="index.html">SOLAR SURVEIL</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home
+          <li class="nav-item">
+            <a class="nav-link" href="resources.html"> Back to Resources
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -89,7 +89,7 @@
       <div class="col-lg-8">
 
         <!-- Title -->
-        <h1 class="mt-4">InfluxDB, Node-Red and REST API</h1>
+        <h1 class="mt-4">InfluxDB, Node-RED, REST API and Cloud Computing</h1>
 
         <!-- Author -->
         <p class="lead">
@@ -168,17 +168,17 @@
           <br>
          <hr> 
          <br>
-        <h2>Node Red</h2>  
+        <h2>Node-RED</h2>  
 
 
         <p>
-            Node Red is a programming tool for wiring together hardware devices, APIs and online service.
-           Node red has various predefined nodes with various functionalities.
+            Node-RED is a programming tool for wiring together hardware devices, APIs and online service.
+           Node-RED has various predefined nodes with various functionalities.
         </p>
 
         <p>
           Once the data is transmitted by MQTT or LoRaWAN protocol,
-          It reaches the broker where node red subscribes to that broker.
+          It reaches the broker where Node-RED subscribes to that broker.
         </p>
 
         <p>
@@ -189,7 +189,7 @@
 
         <p>
           One can install these nodes by clicking on the three lines button on the
-           top right hand side of Node red application and then clicking on the manage pallet option.
+           top right hand side of Node-RED application and then clicking on the manage pallet option.
            On clicking the manage pallet option go to the install section and search for node-red-contrib-influxdb module.
         </p>
 
@@ -200,35 +200,60 @@
         </p>
         
         <p>
-          Given below is the Node Red flow for for the above mentioned nodes.
+          Given below is the Node-RED flow for for the above mentioned nodes.
         </p>
 
         <img class="img-fluid rounded" src="Nodered.PNG" alt="">
         <br>
         <br>
-        <h5>Installation Guide : Node Red</h5>
-        <a href="https://jithinisaac.dblabs.in/posts/aws_nodered/">Node Red installation locally or on Cloud</a>
+        <h5>Installation Guide : Node-RED</h5>
+        <a href="https://jithinisaac.dblabs.in/posts/aws_nodered/">Node-RED installation locally or on Cloud</a>
         <br>
         <hr>
         <br>
         <h2>REST API </h2>
 
         <p>
-          To fetch this data from InfluxDB  into our website we use rest api which is constructed using node red. 
+          To fetch this data from InfluxDB  into our website we use rest api which is constructed using Node-RED. 
           This requires http network nodes. Here we use http 
           in node to create an http endpoint for creating web services and http response 
           that send response back to requests received from an http input node. 
         </p>
 
         <p>
-          Given below is the Node Red flow for creating a REST API.
+          Given below is the Node-RED flow for creating a REST API.
         </p>
 
 
         <img class="img-fluid rounded" src="restapi.PNG" alt="">
         
         <br>
+        <hr>
         <br>
+
+        <h2>Cloud Computing</h2>
+        <p>
+          The server used by us is a 2vCPU 4GB Digital Ocean Droplet for our Web application.
+        </p>
+        <p>
+          We are using the JAM stack for our Web application dashboard and the LAMP stack for the user authentication, Solar Nexus calculator and Get component application.
+        </p>
+
+        <p>
+         <p>Node-RED application <a href="https://nodered.solarsurveildbit.in/"> https://nodered.solarsurveildbit.in/</a>, Grafana application <a href="https://grafana.solarsurveildbit.in/">https://grafana.solarsurveildbit.in/</a> are hosted on the same server.</p> 
+
+        </p>
+
+        <p>
+          We are using Nginx Proxy Manager to enable reverse proxy to the above applications.
+        </p>
+
+        <p>
+          We are using another 2vCPU 4GB GCP instance to host our ChirpStack LoRaWAN network server and MQTT Broker.
+        </p>
+
+        <br>
+
 
       </div>
 
@@ -259,7 +284,7 @@
                     <a href="#">ATM90E26</a>
                   </li>
                   <li>
-                    <a href="#">Node Red</a>
+                    <a href="#">Node-RED</a>
                   </li>
                   <li>
                     <a href="#">Bootstrap 4</a>
