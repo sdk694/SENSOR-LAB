@@ -16,27 +16,41 @@
     <style>
       table {
         border-collapse: collapse;
-        width: 100%;
+        width: 90%;
         color: black; 
-        font-size: 20px;        
+        font-size: 20px; 
+        margin-left: auto;
+        margin-right: auto;  
+        border: 1px solid black;
+        padding: 15px;     
       } 
       th {
-        background-color: darkgrey;
+        background-color: black;
         text-align:left;
+        color: white;
+        border: 1px solid black;
+        padding: 15px; 
       }
       tr:nth-child(even) {
         background-color: lightblue;
         text-align:left;
+        border: 1px solid black; 
+        padding: 15px;
       }
       tr:nth-child(odd) {
         background-color: white ;
         text-align:left;
+        border: 1px solid black;
+        padding: 15px; 
+      }
+      td{
+        border: 1px solid black;
       }
 
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="index.php">DBIT Sensor Lab</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -50,10 +64,16 @@
               <a class="nav-link " href="Checksensor.php"><span class="fa fa-check"></span> Check Sensors</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="Checkavailablity.php"><span class="fa fa-check"></span> Details</a>
+              <a class="nav-link active" href="Checkavailablity.php"><span class="fa fa-check"></span>Details</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="Register.php"><span class="fa fa-id-badge"></span> Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="finaldetails.php"><span class="fa fa-flask"></span>Lab details</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aboutus.html"><span class="fa fa-check"></span> About us</a>
             </li>
           </ul>
           <span class="navbar-text">
@@ -86,7 +106,7 @@
             while($row = mysqli_fetch_assoc($results)) 
             {
 
-              echo "<tr><td>" . $row["Sensor_ID"] . "</td><td>" . $row["Lab_no"] . "</td><td>" . $row["Type"] . "</td><td> " . $row["Application"] . "</td><td>" . $row["Sensor_cost"] . "</td><td>";
+              echo "<tr><td>" . $row["Sensor_ID"] . "</td><td>" . $row["Lab_no"] . "</td><td>" . $row["Type"] . "</td><td> " . $row["Application"] . "</td><td>" . $row["Sensor_cost"] . "</td>";
 
             } 
           }

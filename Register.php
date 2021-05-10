@@ -15,7 +15,7 @@
     <title>Check Sensor Availiblity</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="index.php">DBIT Sensor Lab</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -26,13 +26,19 @@
               <a class="nav-link" href="index.php"><span class="fa fa-home"></span> Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Checksensor.php"><span class="fa fa-check"></span> Check Sensors</a>
+              <a class="nav-link " href="Checksensor.php"><span class="fa fa-check"></span> Check Sensors</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Checkavailablity.php"><span class="fa fa-check"></span> Details</a>
+              <a class="nav-link" href="Checkavailablity.php"><span class="fa fa-check"></span>Details</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="Register.php"><span class="fa fa-id-badge"></span> Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="finaldetails.php"><span class="fa fa-flask"></span>Lab details</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aboutus.html"><span class="fa fa-check"></span> About us</a>
             </li>
           </ul>
           <span class="navbar-text">
@@ -97,7 +103,7 @@
                     </form>
                 </div>
             </div>
-      </div>  
+    </div>  
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -12,24 +12,30 @@
     <title>DBIT Sensor Lab</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="index.php">DBIT Sensor Lab</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#"><span class="fa fa-home"></span> Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item ">
+              <a class="nav-link active" href="index.php"><span class="fa fa-home"></span> Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Checksensor.php"><span class="fa fa-check"></span> Check Sensors</a>
+              <a class="nav-link " href="Checksensor.php"><span class="fa fa-check"></span> Check Sensors</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Checkavailablity.php"><span class="fa fa-check"></span>Details </a>
+              <a class="nav-link" href="Checkavailablity.php"><span class="fa fa-check"></span>Details</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="Register.php"><span class="fa fa-id-badge"></span> Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="finaldetails.php"><span class="fa fa-flask"></span>Lab details</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aboutus.html"><span class="fa fa-check"></span> About us</a>
             </li>
           </ul>
           <span class="navbar-text">
@@ -64,7 +70,7 @@
               <div class="card">
                 <div class="card-body bg-light">
                   <h5 class="card-title bg-dark text-white text-center">Step 1</h5>
-                  <p class="card-text">Check all the sensors availabe in the sensor lab.</p>
+                  <p class="card-text">Check all the sensors available in the sensor lab.</p>
                   <a href="Checksensor.php" class="btn btn-success col-12">Go to Step 1  </a>
                 </div>
               </div>
@@ -91,8 +97,8 @@
                 <div class="card">
                   <div class="card-body bg-light">
                     <h5 class="card-title bg-dark text-white text-center">Step 4</h5>
-                    <p class="card-text">Collect the sensor from the lab</p>
-                    <a href="#" class="btn   btn-success col-12">Go to Step 4</a>
+                    <p class="card-text">Check the lab details and collect the sensor </p>
+                    <a href="finaldetails.php" class="btn   btn-success col-12">Go to Step 4</a>
                   </div>
                 </div>
               </div>
@@ -104,7 +110,7 @@
                   <div class="card">
                     <div class="card-body">
                         <div class="card-header bg-info text-white">
-                            <h2 class="col-12">How these sensors can help students  </h2>
+                            <h2 class="col-12">How the sensor lab can help students  </h2>
                        </div>
                         <div class="card-body bg-light">
                             <h3><span class="badge badge-dark">1 </span> Hackathons </h3>

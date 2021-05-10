@@ -15,19 +15,3 @@ footer {
     background-color: ;
     
 }
-
-table {
-  border-collapse: collapse;
-  width: 95%;
-  color: black; 
-  font-size: 18px;
-  text-align: left;
-
-} 
-th {
-  background-color: darkgrey;
-  color: black;
-}
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
